@@ -15,6 +15,8 @@
 		CE3DEC842BC9581C00B13324 /* DiscountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC832BC9581C00B13324 /* DiscountTests.swift */; };
 		CE3DEC8E2BC9581C00B13324 /* DiscountUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC8D2BC9581C00B13324 /* DiscountUITests.swift */; };
 		CE3DEC902BC9581C00B13324 /* DiscountUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC8F2BC9581C00B13324 /* DiscountUITestsLaunchTests.swift */; };
+		CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE3DEC9E2BC95C2600B13324 /* SnapKit */; };
+		CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = CE3DECA12BC95E6600B13324 /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */,
+				CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,12 +146,17 @@
 				CE3DEC652BC9581B00B13324 /* Sources */,
 				CE3DEC662BC9581B00B13324 /* Frameworks */,
 				CE3DEC672BC9581B00B13324 /* Resources */,
+				CE3DECA32BC9604900B13324 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Discount;
+			packageProductDependencies = (
+				CE3DEC9E2BC95C2600B13324 /* SnapKit */,
+				CE3DECA12BC95E6600B13324 /* Swinject */,
+			);
 			productName = Discount;
 			productReference = CE3DEC692BC9581B00B13324 /* Discount.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +229,10 @@
 				Base,
 			);
 			mainGroup = CE3DEC602BC9581B00B13324;
+			packageReferences = (
+				CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = CE3DEC6A2BC9581B00B13324 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,6 +269,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE3DECA32BC9604900B13324 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE3DEC652BC9581B00B13324 /* Sources */ = {
@@ -594,6 +627,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE3DEC9E2BC95C2600B13324 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		CE3DECA12BC95E6600B13324 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE3DEC612BC9581B00B13324 /* Project object */;
 }
