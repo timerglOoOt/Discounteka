@@ -22,7 +22,6 @@ opt_in_rules:
   - force_try
   - indentation_width
   - operator_usage_whitespace
-  - unused_capture_list
   - implicitly_unwrapped_optional
   - force_unwrapping
 
