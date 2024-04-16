@@ -17,6 +17,14 @@
 		CE3DEC902BC9581C00B13324 /* DiscountUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC8F2BC9581C00B13324 /* DiscountUITestsLaunchTests.swift */; };
 		CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE3DEC9E2BC95C2600B13324 /* SnapKit */; };
 		CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = CE3DECA12BC95E6600B13324 /* Swinject */; };
+		CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECA52BC96A2900B13324 /* UIColor.swift */; };
+		CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECA72BC96B4700B13324 /* UICustomInfoLabel.swift */; };
+		CE3DECAA2BC96C9100B13324 /* UICustomBackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECA92BC96C9100B13324 /* UICustomBackItem.swift */; };
+		CE3DECAC2BC96CDF00B13324 /* UICustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAB2BC96CDF00B13324 /* UICustomButton.swift */; };
+		CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */; };
+		CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */; };
+		CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB12BC9702200B13324 /* UICustomTextView.swift */; };
+		CE3DECB42BC9709D00B13324 /* UICustomBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		CE3DEC892BC9581C00B13324 /* DiscountUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscountUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3DEC8D2BC9581C00B13324 /* DiscountUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountUITests.swift; sourceTree = "<group>"; };
 		CE3DEC8F2BC9581C00B13324 /* DiscountUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE3DECA52BC96A2900B13324 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CE3DECA72BC96B4700B13324 /* UICustomInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomInfoLabel.swift; sourceTree = "<group>"; };
+		CE3DECA92BC96C9100B13324 /* UICustomBackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomBackItem.swift; sourceTree = "<group>"; };
+		CE3DECAB2BC96CDF00B13324 /* UICustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomButton.swift; sourceTree = "<group>"; };
+		CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
+		CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomLabel.swift; sourceTree = "<group>"; };
+		CE3DECB12BC9702200B13324 /* UICustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextView.swift; sourceTree = "<group>"; };
+		CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomBlueButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 		CE3DEC6B2BC9581B00B13324 /* Discount */ = {
 			isa = PBXGroup;
 			children = (
+				CE3DECA42BC969E800B13324 /* Extensions */,
 				CE3DEC9C2BC9591A00B13324 /* AppLife */,
 				CE3DEC702BC9581B00B13324 /* ViewController.swift */,
 				CE3DEC752BC9581C00B13324 /* Assets.xcassets */,
@@ -134,6 +151,21 @@
 				CE3DEC6E2BC9581B00B13324 /* SceneDelegate.swift */,
 			);
 			path = AppLife;
+			sourceTree = "<group>";
+		};
+		CE3DECA42BC969E800B13324 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE3DECA52BC96A2900B13324 /* UIColor.swift */,
+				CE3DECA72BC96B4700B13324 /* UICustomInfoLabel.swift */,
+				CE3DECA92BC96C9100B13324 /* UICustomBackItem.swift */,
+				CE3DECAB2BC96CDF00B13324 /* UICustomButton.swift */,
+				CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */,
+				CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */,
+				CE3DECB12BC9702200B13324 /* UICustomTextView.swift */,
+				CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +329,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3DEC712BC9581B00B13324 /* ViewController.swift in Sources */,
+				CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */,
+				CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */,
+				CE3DECAA2BC96C9100B13324 /* UICustomBackItem.swift in Sources */,
 				CE3DEC6D2BC9581B00B13324 /* AppDelegate.swift in Sources */,
+				CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */,
+				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
+				CE3DECAC2BC96CDF00B13324 /* UICustomButton.swift in Sources */,
+				CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */,
+				CE3DECB42BC9709D00B13324 /* UICustomBlueButton.swift in Sources */,
 				CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
