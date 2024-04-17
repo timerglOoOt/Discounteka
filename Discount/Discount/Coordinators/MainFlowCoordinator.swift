@@ -9,6 +9,7 @@ class MainFlowCoordinator: Coordinator {
 
     func start() {
         let mainViewController = MainModuleBuilder().build()
+        mainViewController.coordinator = self
         navigationController.pushViewController(mainViewController, animated: true)
     }
 
@@ -17,6 +18,20 @@ class MainFlowCoordinator: Coordinator {
     }
 
     func showAboutAppController() {
-        print("About us")
+        let aboutAppViewController = AboutAppModuleBuilder().build()
+        aboutAppViewController.coordinator = self
+        navigationController.pushViewController(aboutAppViewController, animated: true)
+    }
+
+    func showProfileController() {
+        print("profile")
+    }
+
+    func showContactUsController() {
+        print("contact us")
+    }
+
+    func showSettingsController() {
+        print("settings")
     }
 }

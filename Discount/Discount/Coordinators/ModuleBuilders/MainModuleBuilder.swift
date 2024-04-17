@@ -6,18 +6,14 @@ class MainModuleBuilder: ModuleBuilder {
 
     func build() -> MainViewController {
         let viewModel = MainViewModel()
-        let coordinator = MainFlowCoordinator(navigationController: UINavigationController())
         let viewController = MainViewController(viewModel: viewModel)
         viewController.viewModel = viewModel
-        viewController.coordinator = coordinator
         return viewController
     }
 
     func build(with viewModel: MainViewModel) -> MainViewController {
-        let coordinator = MainFlowCoordinator(navigationController: UINavigationController())
         let viewController = MainViewController(viewModel: viewModel)
         viewController.viewModel = viewModel
-        viewController.coordinator = coordinator
         return viewController
     }
 }

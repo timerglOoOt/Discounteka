@@ -30,6 +30,9 @@
 		CE48EE892BCFCB1C006C33F5 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE882BCFCB1C006C33F5 /* MainModuleBuilder.swift */; };
 		CE48EE8B2BCFCB49006C33F5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE8A2BCFCB49006C33F5 /* MainViewModel.swift */; };
 		CE48EE8D2BCFCCC7006C33F5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE8C2BCFCCC7006C33F5 /* AppCoordinator.swift */; };
+		CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */; };
+		CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */; };
+		CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */; };
 		CE7D5F2C2BCEBEB70005DAB9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */; };
 		CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */; };
 		CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F302BCEC3950005DAB9 /* MainView.swift */; };
@@ -79,6 +82,9 @@
 		CE48EE882BCFCB1C006C33F5 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 		CE48EE8A2BCFCB49006C33F5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CE48EE8C2BCFCCC7006C33F5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppModuleBuilder.swift; sourceTree = "<group>"; };
+		CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
+		CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypes.swift; sourceTree = "<group>"; };
 		CE7D5F302BCEC3950005DAB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -189,9 +195,9 @@
 		CE48EE7E2BCFC729006C33F5 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				CE48EE8E2BCFE550006C33F5 /* ModuleBuilders */,
 				CE48EE832BCFCA0C006C33F5 /* Protocols */,
 				CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */,
-				CE48EE882BCFCB1C006C33F5 /* MainModuleBuilder.swift */,
 				CE48EE8C2BCFCCC7006C33F5 /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -204,6 +210,24 @@
 				CE48EE842BCFCA22006C33F5 /* ModuleBuilder.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE48EE8E2BCFE550006C33F5 /* ModuleBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				CE48EE882BCFCB1C006C33F5 /* MainModuleBuilder.swift */,
+				CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */,
+			);
+			path = ModuleBuilders;
+			sourceTree = "<group>";
+		};
+		CE48EE912BCFE59F006C33F5 /* About app */ = {
+			isa = PBXGroup;
+			children = (
+				CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */,
+				CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */,
+			);
+			path = "About app";
 			sourceTree = "<group>";
 		};
 		CE7D5F272BCEBCB50005DAB9 /* Support */ = {
@@ -219,6 +243,7 @@
 		CE7D5F282BCEBE4E0005DAB9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE48EE912BCFE59F006C33F5 /* About app */,
 				CE7D5F292BCEBE800005DAB9 /* Main */,
 			);
 			path = Scenes;
@@ -422,12 +447,15 @@
 				CE48EE892BCFCB1C006C33F5 /* MainModuleBuilder.swift in Sources */,
 				CE48EE822BCFC7B0006C33F5 /* MainFlowCoordinator.swift in Sources */,
 				CE3DEC6D2BC9581B00B13324 /* AppDelegate.swift in Sources */,
+				CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */,
 				CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */,
 				CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */,
 				CE48EE8B2BCFCB49006C33F5 /* MainViewModel.swift in Sources */,
 				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
+				CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */,
 				CE3DECAC2BC96CDF00B13324 /* UICustomButton.swift in Sources */,
 				CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */,
+				CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */,
 				CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */,
 				CE3DECB42BC9709D00B13324 /* UICustomBlueButton.swift in Sources */,
 				CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */,

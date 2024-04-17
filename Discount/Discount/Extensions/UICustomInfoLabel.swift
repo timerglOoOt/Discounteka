@@ -9,7 +9,6 @@ class UICustomInfoLabel: UIView {
         image.contentMode = .scaleToFill
         image.layer.cornerRadius = 14
         image.layer.masksToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -19,7 +18,6 @@ class UICustomInfoLabel: UIView {
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
         label.numberOfLines = .zero
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 

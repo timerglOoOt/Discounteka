@@ -67,7 +67,7 @@ extension MainTableViewCell {
         }
 
         cardImageView.snp.makeConstraints { make in
-            make.top.equalTo(cardNameLabel.snp.bottom).inset(15)
+            make.top.equalTo(cardNameLabel.snp.bottom).offset(15)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
