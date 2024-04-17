@@ -14,9 +14,9 @@ class MainViewModel {
         var height: CGFloat
         switch cards[indexPath.row].type {
         case .withQR:
-            height = cards[indexPath.row].isClicked ? 240 : 55
+            height = cards[indexPath.row].isClicked ? 240 : 60
         case .withBarcode:
-            height = cards[indexPath.row].isClicked ? 170 : 55
+            height = cards[indexPath.row].isClicked ? 170 : 60
         }
         return height
     }
