@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 // MARK: Кастомный label с картинкой
 
@@ -50,16 +51,17 @@ extension UICustomInfoLabel {
         addSubview(infoImageView)
         addSubview(infoDescriptionLabel)
 
-        NSLayoutConstraint.activate([
-            infoImageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            infoImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            infoImageView.heightAnchor.constraint(equalToConstant: 44),
-            infoImageView.widthAnchor.constraint(equalToConstant: 44),
+        infoImageView.snp.makeConstraints { make in
+            make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+            make.size.equalTo(44)
+        }
 
-            infoDescriptionLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            infoDescriptionLabel.leadingAnchor.constraint(equalTo: infoImageView.trailingAnchor, constant: 10),
-            infoDescriptionLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
-        ])
+        infoDescriptionLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
+            make.leading.equalTo(infoImageView.snp.trailing).offset(10)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
+        }
     }
 
     // MARK: - Работа с нажатиями на label
