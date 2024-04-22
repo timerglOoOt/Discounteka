@@ -14,12 +14,12 @@ class MainViewController: UIViewController {
         super.loadView()
 
         view = mainView
-        setupNavigationBar()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavigationBar()
         mainView.delegate = self
         mainView.setupDataSource(self)
         mainView.setupDelegate(self)

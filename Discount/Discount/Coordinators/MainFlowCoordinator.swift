@@ -1,6 +1,6 @@
 import UIKit
 
-//MARK: Логика старта главного потока приложения
+// MARK: Логика старта главного потока приложения
 
 class MainFlowCoordinator: Coordinator {
     var navigationController: UINavigationController
@@ -45,7 +45,7 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
     }
 }
 
-//MARK: Настройка для главного экрана
+// MARK: Настройка для главного экрана
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
     func showAddCardController() {

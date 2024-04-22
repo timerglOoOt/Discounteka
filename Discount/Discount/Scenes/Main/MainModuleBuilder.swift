@@ -6,7 +6,6 @@ class MainModuleBuilder: ModuleBuilder {
     func build() -> MainViewController {
         let viewModel = MainViewModel()
         let viewController = MainViewController(viewModel: viewModel)
-        viewController.viewModel = viewModel
         return viewController
     }
 }
