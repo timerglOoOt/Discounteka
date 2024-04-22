@@ -2,7 +2,7 @@ import UIKit
 
 protocol MainViewControllerDelegate: AnyObject {
     func showAboutAppController()
-    func showAddCardController()
+    func showNewCardController()
 }
 
 class MainViewController: UIViewController {
@@ -59,7 +59,7 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
     }
 
     func addButtonTapped() {
-        delegate?.showAddCardController()
+        delegate?.showNewCardController()
     }
 }
 

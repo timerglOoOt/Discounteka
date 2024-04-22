@@ -19,7 +19,6 @@ class UICustomButton: UIButton {
         backgroundColor = UIColor.hexStringToUIColor(hex: "2B83FF")
         tintColor = .white
         setTitleColor(.gray, for: .highlighted)
-        translatesAutoresizingMaskIntoConstraints = false
     }
 
     required init?(coder: NSCoder) {

@@ -23,7 +23,7 @@
 		CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */; };
 		CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */; };
 		CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB12BC9702200B13324 /* UICustomTextView.swift */; };
-		CE3DECB42BC9709D00B13324 /* UICustomBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */; };
+		CE3DECB42BC9709D00B13324 /* UICustomGrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */; };
 		CE48EE802BCFC738006C33F5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE7F2BCFC738006C33F5 /* Coordinator.swift */; };
 		CE48EE822BCFC7B0006C33F5 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */; };
 		CE48EE852BCFCA22006C33F5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE842BCFCA22006C33F5 /* ModuleBuilder.swift */; };
@@ -37,6 +37,10 @@
 		CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */; };
 		CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F302BCEC3950005DAB9 /* MainView.swift */; };
 		CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F322BCECF350005DAB9 /* MainViewController.swift */; };
+		CEC1A1502BD65DA200080CEC /* NewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */; };
+		CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1512BD65DB200080CEC /* NewCardView.swift */; };
+		CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */; };
+		CEC1A1562BD662E500080CEC /* NewCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +79,7 @@
 		CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
 		CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomLabel.swift; sourceTree = "<group>"; };
 		CE3DECB12BC9702200B13324 /* UICustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextView.swift; sourceTree = "<group>"; };
-		CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomBlueButton.swift; sourceTree = "<group>"; };
+		CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomGrayButton.swift; sourceTree = "<group>"; };
 		CE48EE7F2BCFC738006C33F5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		CE48EE842BCFCA22006C33F5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
@@ -89,6 +93,10 @@
 		CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypes.swift; sourceTree = "<group>"; };
 		CE7D5F302BCEC3950005DAB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE7D5F322BCECF350005DAB9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewController.swift; sourceTree = "<group>"; };
+		CEC1A1512BD65DB200080CEC /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
+		CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModuleBuilder.swift; sourceTree = "<group>"; };
+		CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +195,7 @@
 				CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */,
 				CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */,
 				CE3DECB12BC9702200B13324 /* UICustomTextView.swift */,
-				CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */,
+				CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 		CE7D5F282BCEBE4E0005DAB9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEC1A14E2BD65D8900080CEC /* New Card */,
 				CE48EE912BCFE59F006C33F5 /* About app */,
 				CE7D5F292BCEBE800005DAB9 /* Main */,
 			);
@@ -266,6 +275,17 @@
 				CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CEC1A14E2BD65D8900080CEC /* New Card */ = {
+			isa = PBXGroup;
+			children = (
+				CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */,
+				CEC1A1512BD65DB200080CEC /* NewCardView.swift */,
+				CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */,
+				CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */,
+			);
+			path = "New Card";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,9 +449,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE48EE802BCFC738006C33F5 /* Coordinator.swift in Sources */,
+				CEC1A1562BD662E500080CEC /* NewCardViewModel.swift in Sources */,
 				CE7D5F2C2BCEBEB70005DAB9 /* MainTableViewCell.swift in Sources */,
 				CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */,
 				CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */,
+				CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */,
 				CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */,
 				CE48EE852BCFCA22006C33F5 /* ModuleBuilder.swift in Sources */,
 				CE48EE8D2BCFCCC7006C33F5 /* AppCoordinator.swift in Sources */,
@@ -445,11 +467,13 @@
 				CE48EE8B2BCFCB49006C33F5 /* MainViewModel.swift in Sources */,
 				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
 				CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */,
+				CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */,
+				CEC1A1502BD65DA200080CEC /* NewCardViewController.swift in Sources */,
 				CE3DECAC2BC96CDF00B13324 /* UICustomButton.swift in Sources */,
 				CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */,
 				CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */,
 				CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */,
-				CE3DECB42BC9709D00B13324 /* UICustomBlueButton.swift in Sources */,
+				CE3DECB42BC9709D00B13324 /* UICustomGrayButton.swift in Sources */,
 				CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,9 +10,10 @@ class MainFlowCoordinator: Coordinator {
     }
 
     func start() {
-        let mainViewController = MainModuleBuilder().build()
-        mainViewController.delegate = self
-        navigationController.pushViewController(mainViewController, animated: true)
+//        let mainViewController = MainModuleBuilder().build()
+//        mainViewController.delegate = self
+//        navigationController.pushViewController(mainViewController, animated: true)
+        showNewCardController()
     }
 }
 
@@ -48,8 +49,9 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
 // MARK: Настройка для главного экрана
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
-    func showAddCardController() {
-        print("Add card")
+    func showNewCardController() {
+        let newCardViewController = NewCardModuleBuilder().build()
+        navigationController.pushViewController(newCardViewController, animated: true)
     }
 
     func showAboutAppController() {
