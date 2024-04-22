@@ -1,6 +1,6 @@
 import UIKit
 
-class AboutAppView: UIView {
+final class AboutAppView: UIView {
     private lazy var profileAppInfoLabel: UICustomInfoLabel = {
         let label = UICustomInfoLabel(imageName: "star.svg", text: "Профиль")
         label.tag = 1
@@ -45,7 +45,7 @@ class AboutAppView: UIView {
     }
 }
 
-extension AboutAppView {
+private extension AboutAppView {
     private func setupLayout() {
         backgroundColor = .white
         addSubview(infoStackView)

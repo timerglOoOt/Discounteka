@@ -1,5 +1,7 @@
 import UIKit
 
+//MARK: Логика старта главного потока приложения
+
 class MainFlowCoordinator: Coordinator {
     var navigationController: UINavigationController
 
@@ -9,18 +11,25 @@ class MainFlowCoordinator: Coordinator {
 
     func start() {
         let mainViewController = MainModuleBuilder().build()
-        mainViewController.coordinator = self
+        mainViewController.delegate = self
         navigationController.pushViewController(mainViewController, animated: true)
     }
+}
 
-    func showAddCardController() {
-        print("Add card")
-    }
+// MARK: Настройка для экрана "О Нас"
 
-    func showAboutAppController() {
-        let aboutAppViewController = AboutAppModuleBuilder().build()
-        aboutAppViewController.coordinator = self
-        navigationController.pushViewController(aboutAppViewController, animated: true)
+extension MainFlowCoordinator: AboutAppControllerDelegate {
+    func showScreenByTag(_ tag: Int) {
+        switch tag {
+        case 1:
+            showProfileController()
+        case 2:
+            showSettingsController()
+        case 3:
+            showContactUsController()
+        default:
+            break
+        }
     }
 
     func showProfileController() {
@@ -33,5 +42,19 @@ class MainFlowCoordinator: Coordinator {
 
     func showSettingsController() {
         print("settings")
+    }
+}
+
+//MARK: Настройка для главного экрана
+
+extension MainFlowCoordinator: MainViewControllerDelegate {
+    func showAddCardController() {
+        print("Add card")
+    }
+
+    func showAboutAppController() {
+        let aboutAppViewController = AboutAppModuleBuilder().build()
+        aboutAppViewController.delegate = self
+        navigationController.pushViewController(aboutAppViewController, animated: true)
     }
 }

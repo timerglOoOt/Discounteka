@@ -1,9 +1,9 @@
 import UIKit
 
 class MainViewModel {
-    private var cards: [Type] = [
-        CardWithQR(name: "Магнит", qrcode: UIImageView(image: UIImage(named: "mockqr"))),
-        CardWithBarcode(name: "Discontus", barcode: UIImageView(image: UIImage(named: "mockbarcode")))
+    private var cards: [Card] = [
+        Card(type: .withQR, name: "Магнит", code: UIImageView(image: UIImage(named: "mockqr"))),
+        Card(type: .withBarcode, name: "Discontus", code: UIImageView(image: UIImage(named: "mockbarcode")))
     ]
 
     func numberOfRowsInSection() -> Int {
@@ -25,15 +25,7 @@ class MainViewModel {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as? MainTableViewCell
         guard let cell = cell else { return UITableViewCell() }
         let card = cards[indexPath.row]
-
-        switch card.type {
-        case .withBarcode:
-            guard let card = card as? CardWithBarcode else { return UITableViewCell() }
-            cell.configureCardWithBarcodeCell(card: card)
-        case .withQR:
-            guard let card = card as? CardWithQR else { return UITableViewCell() }
-            cell.configureCardWithQRCell(card: card)
-        }
+        cell.configureCell(card: card)
         return cell
     }
 

@@ -7,7 +7,7 @@ protocol MainSceneDelegate: AnyObject {
     func addButtonTapped()
 }
 
-class MainView: UIView {
+final class MainView: UIView {
     private lazy var cardsTableView: UITableView = {
         let table = UITableView()
         table.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
@@ -16,7 +16,6 @@ class MainView: UIView {
         table.rowHeight = 60
         table.bounces = false
         table.showsVerticalScrollIndicator = false
-        table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
 
@@ -43,7 +42,7 @@ class MainView: UIView {
 
 // MARK: Работа с положением элементов на MainView
 
-extension MainView {
+private extension MainView {
     func setupLayout() {
         backgroundColor = .white
 

@@ -3,12 +3,10 @@ import SnapKit
 
 // MARK: Кастомная ячейка главного экрана
 
-class MainTableViewCell: UITableViewCell {
+final class MainTableViewCell: UITableViewCell {
     private lazy var cardImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
-        image.isHidden = true
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -17,7 +15,6 @@ class MainTableViewCell: UITableViewCell {
         label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -33,12 +30,8 @@ class MainTableViewCell: UITableViewCell {
 
 // MARK: Работа с положением элементов на MainTableCell
 
-extension MainTableViewCell {
-    static var reuseIdentifier: String {
-        return String(describing: self)
-    }
-
-    func cardWithBarcodeSetupLayout() {
+private extension MainTableViewCell {
+    func setupLayout() {
         contentView.backgroundColor = .white
 
         contentView.addSubview(cardNameLabel)
@@ -50,24 +43,6 @@ extension MainTableViewCell {
         }
 
         cardImageView.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
-            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-        }
-    }
-
-    func cardWithQRSetupLayout() {
-        contentView.backgroundColor = .white
-
-        contentView.addSubview(cardNameLabel)
-        contentView.addSubview(cardImageView)
-
-        cardNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(15)
-            make.leading.equalTo(contentView.safeAreaLayoutGuide.snp.leading).offset(20)
-        }
-
-        cardImageView.snp.makeConstraints { make in
-            make.top.equalTo(cardNameLabel.snp.bottom).offset(15)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
@@ -77,20 +52,21 @@ extension MainTableViewCell {
 // MARK: Конфигурация и подготовка ячеек
 
 extension MainTableViewCell {
-    func configureCardWithBarcodeCell(card: CardWithBarcode) {
-        cardWithBarcodeSetupLayout()
-
-        cardNameLabel.text = card.name
-        cardImageView.image = card.barcode.image
-        cardImageView.isHidden = card.isClicked ? false : true
+    static var reuseIdentifier: String {
+        return String(describing: self)
     }
 
-    func configureCardWithQRCell(card: CardWithQR) {
-        cardWithQRSetupLayout()
-
+    func configureCell(card: Card) {
         cardNameLabel.text = card.name
-        cardImageView.image = card.qrcode.image
         cardImageView.isHidden = card.isClicked ? false : true
+        cardImageView.image = card.code.image
+        setupLayout()
+
+        if card.type == .withQR {
+            cardImageView.snp.makeConstraints { make in
+                make.top.equalTo(cardNameLabel.snp.bottom).offset(10)
+            }
+        }
     }
 
     override func prepareForReuse() {

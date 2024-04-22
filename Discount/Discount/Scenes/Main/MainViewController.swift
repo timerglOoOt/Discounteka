@@ -1,9 +1,14 @@
 import UIKit
 
+protocol MainViewControllerDelegate: AnyObject {
+    func showAboutAppController()
+    func showAddCardController()
+}
+
 class MainViewController: UIViewController {
     private let mainView = MainView(frame: .zero)
     var viewModel: MainViewModel
-    var coordinator: MainFlowCoordinator?
+    weak var delegate: MainViewControllerDelegate?
 
     override func loadView() {
         super.loadView()
@@ -54,7 +59,7 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
     }
 
     func addButtonTapped() {
-        coordinator?.showAddCardController()
+        delegate?.showAddCardController()
     }
 }
 
@@ -76,6 +81,6 @@ extension MainViewController {
     }
 
     @objc private func handleTap() {
-        coordinator?.showAboutAppController()
+        delegate?.showAboutAppController()
     }
 }

@@ -1,13 +1,20 @@
 import UIKit
 
+protocol AboutAppControllerDelegate: AnyObject {
+    func showScreenByTag(_ tag: Int)
+}
+
 class AboutAppViewController: UIViewController {
     private let aboutAppView = AboutAppView(frame: .zero)
-    var coordinator: MainFlowCoordinator?
+    weak var delegate: AboutAppControllerDelegate?
+
+    override func loadView() {
+        view = aboutAppView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view = aboutAppView
         setupNavigationBar()
         setupGestures()
     }
@@ -29,16 +36,7 @@ extension AboutAppViewController {
 
     private func setupGestures() {
         aboutAppView.labelTappedClosure = { [weak self] tag in
-            switch tag {
-            case 1:
-                self?.coordinator?.showProfileController()
-            case 2:
-                self?.coordinator?.showSettingsController()
-            case 3:
-                self?.coordinator?.showContactUsController()
-            default:
-                break
-            }
+            self?.delegate?.showScreenByTag(tag)
         }
     }
 }

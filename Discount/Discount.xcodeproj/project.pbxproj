@@ -195,7 +195,6 @@
 		CE48EE7E2BCFC729006C33F5 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				CE48EE8E2BCFE550006C33F5 /* ModuleBuilders */,
 				CE48EE832BCFCA0C006C33F5 /* Protocols */,
 				CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */,
 				CE48EE8C2BCFCCC7006C33F5 /* AppCoordinator.swift */,
@@ -212,18 +211,10 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		CE48EE8E2BCFE550006C33F5 /* ModuleBuilders */ = {
-			isa = PBXGroup;
-			children = (
-				CE48EE882BCFCB1C006C33F5 /* MainModuleBuilder.swift */,
-				CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */,
-			);
-			path = ModuleBuilders;
-			sourceTree = "<group>";
-		};
 		CE48EE912BCFE59F006C33F5 /* About app */ = {
 			isa = PBXGroup;
 			children = (
+				CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */,
 				CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */,
 				CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */,
 			);
@@ -254,6 +245,7 @@
 			children = (
 				CE7D5F2A2BCEBE970005DAB9 /* Views */,
 				CE7D5F322BCECF350005DAB9 /* MainViewController.swift */,
+				CE48EE882BCFCB1C006C33F5 /* MainModuleBuilder.swift */,
 				CE48EE8A2BCFCB49006C33F5 /* MainViewModel.swift */,
 			);
 			path = Main;
