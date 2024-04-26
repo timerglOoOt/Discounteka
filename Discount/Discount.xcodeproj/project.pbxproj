@@ -33,6 +33,9 @@
 		CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */; };
 		CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */; };
 		CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */; };
+		CE56B2902BDB6BC500132A10 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56B28F2BDB6BC500132A10 /* CardService.swift */; };
+		CE56B2932BDB6E9400132A10 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = CE56B2922BDB6E9400132A10 /* EFQRCode */; };
+		CE56B2952BDB70FF00132A10 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56B2942BDB70FF00132A10 /* Errors.swift */; };
 		CE7D5F2C2BCEBEB70005DAB9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */; };
 		CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */; };
 		CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F302BCEC3950005DAB9 /* MainView.swift */; };
@@ -89,6 +92,8 @@
 		CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppModuleBuilder.swift; sourceTree = "<group>"; };
 		CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
 		CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		CE56B28F2BDB6BC500132A10 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		CE56B2942BDB70FF00132A10 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypes.swift; sourceTree = "<group>"; };
 		CE7D5F302BCEC3950005DAB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 			files = (
 				CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */,
 				CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */,
+				CE56B2932BDB6E9400132A10 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +155,7 @@
 		CE3DEC6B2BC9581B00B13324 /* Discount */ = {
 			isa = PBXGroup;
 			children = (
+				CE56B28E2BDB6BB200132A10 /* Services */,
 				CE48EE7E2BCFC729006C33F5 /* Coordinators */,
 				CE7D5F2D2BCEC0F70005DAB9 /* Models */,
 				CE7D5F282BCEBE4E0005DAB9 /* Scenes */,
@@ -196,6 +203,7 @@
 				CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */,
 				CE3DECB12BC9702200B13324 /* UICustomTextView.swift */,
 				CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */,
+				CE56B2942BDB70FF00132A10 /* Errors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +235,14 @@
 				CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */,
 			);
 			path = "About app";
+			sourceTree = "<group>";
+		};
+		CE56B28E2BDB6BB200132A10 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE56B28F2BDB6BC500132A10 /* CardService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CE7D5F272BCEBCB50005DAB9 /* Support */ = {
@@ -308,6 +324,7 @@
 			packageProductDependencies = (
 				CE3DEC9E2BC95C2600B13324 /* SnapKit */,
 				CE3DECA12BC95E6600B13324 /* Swinject */,
+				CE56B2922BDB6E9400132A10 /* EFQRCode */,
 			);
 			productName = Discount;
 			productReference = CE3DEC692BC9581B00B13324 /* Discount.app */;
@@ -384,6 +401,7 @@
 			packageReferences = (
 				CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */,
+				CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */,
 			);
 			productRefGroup = CE3DEC6A2BC9581B00B13324 /* Products */;
 			projectDirPath = "";
@@ -451,6 +469,7 @@
 				CE48EE802BCFC738006C33F5 /* Coordinator.swift in Sources */,
 				CEC1A1562BD662E500080CEC /* NewCardViewModel.swift in Sources */,
 				CE7D5F2C2BCEBEB70005DAB9 /* MainTableViewCell.swift in Sources */,
+				CE56B2952BDB70FF00132A10 /* Errors.swift in Sources */,
 				CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */,
 				CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */,
 				CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */,
@@ -463,6 +482,7 @@
 				CE3DEC6D2BC9581B00B13324 /* AppDelegate.swift in Sources */,
 				CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */,
 				CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */,
+				CE56B2902BDB6BC500132A10 /* CardService.swift in Sources */,
 				CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */,
 				CE48EE8B2BCFCB49006C33F5 /* MainViewModel.swift in Sources */,
 				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
@@ -822,6 +842,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -834,6 +862,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		CE56B2922BDB6E9400132A10 /* EFQRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */;
+			productName = EFQRCode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

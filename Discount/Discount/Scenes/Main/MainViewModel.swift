@@ -2,8 +2,8 @@ import UIKit
 
 class MainViewModel {
     private var cards: [Card] = [
-        Card(type: .withQR, name: "Магнит", code: UIImageView(image: UIImage(named: "mockqr"))),
-        Card(type: .withBarcode, name: "Discontus", code: UIImageView(image: UIImage(named: "mockbarcode")))
+//        Card(type: .withQR, name: "Магнит", code: UIImageView(image: UIImage(named: "mockqr"))),
+//        Card(type: .withBarcode, name: "Discontus", code: UIImageView(image: UIImage(named: "mockbarcode")))
     ]
 
     func numberOfRowsInSection() -> Int {

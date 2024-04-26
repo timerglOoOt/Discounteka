@@ -59,7 +59,7 @@ extension MainTableViewCell {
     func configureCell(card: Card) {
         cardNameLabel.text = card.name
         cardImageView.isHidden = card.isClicked ? false : true
-        cardImageView.image = card.code.image
+        cardImageView.image = UIImage(cgImage: card.code)
         setupLayout()
 
         if card.type == .withQR {
