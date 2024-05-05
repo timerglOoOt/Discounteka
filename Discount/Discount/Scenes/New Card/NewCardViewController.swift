@@ -11,6 +11,7 @@ class NewCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        newCardView.delegate = self
         setupNavigationBar()
     }
 
@@ -40,5 +41,13 @@ extension NewCardViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+}
+
+extension NewCardViewController: NewCardSceneDelegate {
+    func saveButtonTapped() {
+        let cardInfo = newCardView.getTextFields()
+        viewModel.addNewCard(cardValue: cardInfo[0], cardName: cardInfo[1], cardType: .withQR)
+        navigationController?.popViewController(animated: true)
     }
 }

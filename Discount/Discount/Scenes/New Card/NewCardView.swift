@@ -1,6 +1,10 @@
 import UIKit
 import SnapKit
 
+protocol NewCardSceneDelegate: AnyObject {
+    func saveButtonTapped()
+}
+
 final class NewCardView: UIView {
     private lazy var enterCardNumberCustomLabel = UICustomLabel(labelText: "Вы можете ввести номер карты вручную", alignment: .center)
     private lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: "Введите номер...")
@@ -8,8 +12,15 @@ final class NewCardView: UIView {
     private lazy var scanQRCustomBlueButton = UICustomGrayButton("Сканировать")
     private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: "Введите название карты", alignment: .center)
     private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: "Введите название...")
-    private lazy var saveCustomButton = UICustomButton("Сохранить", "checkmark.circle")
+    private lazy var saveCustomButton: UICustomButton = {
+        let button = UICustomButton("Сохранить", "checkmark.circle")
+        button.addAction(UIAction(handler: { _ in
+            self.delegate?.saveButtonTapped()
+        }), for: .touchUpInside)
+        return button
+    }()
 
+    weak var delegate: NewCardSceneDelegate?
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
@@ -18,6 +29,10 @@ final class NewCardView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func getTextFields() -> [String] {
+        return [cardNumberCustomTextField.text ?? "", cardNameCustomTextField.text ?? ""]
     }
 }
 

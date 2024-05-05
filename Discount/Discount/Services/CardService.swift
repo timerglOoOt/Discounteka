@@ -26,4 +26,8 @@ class CardService {
     func getCount() -> Int {
         cards.count
     }
+
+    func toggleCardVision(at index: Int) {
+        cards[index].isClicked.toggle()
+    }
 }

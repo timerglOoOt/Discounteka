@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 protocol MainViewControllerDelegate: AnyObject {
     func showAboutAppController()
@@ -9,6 +10,8 @@ class MainViewController: UIViewController {
     private let mainView = MainView(frame: .zero)
     var viewModel: MainViewModel
     weak var delegate: MainViewControllerDelegate?
+    private var cancellables = Set<AnyCancellable>()
+    var cardsCount = 0
 
     override func loadView() {
         super.loadView()
@@ -20,6 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupBindigs()
         mainView.delegate = self
         mainView.setupDataSource(self)
         mainView.setupDelegate(self)
@@ -60,6 +64,20 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
 
     func addButtonTapped() {
         delegate?.showNewCardController()
+    }
+
+    func setupBindigs() {
+        CardService.shared.$cards
+        .sink { [weak self] cards in
+            let curCardsCount = cards.count
+            if curCardsCount != self?.cardsCount {
+                DispatchQueue.main.async {
+                    self?.mainView.reloadData()
+                }
+            }
+            self?.cardsCount = curCardsCount
+        }
+        .store(in: &cancellables)
     }
 }
 

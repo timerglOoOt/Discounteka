@@ -61,7 +61,6 @@ private extension MainView {
             make.height.equalTo(65)
             make.width.equalTo(350)
         }
-
     }
 }
 
@@ -74,5 +73,9 @@ extension MainView {
 
     func setupDelegate(_ delegate: UITableViewDelegate) {
         cardsTableView.delegate = delegate
+    }
+
+    func reloadData() {
+        cardsTableView.reloadData()
     }
 }
