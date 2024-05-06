@@ -22,7 +22,7 @@ class MainViewModel {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as? MainTableViewCell
         guard let cell = cell else { return UITableViewCell() }
         let card = cardsService.getTask(at: indexPath.row)
-        cell.configureCell(card: card)
+        cell.configureCell(card: card, isClicked: cardsService.getTask(at: indexPath.row).isClicked)
         return cell
     }
 
@@ -36,6 +36,7 @@ class MainViewModel {
     func deleteByLeftSwipe(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] (_, _, completionHandler) in
             self?.cardsService.removeTask(at: indexPath.row)
+
             tableView.deleteRows(at: [indexPath], with: .left)
             completionHandler(true)
         }

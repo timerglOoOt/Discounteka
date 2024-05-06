@@ -35,16 +35,10 @@ private extension MainTableViewCell {
         contentView.backgroundColor = .white
 
         contentView.addSubview(cardNameLabel)
-        contentView.addSubview(cardImageView)
 
         cardNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(15)
-            make.leading.equalTo(contentView.safeAreaLayoutGuide.snp.leading).offset(20)
-        }
-
-        cardImageView.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
-            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(15)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(20)
         }
     }
 }
@@ -56,16 +50,28 @@ extension MainTableViewCell {
         return String(describing: self)
     }
 
-    func configureCell(card: Card) {
+    func configureCell(card: Card, isClicked: Bool) {
         cardNameLabel.text = card.name
-        cardImageView.isHidden = card.isClicked ? false : true
         cardImageView.image = UIImage(cgImage: card.code)
         setupLayout()
 
-        if card.type == .withQR {
+//        if card.type == .withQR {
+//            cardImageView.snp.makeConstraints { make in
+//                make.top.equalTo(cardNameLabel.snp.bottom).offset(10)
+//            }
+//        }
+        if isClicked {
+            if cardImageView.superview == nil {
+                contentView.addSubview(cardImageView)
+            }
             cardImageView.snp.makeConstraints { make in
                 make.top.equalTo(cardNameLabel.snp.bottom).offset(10)
+                make.centerX.equalTo(contentView.safeAreaLayoutGuide.snp.centerX)
+                make.size.equalTo(190)
+
             }
+        } else {
+            cardImageView.removeFromSuperview()
         }
     }
 

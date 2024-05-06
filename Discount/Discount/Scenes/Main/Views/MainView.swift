@@ -13,7 +13,6 @@ final class MainView: UIView {
         table.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         table.separatorStyle = .none
         table.backgroundColor = .white
-        table.rowHeight = 60
         table.bounces = false
         table.showsVerticalScrollIndicator = false
         return table
