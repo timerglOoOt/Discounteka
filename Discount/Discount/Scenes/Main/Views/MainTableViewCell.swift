@@ -6,16 +6,18 @@ import SnapKit
 final class MainTableViewCell: UITableViewCell {
     private lazy var cardImageView: UIImageView = {
         let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-        image.snp.makeConstraints {
-            $0.width.height.equalTo(128)
-        }
+//        image.snp.makeConstraints {
+//            $0.width.height.equalTo(128)
+//        }
         image.isHidden = true
         return image
     }()
 
     private lazy var cardNameLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
@@ -49,7 +51,7 @@ private extension MainTableViewCell {
         contentView.addSubview(stackView)
 
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(16)
         }
     }
 }
@@ -66,24 +68,12 @@ extension MainTableViewCell {
         cardImageView.image = generateImage(from: card.code, cardType: card.type)
 
         cardImageView.isHidden = !card.isClicked
-
-//        if card.isClicked {
-//            UIView.animate(withDuration: 0.3) { [weak self] in
-//                guard let self else { return }
-//                self.stackView.addArrangedSubview(self.cardImageView)
-//            }
-//        } else {
-//            UIView.animate(withDuration: 0.3) { [weak self] in
-//                guard let self else { return }
-//                self.stackView.removeArrangedSubview(self.cardImageView)
-//            }
-//        }
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        stackView.arrangedSubviews.forEach { stackView.removeArrangedSubview($0) }
+
         cardImageView.image = nil
         cardNameLabel.text = nil
     }
@@ -103,6 +93,6 @@ extension MainTableViewCell {
 
         let transformedImage = output.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
 
-        return UIImage(ciImage: output)
+        return UIImage(ciImage: transformedImage)
     }
 }
