@@ -47,7 +47,7 @@ extension NewCardViewController {
 extension NewCardViewController: NewCardSceneDelegate {
     func saveButtonTapped() {
         let cardInfo = newCardView.getTextFields()
-        viewModel.addNewCard(cardValue: cardInfo[0], cardName: cardInfo[1], cardType: .withQR)
+        viewModel.addNewCard(cardValue: cardInfo.0, cardName: cardInfo.1, cardType: .withQR)
         navigationController?.popViewController(animated: true)
     }
 }

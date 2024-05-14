@@ -31,8 +31,8 @@ final class NewCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func getTextFields() -> [String] {
-        return [cardNumberCustomTextField.text ?? "", cardNameCustomTextField.text ?? ""]
+    func getTextFields() -> (String, String) {
+        return (cardNumberCustomTextField.text ?? "", cardNameCustomTextField.text ?? "")
     }
 }
 

@@ -50,10 +50,6 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
         viewModel.configureCell(tableView, cellForRowAt: indexPath)
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        viewModel.getHeight(tableView, heightForRowAt: indexPath)
-    }
-
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         viewModel.deleteByLeftSwipe(tableView, trailingSwipeActionsConfigurationForRowAt: indexPath)
     }

@@ -19,12 +19,12 @@ class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator {
-    func showMainFlow() {
+    private func showMainFlow() {
         flowCoordinator = MainFlowCoordinator(navigationController: navigationController)
         flowCoordinator?.start()
     }
 
-    func showAuthFlow() {
+    private func showAuthFlow() {
         print("Auth flow")
     }
 }

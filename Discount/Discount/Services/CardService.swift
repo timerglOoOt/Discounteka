@@ -6,13 +6,18 @@ class CardService {
 
     public static let shared = CardService()
     private init() {}
+    private let lock = NSLock()
 
     func saveCard(_ card: Card) {
+        lock.lock()
         cards.append(card)
+        lock.unlock()
     }
 
     func removeTask(at index: Int) {
+        lock.lock()
         cards.remove(at: index)
+        lock.unlock()
     }
 
     func getTask(at index: Int) -> Card {

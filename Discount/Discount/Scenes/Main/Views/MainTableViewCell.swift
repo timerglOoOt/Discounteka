@@ -7,6 +7,10 @@ final class MainTableViewCell: UITableViewCell {
     private lazy var cardImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
+        image.snp.makeConstraints {
+            $0.width.height.equalTo(128)
+        }
+        image.isHidden = true
         return image
     }()
 
@@ -18,9 +22,16 @@ final class MainTableViewCell: UITableViewCell {
         return label
     }()
 
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [cardNameLabel, cardImageView])
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        return stackView
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -31,14 +42,14 @@ final class MainTableViewCell: UITableViewCell {
 // MARK: Работа с положением элементов на MainTableCell
 
 private extension MainTableViewCell {
+
     func setupLayout() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .systemBackground
 
-        contentView.addSubview(cardNameLabel)
+        contentView.addSubview(stackView)
 
-        cardNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(15)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(20)
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 }
@@ -50,35 +61,48 @@ extension MainTableViewCell {
         return String(describing: self)
     }
 
-    func configureCell(card: Card, isClicked: Bool) {
+    func configureCell(card: Card) {
         cardNameLabel.text = card.name
-        cardImageView.image = UIImage(cgImage: card.code)
-        setupLayout()
+        cardImageView.image = generateImage(from: card.code, cardType: card.type)
 
-//        if card.type == .withQR {
-//            cardImageView.snp.makeConstraints { make in
-//                make.top.equalTo(cardNameLabel.snp.bottom).offset(10)
+        cardImageView.isHidden = !card.isClicked
+
+//        if card.isClicked {
+//            UIView.animate(withDuration: 0.3) { [weak self] in
+//                guard let self else { return }
+//                self.stackView.addArrangedSubview(self.cardImageView)
+//            }
+//        } else {
+//            UIView.animate(withDuration: 0.3) { [weak self] in
+//                guard let self else { return }
+//                self.stackView.removeArrangedSubview(self.cardImageView)
 //            }
 //        }
-        if isClicked {
-            if cardImageView.superview == nil {
-                contentView.addSubview(cardImageView)
-            }
-            cardImageView.snp.makeConstraints { make in
-                make.top.equalTo(cardNameLabel.snp.bottom).offset(10)
-                make.centerX.equalTo(contentView.safeAreaLayoutGuide.snp.centerX)
-                make.size.equalTo(190)
-
-            }
-        } else {
-            cardImageView.removeFromSuperview()
-        }
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
 
+        stackView.arrangedSubviews.forEach { stackView.removeArrangedSubview($0) }
         cardImageView.image = nil
         cardNameLabel.text = nil
+    }
+
+    private func generateImage(from string: String, cardType: CardType) -> UIImage? {
+        let data = Data(string.utf8)
+
+        let filter: CIFilter = cardType.isBarcode ?
+            CIFilter.barcodeGenerator() :
+            CIFilter.qrCodeGenerator()
+
+        filter.setValue(data, forKey: "inputMessage")
+
+        guard let output = filter.outputImage else { return nil }
+        let scaleX = 200 / output.extent.size.width
+        let scaleY = 200 / output.extent.size.height
+
+        let transformedImage = output.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
+
+        return UIImage(ciImage: output)
     }
 }

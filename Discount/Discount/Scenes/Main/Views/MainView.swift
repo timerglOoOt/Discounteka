@@ -15,6 +15,7 @@ final class MainView: UIView {
         table.backgroundColor = .white
         table.bounces = false
         table.showsVerticalScrollIndicator = false
+        table.estimatedRowHeight = UITableView.automaticDimension
         return table
     }()
 

@@ -7,29 +7,27 @@ class MainViewModel {
         cardsService.getCount()
     }
 
-    func getHeight(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height: CGFloat
-        switch cardsService.getTask(at: indexPath.row).type {
-        case .withQR:
-            height = cardsService.getTask(at: indexPath.row).isClicked ? 240 : 60
-        case .withBarcode:
-            height = cardsService.getTask(at: indexPath.row).isClicked ? 170 : 60
-        }
-        return height
-    }
+//    func getHeight(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        var height: CGFloat
+//        switch cardsService.getTask(at: indexPath.row).type {
+//        case .withQR:
+//            height = cardsService.getTask(at: indexPath.row).isClicked ? 240 : 60
+//        case .withBarcode:
+//            height = cardsService.getTask(at: indexPath.row).isClicked ? 170 : 60
+//        }
+//        return height
+//    }
 
     func configureCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as? MainTableViewCell
         guard let cell = cell else { return UITableViewCell() }
         let card = cardsService.getTask(at: indexPath.row)
-        cell.configureCell(card: card, isClicked: cardsService.getTask(at: indexPath.row).isClicked)
+        cell.configureCell(card: card)
         return cell
     }
 
     func updateSelectedRow(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cardsService.toggleCardVision(at: indexPath.row)
-        tableView.beginUpdates()
-        tableView.endUpdates()
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 

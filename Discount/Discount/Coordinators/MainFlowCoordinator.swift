@@ -32,15 +32,15 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
         }
     }
 
-    func showProfileController() {
+    private func showProfileController() {
         print("profile")
     }
 
-    func showContactUsController() {
+    private func showContactUsController() {
         print("contact us")
     }
 
-    func showSettingsController() {
+    private func showSettingsController() {
         print("settings")
     }
 }
