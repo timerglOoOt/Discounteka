@@ -1,8 +1,14 @@
 import UIKit
+import Combine
+import SwiftUI
+import SnapKit
+import CodeScanner
 
 class NewCardViewController: UIViewController {
     private let newCardView = NewCardView(frame: .zero)
     let viewModel: NewCardViewModel
+    private var cancellable: AnyCancellable?
+    var scanView = ScannerView()
 
     override func loadView() {
         view = newCardView
@@ -13,6 +19,8 @@ class NewCardViewController: UIViewController {
 
         newCardView.delegate = self
         setupNavigationBar()
+        setupBindigs()
+        scanView.delegate = self
     }
 
     init(viewModel: NewCardViewModel) {
@@ -44,10 +52,39 @@ extension NewCardViewController {
     }
 }
 
+extension NewCardViewController: ScannerViewProtocol {
+    func didResultChanged(result: Result<CodeScanner.ScanResult, CodeScanner.ScanError>) {
+        switch result {
+        case .success(let text):
+            self.newCardView.cardNumberCustomTextField.text = text.string
+        case .failure(let message):
+            print(message.localizedDescription)
+        }
+    }
+}
+
 extension NewCardViewController: NewCardSceneDelegate {
+    func setupBindigs() {    }
+
     func saveButtonTapped() {
         let cardInfo = newCardView.getTextFields()
         viewModel.addNewCard(cardValue: cardInfo.0, cardName: cardInfo.1, cardType: .withQR)
         navigationController?.popViewController(animated: true)
+    }
+
+    func scanButtonTapped() {
+        configScannerView()
+    }
+
+    private func configScannerView() {
+        let hostingController = UIHostingController(rootView: scanView)
+        addChild(hostingController)
+        view.addSubview(hostingController.view)
+
+        hostingController.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        hostingController.didMove(toParent: self)
     }
 }

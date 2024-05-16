@@ -8,9 +8,6 @@ final class MainTableViewCell: UITableViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-        //        image.snp.makeConstraints {
-        //            $0.width.height.equalTo(128)
-        //        }
         image.isHidden = true
         return image
     }()
@@ -64,6 +61,9 @@ extension MainTableViewCell {
     }
 
     func configureCell(card: Card) {
+        contentView.layer.cornerRadius = 10
+        contentView.layer.masksToBounds = true
+
         cardNameLabel.text = card.name
         cardImageView.image = generateImage(from: card.code, cardType: card.type)
 
@@ -72,7 +72,6 @@ extension MainTableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-
 
         cardImageView.image = nil
         cardNameLabel.text = nil

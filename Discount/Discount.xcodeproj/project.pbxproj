@@ -24,6 +24,8 @@
 		CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */; };
 		CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB12BC9702200B13324 /* UICustomTextView.swift */; };
 		CE3DECB42BC9709D00B13324 /* UICustomGrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */; };
+		CE4306E22BF62847009D8577 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CE4306E12BF62847009D8577 /* CodeScanner */; };
+		CE4306E62BF63AAF009D8577 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4306E52BF63AAF009D8577 /* ScannerView.swift */; };
 		CE48EE802BCFC738006C33F5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE7F2BCFC738006C33F5 /* Coordinator.swift */; };
 		CE48EE822BCFC7B0006C33F5 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */; };
 		CE48EE852BCFCA22006C33F5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE842BCFCA22006C33F5 /* ModuleBuilder.swift */; };
@@ -83,6 +85,7 @@
 		CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomLabel.swift; sourceTree = "<group>"; };
 		CE3DECB12BC9702200B13324 /* UICustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextView.swift; sourceTree = "<group>"; };
 		CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomGrayButton.swift; sourceTree = "<group>"; };
+		CE4306E52BF63AAF009D8577 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		CE48EE7F2BCFC738006C33F5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		CE48EE842BCFCA22006C33F5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4306E22BF62847009D8577 /* CodeScanner in Frameworks */,
 				CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */,
 				CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */,
 				CE56B2932BDB6E9400132A10 /* EFQRCode in Frameworks */,
@@ -300,6 +304,7 @@
 				CEC1A1512BD65DB200080CEC /* NewCardView.swift */,
 				CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */,
 				CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */,
+				CE4306E52BF63AAF009D8577 /* ScannerView.swift */,
 			);
 			path = "New Card";
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				CE3DEC9E2BC95C2600B13324 /* SnapKit */,
 				CE3DECA12BC95E6600B13324 /* Swinject */,
 				CE56B2922BDB6E9400132A10 /* EFQRCode */,
+				CE4306E12BF62847009D8577 /* CodeScanner */,
 			);
 			productName = Discount;
 			productReference = CE3DEC692BC9581B00B13324 /* Discount.app */;
@@ -402,6 +408,7 @@
 				CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */,
 				CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */,
+				CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = CE3DEC6A2BC9581B00B13324 /* Products */;
 			projectDirPath = "";
@@ -475,6 +482,7 @@
 				CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */,
 				CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */,
 				CE48EE852BCFCA22006C33F5 /* ModuleBuilder.swift in Sources */,
+				CE4306E62BF63AAF009D8577 /* ScannerView.swift in Sources */,
 				CE48EE8D2BCFCCC7006C33F5 /* AppCoordinator.swift in Sources */,
 				CE3DECAA2BC96C9100B13324 /* UICustomBackItem.swift in Sources */,
 				CE48EE892BCFCB1C006C33F5 /* MainModuleBuilder.swift in Sources */,
@@ -663,6 +671,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7U2MKC2VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Discount/Support/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Need Camera access to Sqan QR code Image";
@@ -690,6 +699,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7U2MKC2VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Discount/Support/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Need Camera access to Sqan QR code Image";
@@ -844,6 +854,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
@@ -864,6 +882,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		CE4306E12BF62847009D8577 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 		CE56B2922BDB6E9400132A10 /* EFQRCode */ = {
 			isa = XCSwiftPackageProductDependency;

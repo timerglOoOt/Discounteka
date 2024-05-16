@@ -14,17 +14,17 @@ class CardService {
         lock.unlock()
     }
 
-    func removeTask(at index: Int) {
+    func removeCard(at index: Int) {
         lock.lock()
         cards.remove(at: index)
         lock.unlock()
     }
 
-    func getTask(at index: Int) -> Card {
+    func getCard(at index: Int) -> Card {
         cards[index]
     }
 
-    func getAllTasks() -> [Card] {
+    func getAllCards() -> [Card] {
         cards
     }
 

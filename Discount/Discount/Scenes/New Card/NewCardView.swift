@@ -3,20 +3,29 @@ import SnapKit
 
 protocol NewCardSceneDelegate: AnyObject {
     func saveButtonTapped()
+    func scanButtonTapped()
 }
 
 final class NewCardView: UIView {
     private lazy var enterCardNumberCustomLabel = UICustomLabel(labelText: "Вы можете ввести номер карты вручную", alignment: .center)
-    private lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: "Введите номер...")
+    lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: "Введите номер...")
     private lazy var scanQRCustomLabel = UICustomLabel(labelText: "или отсканировать QR-код", alignment: .center)
-    private lazy var scanQRCustomBlueButton = UICustomGrayButton("Сканировать")
     private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: "Введите название карты", alignment: .center)
     private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: "Введите название...")
     private lazy var saveCustomButton: UICustomButton = {
         let button = UICustomButton("Сохранить", "checkmark.circle")
-        button.addAction(UIAction(handler: { _ in
-            self.delegate?.saveButtonTapped()
+        button.addAction(UIAction(handler: { [weak self] _ in
+            self?.delegate?.saveButtonTapped()
         }), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var scanQRCustomBlueButton: UICustomGrayButton = {
+        let button = UICustomGrayButton("Сканировать")
+        let action = UIAction { [weak self] _ in
+            self?.delegate?.scanButtonTapped()
+        }
+        button.addAction(action, for: .touchUpInside)
         return button
     }()
 
