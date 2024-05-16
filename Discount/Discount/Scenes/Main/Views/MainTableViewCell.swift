@@ -8,9 +8,9 @@ final class MainTableViewCell: UITableViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-//        image.snp.makeConstraints {
-//            $0.width.height.equalTo(128)
-//        }
+        //        image.snp.makeConstraints {
+        //            $0.width.height.equalTo(128)
+        //        }
         image.isHidden = true
         return image
     }()
@@ -82,8 +82,8 @@ extension MainTableViewCell {
         let data = Data(string.utf8)
 
         let filter: CIFilter = cardType.isBarcode ?
-            CIFilter.barcodeGenerator() :
-            CIFilter.qrCodeGenerator()
+        CIFilter.barcodeGenerator() :
+        CIFilter.qrCodeGenerator()
 
         filter.setValue(data, forKey: "inputMessage")
 
@@ -92,6 +92,11 @@ extension MainTableViewCell {
         let scaleY = 200 / output.extent.size.height
 
         let transformedImage = output.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
+
+        let context = CIContext()
+        if let cgImage = context.createCGImage(transformedImage, from: transformedImage.extent) {
+            return UIImage(cgImage: cgImage)
+        }
 
         return UIImage(ciImage: transformedImage)
     }

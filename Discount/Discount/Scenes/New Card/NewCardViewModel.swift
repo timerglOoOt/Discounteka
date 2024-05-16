@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 import CoreImage.CIFilterBuiltins
-//import EFQRCode
 
 class NewCardViewModel {
     let cardService = CardService.shared
