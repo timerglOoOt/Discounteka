@@ -53,12 +53,22 @@ extension NewCardViewController {
 }
 
 extension NewCardViewController: ScannerViewProtocol {
+    func dismissScanner() {
+        navigationController?.dismiss(animated: true)
+    }
+
     func didResultChanged(result: Result<CodeScanner.ScanResult, CodeScanner.ScanError>) {
         switch result {
         case .success(let text):
             self.newCardView.cardNumberCustomTextField.text = text.string
         case .failure(let message):
             print(message.localizedDescription)
+        }
+
+        if let hostingController = children.last as? UIHostingController<ScannerView> {
+            hostingController.willMove(toParent: nil)
+            hostingController.view.removeFromSuperview()
+            hostingController.removeFromParent()
         }
     }
 }
@@ -84,7 +94,6 @@ extension NewCardViewController: NewCardSceneDelegate {
         hostingController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
         hostingController.didMove(toParent: self)
     }
 }
