@@ -9,6 +9,7 @@ class NewCardViewController: UIViewController {
     let viewModel: NewCardViewModel
     private var cancellable: AnyCancellable?
     var scanView = ScannerView()
+    private var hostingController: UIHostingController<ScannerView>?
 
     override func loadView() {
         view = newCardView
@@ -54,7 +55,12 @@ extension NewCardViewController {
 
 extension NewCardViewController: ScannerViewProtocol {
     func dismissScanner() {
+        hostingController?.willMove(toParent: nil)
+        hostingController?.view.removeFromSuperview()
+        hostingController?.removeFromParent()
+        hostingController = nil
         navigationController?.dismiss(animated: true)
+
     }
 
     func didResultChanged(result: Result<CodeScanner.ScanResult, CodeScanner.ScanError>) {
@@ -87,13 +93,15 @@ extension NewCardViewController: NewCardSceneDelegate {
     }
 
     private func configScannerView() {
-        let hostingController = UIHostingController(rootView: scanView)
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
+        hostingController = UIHostingController(rootView: scanView)
+        if let hostingController = hostingController {
+            addChild(hostingController)
+            view.addSubview(hostingController.view)
 
-        hostingController.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            hostingController.view.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            hostingController.didMove(toParent: self)
         }
-        hostingController.didMove(toParent: self)
     }
 }

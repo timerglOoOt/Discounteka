@@ -14,8 +14,8 @@ struct ScannerView: View {
         ZStack {
             if isPresentingScanner {
                 CodeScannerView(codeTypes: [.qr, .ean13, .upce, .code128,
-                                            .code39, .code93, .code39Mod43,
-                                            .interleaved2of5], simulatedData: "ibb"
+                .code39, .code93, .code39Mod43,
+                .interleaved2of5], simulatedData: "some card"
                 ) { response in
                     delegate?.didResultChanged(result: response)
                     isPresentingScanner = false
@@ -36,7 +36,7 @@ struct ScannerView: View {
                     Button(action: {
                         isPresentingScanner = false
                         delegate?.dismissScanner()
-                    }) {
+                    }){
                         Text("Закрыть")
                             .padding()
                             .background(Color.black.opacity(0.5))
