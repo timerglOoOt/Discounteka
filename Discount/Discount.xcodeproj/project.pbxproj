@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0179902BFD274D0038721D /* GoogleService-Info.plist 22-02-25-699.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE01798F2BFD274D0038721D /* GoogleService-Info.plist 22-02-25-699.plist */; };
 		CE3DEC6D2BC9581B00B13324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC6C2BC9581B00B13324 /* AppDelegate.swift */; };
 		CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC6E2BC9581B00B13324 /* SceneDelegate.swift */; };
 		CE3DEC762BC9581C00B13324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3DEC752BC9581C00B13324 /* Assets.xcassets */; };
@@ -36,7 +37,6 @@
 		CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */; };
 		CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */; };
 		CE56B2902BDB6BC500132A10 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56B28F2BDB6BC500132A10 /* CardService.swift */; };
-		CE56B2932BDB6E9400132A10 /* EFQRCode in Frameworks */ = {isa = PBXBuildFile; productRef = CE56B2922BDB6E9400132A10 /* EFQRCode */; };
 		CE56B2952BDB70FF00132A10 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56B2942BDB70FF00132A10 /* Errors.swift */; };
 		CE7D5F2C2BCEBEB70005DAB9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */; };
 		CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */; };
@@ -66,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE01798F2BFD274D0038721D /* GoogleService-Info.plist 22-02-25-699.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist 22-02-25-699.plist"; path = "../../../../../../../.Trash/GoogleService-Info.plist 22-02-25-699.plist"; sourceTree = "<group>"; };
 		CE3DEC692BC9581B00B13324 /* Discount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3DEC6C2BC9581B00B13324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE3DEC6E2BC9581B00B13324 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 				CE4306E22BF62847009D8577 /* CodeScanner in Frameworks */,
 				CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */,
 				CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */,
-				CE56B2932BDB6E9400132A10 /* EFQRCode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +252,7 @@
 		CE7D5F272BCEBCB50005DAB9 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CE01798F2BFD274D0038721D /* GoogleService-Info.plist 22-02-25-699.plist */,
 				CE3DEC752BC9581C00B13324 /* Assets.xcassets */,
 				CE3DEC772BC9581C00B13324 /* LaunchScreen.storyboard */,
 				CE3DEC7A2BC9581C00B13324 /* Info.plist */,
@@ -329,7 +330,6 @@
 			packageProductDependencies = (
 				CE3DEC9E2BC95C2600B13324 /* SnapKit */,
 				CE3DECA12BC95E6600B13324 /* Swinject */,
-				CE56B2922BDB6E9400132A10 /* EFQRCode */,
 				CE4306E12BF62847009D8577 /* CodeScanner */,
 			);
 			productName = Discount;
@@ -407,8 +407,8 @@
 			packageReferences = (
 				CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */,
-				CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */,
 				CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				CE01798D2BFD271D0038721D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = CE3DEC6A2BC9581B00B13324 /* Products */;
 			projectDirPath = "";
@@ -426,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0179902BFD274D0038721D /* GoogleService-Info.plist 22-02-25-699.plist in Resources */,
 				CE3DEC792BC9581C00B13324 /* LaunchScreen.storyboard in Resources */,
 				CE3DEC762BC9581C00B13324 /* Assets.xcassets in Resources */,
 			);
@@ -838,6 +839,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE01798D2BFD271D0038721D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -862,14 +871,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/EFPrefix/EFQRCode";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -887,11 +888,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
-		};
-		CE56B2922BDB6E9400132A10 /* EFQRCode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE56B2912BDB6E9400132A10 /* XCRemoteSwiftPackageReference "EFQRCode" */;
-			productName = EFQRCode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
