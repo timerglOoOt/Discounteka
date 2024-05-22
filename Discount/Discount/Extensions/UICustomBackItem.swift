@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 // MARK: Кастомная кнопка перехода не предыдущий экран с названием страницы
 
@@ -42,12 +43,13 @@ extension UICustomBackItem {
         addSubview(backItemImageView)
         addSubview(titleLabel)
 
-        NSLayoutConstraint.activate([
-            backItemImageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            backItemImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+        backItemImageView.snp.makeConstraints { make in
+            make.centerY.leading.equalTo(safeAreaLayoutGuide)
+        }
 
-            titleLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: backItemImageView.trailingAnchor, constant: 10)
-        ])
+        titleLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(safeAreaLayoutGuide)
+            make.leading.equalTo(backItemImageView.snp.trailing).offset(10)
+        }
     }
 }

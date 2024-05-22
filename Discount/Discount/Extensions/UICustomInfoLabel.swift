@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 // MARK: Кастомный label с картинкой
 
@@ -8,7 +9,6 @@ class UICustomInfoLabel: UIView {
         image.contentMode = .scaleToFill
         image.layer.cornerRadius = 14
         image.layer.masksToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
@@ -18,7 +18,6 @@ class UICustomInfoLabel: UIView {
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
         label.numberOfLines = .zero
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -50,16 +49,17 @@ extension UICustomInfoLabel {
         addSubview(infoImageView)
         addSubview(infoDescriptionLabel)
 
-        NSLayoutConstraint.activate([
-            infoImageView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            infoImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            infoImageView.heightAnchor.constraint(equalToConstant: 44),
-            infoImageView.widthAnchor.constraint(equalToConstant: 44),
+        infoImageView.snp.makeConstraints { make in
+            make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+            make.size.equalTo(44)
+        }
 
-            infoDescriptionLabel.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            infoDescriptionLabel.leadingAnchor.constraint(equalTo: infoImageView.trailingAnchor, constant: 10),
-            infoDescriptionLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
-        ])
+        infoDescriptionLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(safeAreaLayoutGuide.snp.centerY)
+            make.leading.equalTo(infoImageView.snp.trailing).offset(10)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
+        }
     }
 
     // MARK: - Работа с нажатиями на label
