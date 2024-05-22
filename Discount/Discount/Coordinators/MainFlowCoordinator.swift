@@ -45,12 +45,36 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
     }
 }
 
+// MARK: Настройка для экрана добавления карты
+
+extension MainFlowCoordinator: NewCardChoiseControllerDelegate {
+    func showNewCardScreenByTag(_ tag: Int) {
+        switch tag {
+        case 1:
+            showNewQRCardController()
+        case 2:
+            showNewBarcodeCardController()
+        default:
+            break
+        }
+    }
+
+    private func showNewQRCardController() {
+        let newCardViewController = NewCardModuleBuilder().build()
+        navigationController.pushViewController(newCardViewController, animated: true)
+    }
+
+    private func showNewBarcodeCardController() {
+        print("contact us")
+    }
+}
 // MARK: Настройка для главного экрана
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
     func showNewCardController() {
-        let newCardViewController = NewCardModuleBuilder().build()
-        navigationController.pushViewController(newCardViewController, animated: true)
+        let newCardChoiseViewController = NewCardChoiseModuleBuilder().build()
+        newCardChoiseViewController.delegate = self
+        navigationController.pushViewController(newCardChoiseViewController, animated: true)
     }
 
     func showAboutAppController() {

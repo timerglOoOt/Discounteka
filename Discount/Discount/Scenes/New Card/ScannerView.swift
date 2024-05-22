@@ -36,7 +36,7 @@ struct ScannerView: View {
                     Button(action: {
                         isPresentingScanner = false
                         delegate?.dismissScanner()
-                    }){
+                    }) {
                         Text("Закрыть")
                             .padding()
                             .background(Color.black.opacity(0.5))
@@ -49,15 +49,4 @@ struct ScannerView: View {
             }
         }
     }
-
-//    private func dismissScanner() {
-//        DispatchQueue.main.async {
-//            if let parentController = UIApplication.shared.windows.first?.rootViewController?.presentedViewController as? NewCardViewController,
-//               let hostingController = parentController.children.last as? UIHostingController<ScannerView> {
-//                hostingController.willMove(toParent: nil)
-//                hostingController.view.removeFromSuperview()
-//                hostingController.removeFromParent()
-//            }
-//        }
-//    }
 }
