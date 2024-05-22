@@ -3,6 +3,7 @@ import UIKit
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     var isLogged = true
+    var flowCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -18,12 +19,12 @@ class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator {
-    func showMainFlow() {
-        let mainFlowCoordintor = MainFlowCoordinator(navigationController: navigationController)
-        mainFlowCoordintor.start()
+    private func showMainFlow() {
+        flowCoordinator = MainFlowCoordinator(navigationController: navigationController)
+        flowCoordinator?.start()
     }
 
-    func showAuthFlow() {
+    private func showAuthFlow() {
         print("Auth flow")
     }
 }

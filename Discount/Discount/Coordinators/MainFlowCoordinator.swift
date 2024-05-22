@@ -32,24 +32,52 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
         }
     }
 
-    func showProfileController() {
+    private func showProfileController() {
         print("profile")
     }
 
-    func showContactUsController() {
+    private func showContactUsController() {
         print("contact us")
     }
 
-    func showSettingsController() {
+    private func showSettingsController() {
         print("settings")
     }
 }
 
+// MARK: Настройка для экрана добавления карты
+
+extension MainFlowCoordinator: NewCardChoiseControllerDelegate {
+    func showNewCardScreenByTag(_ tag: Int) {
+        let newCardViewController = NewCardModuleBuilder().build()
+        switch tag {
+        case 1:
+            newCardViewController.cardType = .qr
+        case 2:
+            newCardViewController.cardType = .code128
+        default:
+            break
+        }
+        navigationController.pushViewController(newCardViewController, animated: true)
+    }
+
+//    private func showNewQRCardController() {
+//        let newCardViewController = NewCardModuleBuilder().build()
+//        newCardViewController.cardType = .withQR
+//        navigationController.pushViewController(newCardViewController, animated: true)
+//    }
+//
+//    private func showNewBarcodeCardController() {
+//        print("contact us")
+//    }
+}
 // MARK: Настройка для главного экрана
 
 extension MainFlowCoordinator: MainViewControllerDelegate {
-    func showAddCardController() {
-        print("Add card")
+    func showNewCardController() {
+        let newCardChoiseViewController = NewCardChoiseModuleBuilder().build()
+        newCardChoiseViewController.delegate = self
+        navigationController.pushViewController(newCardChoiseViewController, animated: true)
     }
 
     func showAboutAppController() {

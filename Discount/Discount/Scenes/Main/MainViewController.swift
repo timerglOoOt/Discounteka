@@ -1,14 +1,17 @@
 import UIKit
+import Combine
 
 protocol MainViewControllerDelegate: AnyObject {
     func showAboutAppController()
-    func showAddCardController()
+    func showNewCardController()
 }
 
 class MainViewController: UIViewController {
     private let mainView = MainView(frame: .zero)
     var viewModel: MainViewModel
     weak var delegate: MainViewControllerDelegate?
+    private var cancellables = Set<AnyCancellable>()
+    var cardsCount = 0
 
     override func loadView() {
         super.loadView()
@@ -20,6 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupBindigs()
         mainView.delegate = self
         mainView.setupDataSource(self)
         mainView.setupDelegate(self)
@@ -46,10 +50,6 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
         viewModel.configureCell(tableView, cellForRowAt: indexPath)
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        viewModel.getHeight(tableView, heightForRowAt: indexPath)
-    }
-
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         viewModel.deleteByLeftSwipe(tableView, trailingSwipeActionsConfigurationForRowAt: indexPath)
     }
@@ -59,7 +59,21 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
     }
 
     func addButtonTapped() {
-        delegate?.showAddCardController()
+        delegate?.showNewCardController()
+    }
+
+    func setupBindigs() {
+        CardService.shared.$cards
+        .sink { [weak self] cards in
+            let curCardsCount = cards.count
+            if curCardsCount != self?.cardsCount {
+                DispatchQueue.main.async {
+                    self?.mainView.reloadData()
+                }
+            }
+            self?.cardsCount = curCardsCount
+        }
+        .store(in: &cancellables)
     }
 }
 

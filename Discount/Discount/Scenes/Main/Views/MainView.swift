@@ -13,9 +13,9 @@ final class MainView: UIView {
         table.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         table.separatorStyle = .none
         table.backgroundColor = .white
-        table.rowHeight = 60
         table.bounces = false
         table.showsVerticalScrollIndicator = false
+        table.estimatedRowHeight = UITableView.automaticDimension
         return table
     }()
 
@@ -61,7 +61,6 @@ private extension MainView {
             make.height.equalTo(65)
             make.width.equalTo(350)
         }
-
     }
 }
 
@@ -74,5 +73,9 @@ extension MainView {
 
     func setupDelegate(_ delegate: UITableViewDelegate) {
         cardsTableView.delegate = delegate
+    }
+
+    func reloadData() {
+        cardsTableView.reloadData()
     }
 }

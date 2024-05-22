@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE206A9D2BFDE4EA000A8336 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE206A9C2BFDE4EA000A8336 /* FirebaseAuth */; };
+		CE206A9F2BFDE4EA000A8336 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CE206A9E2BFDE4EA000A8336 /* FirebaseAuthCombine-Community */; };
+		CE206AA12BFDE4EA000A8336 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE206AA02BFDE4EA000A8336 /* FirebaseDatabase */; };
+		CE206AA32BFDE4EA000A8336 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE206AA22BFDE4EA000A8336 /* FirebaseFirestore */; };
+		CE206AA52BFDE4EA000A8336 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CE206AA42BFDE4EA000A8336 /* FirebaseStorage */; };
+		CE206AAA2BFDEBCA000A8336 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE206AA92BFDEBCA000A8336 /* GoogleService-Info.plist */; };
+		CE206AAC2BFDECF1000A8336 /* NewCardChoiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE206AAB2BFDECF1000A8336 /* NewCardChoiseView.swift */; };
+		CE206AAF2BFDF0AF000A8336 /* NewCardChoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE206AAE2BFDF0AF000A8336 /* NewCardChoiseViewController.swift */; };
+		CE206AB12BFDF53A000A8336 /* NewCardChoiseModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE206AB02BFDF53A000A8336 /* NewCardChoiseModuleBuilder.swift */; };
 		CE3DEC6D2BC9581B00B13324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC6C2BC9581B00B13324 /* AppDelegate.swift */; };
 		CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC6E2BC9581B00B13324 /* SceneDelegate.swift */; };
 		CE3DEC762BC9581C00B13324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3DEC752BC9581C00B13324 /* Assets.xcassets */; };
@@ -23,7 +32,9 @@
 		CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */; };
 		CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */; };
 		CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB12BC9702200B13324 /* UICustomTextView.swift */; };
-		CE3DECB42BC9709D00B13324 /* UICustomBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */; };
+		CE3DECB42BC9709D00B13324 /* UICustomGrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */; };
+		CE4306E22BF62847009D8577 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CE4306E12BF62847009D8577 /* CodeScanner */; };
+		CE4306E62BF63AAF009D8577 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4306E52BF63AAF009D8577 /* ScannerView.swift */; };
 		CE48EE802BCFC738006C33F5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE7F2BCFC738006C33F5 /* Coordinator.swift */; };
 		CE48EE822BCFC7B0006C33F5 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */; };
 		CE48EE852BCFCA22006C33F5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE842BCFCA22006C33F5 /* ModuleBuilder.swift */; };
@@ -33,10 +44,16 @@
 		CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */; };
 		CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */; };
 		CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */; };
+		CE56B2902BDB6BC500132A10 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56B28F2BDB6BC500132A10 /* CardService.swift */; };
+		CE56B2952BDB70FF00132A10 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56B2942BDB70FF00132A10 /* Errors.swift */; };
 		CE7D5F2C2BCEBEB70005DAB9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */; };
 		CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */; };
 		CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F302BCEC3950005DAB9 /* MainView.swift */; };
 		CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F322BCECF350005DAB9 /* MainViewController.swift */; };
+		CEC1A1502BD65DA200080CEC /* NewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */; };
+		CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1512BD65DB200080CEC /* NewCardView.swift */; };
+		CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */; };
+		CEC1A1562BD662E500080CEC /* NewCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +74,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE206AA92BFDEBCA000A8336 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE206AAB2BFDECF1000A8336 /* NewCardChoiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardChoiseView.swift; sourceTree = "<group>"; };
+		CE206AAE2BFDF0AF000A8336 /* NewCardChoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardChoiseViewController.swift; sourceTree = "<group>"; };
+		CE206AB02BFDF53A000A8336 /* NewCardChoiseModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardChoiseModuleBuilder.swift; sourceTree = "<group>"; };
 		CE3DEC692BC9581B00B13324 /* Discount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3DEC6C2BC9581B00B13324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE3DEC6E2BC9581B00B13324 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +96,8 @@
 		CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextField.swift; sourceTree = "<group>"; };
 		CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomLabel.swift; sourceTree = "<group>"; };
 		CE3DECB12BC9702200B13324 /* UICustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomTextView.swift; sourceTree = "<group>"; };
-		CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomBlueButton.swift; sourceTree = "<group>"; };
+		CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomGrayButton.swift; sourceTree = "<group>"; };
+		CE4306E52BF63AAF009D8577 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		CE48EE7F2BCFC738006C33F5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE48EE812BCFC7B0006C33F5 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		CE48EE842BCFCA22006C33F5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
@@ -85,10 +107,16 @@
 		CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppModuleBuilder.swift; sourceTree = "<group>"; };
 		CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
 		CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		CE56B28F2BDB6BC500132A10 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		CE56B2942BDB70FF00132A10 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypes.swift; sourceTree = "<group>"; };
 		CE7D5F302BCEC3950005DAB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE7D5F322BCECF350005DAB9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewController.swift; sourceTree = "<group>"; };
+		CEC1A1512BD65DB200080CEC /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
+		CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModuleBuilder.swift; sourceTree = "<group>"; };
+		CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +124,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE206AA12BFDE4EA000A8336 /* FirebaseDatabase in Frameworks */,
+				CE4306E22BF62847009D8577 /* CodeScanner in Frameworks */,
 				CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */,
 				CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */,
+				CE206A9D2BFDE4EA000A8336 /* FirebaseAuth in Frameworks */,
+				CE206AA52BFDE4EA000A8336 /* FirebaseStorage in Frameworks */,
+				CE206A9F2BFDE4EA000A8336 /* FirebaseAuthCombine-Community in Frameworks */,
+				CE206AA32BFDE4EA000A8336 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +152,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE206AAD2BFDEF82000A8336 /* Choise */ = {
+			isa = PBXGroup;
+			children = (
+				CE206AAB2BFDECF1000A8336 /* NewCardChoiseView.swift */,
+				CE206AAE2BFDF0AF000A8336 /* NewCardChoiseViewController.swift */,
+				CE206AB02BFDF53A000A8336 /* NewCardChoiseModuleBuilder.swift */,
+			);
+			path = Choise;
+			sourceTree = "<group>";
+		};
 		CE3DEC602BC9581B00B13324 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +185,7 @@
 		CE3DEC6B2BC9581B00B13324 /* Discount */ = {
 			isa = PBXGroup;
 			children = (
+				CE56B28E2BDB6BB200132A10 /* Services */,
 				CE48EE7E2BCFC729006C33F5 /* Coordinators */,
 				CE7D5F2D2BCEC0F70005DAB9 /* Models */,
 				CE7D5F282BCEBE4E0005DAB9 /* Scenes */,
@@ -187,7 +232,8 @@
 				CE3DECAD2BC96D9500B13324 /* UICustomTextField.swift */,
 				CE3DECAF2BC96F3500B13324 /* UICustomLabel.swift */,
 				CE3DECB12BC9702200B13324 /* UICustomTextView.swift */,
-				CE3DECB32BC9709D00B13324 /* UICustomBlueButton.swift */,
+				CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */,
+				CE56B2942BDB70FF00132A10 /* Errors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -221,9 +267,18 @@
 			path = "About app";
 			sourceTree = "<group>";
 		};
+		CE56B28E2BDB6BB200132A10 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE56B28F2BDB6BC500132A10 /* CardService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CE7D5F272BCEBCB50005DAB9 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CE206AA92BFDEBCA000A8336 /* GoogleService-Info.plist */,
 				CE3DEC752BC9581C00B13324 /* Assets.xcassets */,
 				CE3DEC772BC9581C00B13324 /* LaunchScreen.storyboard */,
 				CE3DEC7A2BC9581C00B13324 /* Info.plist */,
@@ -234,6 +289,7 @@
 		CE7D5F282BCEBE4E0005DAB9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEC1A14E2BD65D8900080CEC /* New Card */,
 				CE48EE912BCFE59F006C33F5 /* About app */,
 				CE7D5F292BCEBE800005DAB9 /* Main */,
 			);
@@ -268,6 +324,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CEC1A14E2BD65D8900080CEC /* New Card */ = {
+			isa = PBXGroup;
+			children = (
+				CE206AAD2BFDEF82000A8336 /* Choise */,
+				CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */,
+				CEC1A1512BD65DB200080CEC /* NewCardView.swift */,
+				CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */,
+				CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */,
+				CE4306E52BF63AAF009D8577 /* ScannerView.swift */,
+			);
+			path = "New Card";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +357,12 @@
 			packageProductDependencies = (
 				CE3DEC9E2BC95C2600B13324 /* SnapKit */,
 				CE3DECA12BC95E6600B13324 /* Swinject */,
+				CE4306E12BF62847009D8577 /* CodeScanner */,
+				CE206A9C2BFDE4EA000A8336 /* FirebaseAuth */,
+				CE206A9E2BFDE4EA000A8336 /* FirebaseAuthCombine-Community */,
+				CE206AA02BFDE4EA000A8336 /* FirebaseDatabase */,
+				CE206AA22BFDE4EA000A8336 /* FirebaseFirestore */,
+				CE206AA42BFDE4EA000A8336 /* FirebaseStorage */,
 			);
 			productName = Discount;
 			productReference = CE3DEC692BC9581B00B13324 /* Discount.app */;
@@ -364,6 +439,8 @@
 			packageReferences = (
 				CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */,
+				CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = CE3DEC6A2BC9581B00B13324 /* Products */;
 			projectDirPath = "";
@@ -383,6 +460,7 @@
 			files = (
 				CE3DEC792BC9581C00B13324 /* LaunchScreen.storyboard in Resources */,
 				CE3DEC762BC9581C00B13324 /* Assets.xcassets in Resources */,
+				CE206AAA2BFDEBCA000A8336 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,27 +507,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE48EE802BCFC738006C33F5 /* Coordinator.swift in Sources */,
+				CEC1A1562BD662E500080CEC /* NewCardViewModel.swift in Sources */,
 				CE7D5F2C2BCEBEB70005DAB9 /* MainTableViewCell.swift in Sources */,
+				CE56B2952BDB70FF00132A10 /* Errors.swift in Sources */,
 				CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */,
 				CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */,
+				CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */,
+				CE206AAC2BFDECF1000A8336 /* NewCardChoiseView.swift in Sources */,
 				CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */,
 				CE48EE852BCFCA22006C33F5 /* ModuleBuilder.swift in Sources */,
+				CE4306E62BF63AAF009D8577 /* ScannerView.swift in Sources */,
 				CE48EE8D2BCFCCC7006C33F5 /* AppCoordinator.swift in Sources */,
 				CE3DECAA2BC96C9100B13324 /* UICustomBackItem.swift in Sources */,
 				CE48EE892BCFCB1C006C33F5 /* MainModuleBuilder.swift in Sources */,
+				CE206AAF2BFDF0AF000A8336 /* NewCardChoiseViewController.swift in Sources */,
 				CE48EE822BCFC7B0006C33F5 /* MainFlowCoordinator.swift in Sources */,
 				CE3DEC6D2BC9581B00B13324 /* AppDelegate.swift in Sources */,
 				CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */,
 				CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */,
+				CE206AB12BFDF53A000A8336 /* NewCardChoiseModuleBuilder.swift in Sources */,
+				CE56B2902BDB6BC500132A10 /* CardService.swift in Sources */,
 				CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */,
 				CE48EE8B2BCFCB49006C33F5 /* MainViewModel.swift in Sources */,
 				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
 				CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */,
+				CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */,
+				CEC1A1502BD65DA200080CEC /* NewCardViewController.swift in Sources */,
 				CE3DECAC2BC96CDF00B13324 /* UICustomButton.swift in Sources */,
 				CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */,
 				CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */,
 				CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */,
-				CE3DECB42BC9709D00B13324 /* UICustomBlueButton.swift in Sources */,
+				CE3DECB42BC9709D00B13324 /* UICustomGrayButton.swift in Sources */,
 				CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,8 +707,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7U2MKC2VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Discount/Support/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Need Camera access to Sqan QR code Image";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -645,8 +735,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7U2MKC2VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Discount/Support/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Need Camera access to Sqan QR code Image";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -782,6 +874,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -798,9 +898,42 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE206A9C2BFDE4EA000A8336 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CE206A9E2BFDE4EA000A8336 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		CE206AA02BFDE4EA000A8336 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		CE206AA22BFDE4EA000A8336 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CE206AA42BFDE4EA000A8336 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		CE3DEC9E2BC95C2600B13324 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -810,6 +943,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		CE4306E12BF62847009D8577 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
