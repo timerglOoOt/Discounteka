@@ -13,9 +13,11 @@ struct ScannerView: View {
     var body: some View {
         ZStack {
             if isPresentingScanner {
-                CodeScannerView(codeTypes: [.qr, .ean13, .upce, .code128,
-                .code39, .code93, .code39Mod43,
-                .interleaved2of5], simulatedData: "some card"
+                CodeScannerView(codeTypes: [.qr, .code128,
+//                .ean13, .upce,
+//                .code39, .code93, .code39Mod43,
+//                .interleaved2of5
+                ], simulatedData: "some card"
                 ) { response in
                     delegate?.didResultChanged(result: response)
                     isPresentingScanner = false

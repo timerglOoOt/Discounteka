@@ -2,16 +2,17 @@ import Foundation
 import UIKit
 import CoreImage.CIFilterBuiltins
 import CodeScanner
+import AVFoundation
 
 class NewCardViewModel {
     let cardService = CardService.shared
     @Published var scannedResult: String?
 
-    private func configureCard(cardValue: String, cardName: String, cardType: CardType) -> Card {
+    private func configureCard(cardValue: String, cardName: String, cardType: AVMetadataObject.ObjectType) -> Card {
         return Card(type: cardType, name: cardName, code: cardValue)
     }
 
-    func addNewCard(cardValue: String, cardName: String, cardType: CardType) {
+    func addNewCard(cardValue: String, cardName: String, cardType: AVMetadataObject.ObjectType) {
         let confCard = configureCard(cardValue: cardValue, cardName: cardName, cardType: cardType)
 
         cardService.saveCard(confCard)

@@ -9,7 +9,7 @@ protocol NewCardSceneDelegate: AnyObject {
 final class NewCardView: UIView {
     private lazy var enterCardNumberCustomLabel = UICustomLabel(labelText: "Вы можете ввести номер карты вручную", alignment: .center)
     lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: "Введите номер...")
-    private lazy var scanQRCustomLabel = UICustomLabel(labelText: "или отсканировать QR-код", alignment: .center)
+    private lazy var scanQRCustomLabel = UICustomLabel(labelText: "или отсканировать", alignment: .center)
     private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: "Введите название карты", alignment: .center)
     private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: "Введите название...")
     private lazy var saveCustomButton: UICustomButton = {

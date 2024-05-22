@@ -3,13 +3,15 @@ import Combine
 import SwiftUI
 import SnapKit
 import CodeScanner
+import AVFoundation
 
 class NewCardViewController: UIViewController {
     private let newCardView = NewCardView(frame: .zero)
     let viewModel: NewCardViewModel
     private var cancellable: AnyCancellable?
-    var scanView = ScannerView()
+    private var scanView = ScannerView()
     private var hostingController: UIHostingController<ScannerView>?
+    var cardType: AVMetadataObject.ObjectType?
 
     override func loadView() {
         view = newCardView
@@ -36,7 +38,8 @@ class NewCardViewController: UIViewController {
 
 extension NewCardViewController {
     private func setupNavigationBar() {
-        let item = UICustomBackItem(titleLabel: "Карта с QR-кодом")
+        let titleLabel = "Карта с\(cardType == .qr ? " QR-кодом" : "о штрихкодом")"
+        let item = UICustomBackItem(titleLabel: titleLabel)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
         item.addGestureRecognizer(tapGesture)
@@ -60,13 +63,13 @@ extension NewCardViewController: ScannerViewProtocol {
         hostingController?.removeFromParent()
         hostingController = nil
         navigationController?.dismiss(animated: true)
-
     }
 
     func didResultChanged(result: Result<CodeScanner.ScanResult, CodeScanner.ScanError>) {
         switch result {
         case .success(let text):
             self.newCardView.cardNumberCustomTextField.text = text.string
+            self.cardType = text.type
         case .failure(let message):
             print(message.localizedDescription)
         }
@@ -84,8 +87,14 @@ extension NewCardViewController: NewCardSceneDelegate {
 
     func saveButtonTapped() {
         let cardInfo = newCardView.getTextFields()
-        viewModel.addNewCard(cardValue: cardInfo.0, cardName: cardInfo.1, cardType: .withQR)
-        navigationController?.popViewController(animated: true)
+        viewModel.addNewCard(cardValue: cardInfo.0, cardName: cardInfo.1, cardType: cardType ?? .qr)
+        if let viewControllers = self.navigationController?.viewControllers {
+            if viewControllers.count >= 3 {
+                let targetViewController = viewControllers[viewControllers.count - 3]
+                self.navigationController?.popToViewController(targetViewController, animated: true)
+            }
+        }
+
     }
 
     func scanButtonTapped() {

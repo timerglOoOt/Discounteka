@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import AVFoundation
 
 // MARK: Кастомная ячейка главного экрана
 
@@ -77,18 +78,24 @@ extension MainTableViewCell {
         cardNameLabel.text = nil
     }
 
-    private func generateImage(from string: String, cardType: CardType) -> UIImage? {
+    private func generateImage(from string: String, cardType: AVMetadataObject.ObjectType) -> UIImage? {
         let data = Data(string.utf8)
+        var filter: CIFilter = CIFilter()
 
-        let filter: CIFilter = cardType.isBarcode ?
-        CIFilter.barcodeGenerator() :
-        CIFilter.qrCodeGenerator()
+        switch cardType {
+        case .qr:
+            filter = CIFilter.qrCodeGenerator()
+        case .code128:
+            filter = CIFilter.code128BarcodeGenerator()
+        default:
+            break
+        }
 
         filter.setValue(data, forKey: "inputMessage")
 
         guard let output = filter.outputImage else { return nil }
         let scaleX = 200 / output.extent.size.width
-        let scaleY = 200 / output.extent.size.height
+        let scaleY = (cardType == .qr ? 200 : 130) / output.extent.size.height
 
         let transformedImage = output.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
 

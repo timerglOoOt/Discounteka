@@ -49,24 +49,27 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
 
 extension MainFlowCoordinator: NewCardChoiseControllerDelegate {
     func showNewCardScreenByTag(_ tag: Int) {
+        let newCardViewController = NewCardModuleBuilder().build()
         switch tag {
         case 1:
-            showNewQRCardController()
+            newCardViewController.cardType = .qr
         case 2:
-            showNewBarcodeCardController()
+            newCardViewController.cardType = .code128
         default:
             break
         }
-    }
-
-    private func showNewQRCardController() {
-        let newCardViewController = NewCardModuleBuilder().build()
         navigationController.pushViewController(newCardViewController, animated: true)
     }
 
-    private func showNewBarcodeCardController() {
-        print("contact us")
-    }
+//    private func showNewQRCardController() {
+//        let newCardViewController = NewCardModuleBuilder().build()
+//        newCardViewController.cardType = .withQR
+//        navigationController.pushViewController(newCardViewController, animated: true)
+//    }
+//
+//    private func showNewBarcodeCardController() {
+//        print("contact us")
+//    }
 }
 // MARK: Настройка для главного экрана
 
