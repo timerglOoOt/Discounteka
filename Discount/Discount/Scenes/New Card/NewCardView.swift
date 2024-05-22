@@ -13,7 +13,7 @@ final class NewCardView: UIView {
     private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: "Введите название карты", alignment: .center)
     private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: "Введите название...")
     private lazy var saveCustomButton: UICustomButton = {
-        let button = UICustomButton("Сохранить", "checkmark.circle")
+        let button = UICustomButton("Сохранить")
         button.addAction(UIAction(handler: { [weak self] _ in
             self?.delegate?.saveButtonTapped()
         }), for: .touchUpInside)

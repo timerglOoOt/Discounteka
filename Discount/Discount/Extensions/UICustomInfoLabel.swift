@@ -14,7 +14,6 @@ class UICustomInfoLabel: UIView {
 
     private lazy var infoDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
         label.numberOfLines = .zero

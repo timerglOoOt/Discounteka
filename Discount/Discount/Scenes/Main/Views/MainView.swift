@@ -20,7 +20,7 @@ final class MainView: UIView {
     }()
 
     private lazy var addButton: UICustomButton = {
-        let button = UICustomButton("Добавить", "plus.circle")
+        let button = UICustomButton("Добавить")
         button.addAction(UIAction(handler: { _ in
             self.delegate?.addButtonTapped()
         }), for: .touchUpInside)

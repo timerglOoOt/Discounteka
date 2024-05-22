@@ -2,7 +2,8 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
-    var isLogged = true
+    // TODO: добавить UserDefaults на лог
+    var isLogged = false
     var flowCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {
@@ -18,13 +19,25 @@ class AppCoordinator: Coordinator {
     }
 }
 
-extension AppCoordinator {
-    private func showMainFlow() {
+private extension AppCoordinator {
+    func showMainFlow() {
         flowCoordinator = MainFlowCoordinator(navigationController: navigationController)
         flowCoordinator?.start()
     }
 
-    private func showAuthFlow() {
-        print("Auth flow")
+    func showAuthFlow() {
+        flowCoordinator = AuthFlowCoordinator(navigationController: navigationController)
+        flowCoordinator?.start()
+    }
+}
+
+extension AppCoordinator: FlowTransitionProtocol {
+    func goFromAuthToMainFlow() {
+        navigationController.setViewControllers([], animated: false)
+        showMainFlow()
+    }
+
+    func goFromMainToAuthFlow() {
+        //
     }
 }
