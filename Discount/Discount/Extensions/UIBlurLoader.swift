@@ -1,15 +1,16 @@
 import UIKit
 
 class UIBlurLoader: UIView {
-
-    var blurEffectView: UIVisualEffectView?
-
-    override init(frame: CGRect) {
+    private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = frame
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.blurEffectView = blurEffectView
+        return blurEffectView
+    }()
+
+
+    override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(blurEffectView)
         addLoader()
@@ -20,7 +21,6 @@ class UIBlurLoader: UIView {
     }
 
     private func addLoader() {
-        guard let blurEffectView = blurEffectView else { return }
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         blurEffectView.contentView.addSubview(activityIndicator)

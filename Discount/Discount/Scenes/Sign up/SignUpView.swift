@@ -6,7 +6,7 @@ protocol SignUpViewProtocol: AnyObject {
     func signUpButtonTapped()
 }
 
-class SignUpView: UIView {
+final class SignUpView: UIView {
     private lazy var welcomeCustomeLabel = UICustomLabel(
         labelText: "Discounteka - лучший друг человека!",
         alignment: .center)

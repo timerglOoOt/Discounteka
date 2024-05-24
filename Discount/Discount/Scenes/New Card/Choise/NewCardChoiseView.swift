@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class NewCardChoiseView: UIView {
+final class NewCardChoiseView: UIView {
     private lazy var newCardsNameLabel: UICustomLabel = UICustomLabel(
         labelText: "Какую карту вы хотели бы добавить?",
         alignment: .left)

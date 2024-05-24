@@ -6,7 +6,7 @@ protocol SignInViewProtocol: AnyObject {
     func signInButtonTapped()
 }
 
-class SignInView: UIView {
+final class SignInView: UIView {
     private lazy var welcomeCustomeLabel = UICustomLabel(
         labelText: "Discounteka - лучший друг человека!",
         alignment: .center)
@@ -105,7 +105,6 @@ private extension SignInView {
 
 extension SignInView {
     func configureSignInForm() -> (String?, String?) {
-        let form = (emailCustomTextField.text, passwordCustomTextField.text)
-        return form
+        return (emailCustomTextField.text, passwordCustomTextField.text)
     }
 }
