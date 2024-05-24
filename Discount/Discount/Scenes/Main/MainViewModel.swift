@@ -1,7 +1,10 @@
 import UIKit
 
 class MainViewModel {
-    private var cardsService = CardService.shared
+    private let cardsService = CardService.shared
+    weak var controller: MainViewController?
+    private lazy var firebase = FirebaseManager(alertShowable: controller)
+    private let userId = UserDefaults.standard.string(forKey: "curUser")
 
     func numberOfRowsInSection() -> Int {
         cardsService.getCount()
@@ -23,7 +26,9 @@ class MainViewModel {
     }
 
     func deleteByLeftSwipe(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] (_, _, completionHandler) in
+            self?.deleteCard(at: indexPath.row)
             self?.cardsService.removeCard(at: indexPath.row)
 
             tableView.deleteRows(at: [indexPath], with: .left)
@@ -31,5 +36,12 @@ class MainViewModel {
         }
         deleteAction.image = UIImage(systemName: "trash.fill")
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+
+    private func deleteCard(at id: Int) {
+        let card = cardsService.getCard(at: id)
+        Task {
+            await firebase.removeCard(fromUserId: userId ?? "", card: card)
+        }
     }
 }

@@ -9,7 +9,6 @@ class UIBlurLoader: UIView {
         return blurEffectView
     }()
 
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(blurEffectView)

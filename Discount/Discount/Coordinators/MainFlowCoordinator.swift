@@ -87,5 +87,6 @@ extension MainFlowCoordinator: MainViewControllerDelegate {
 extension MainFlowCoordinator: SignOutOutput {
     func signedOutUser() {
         mainFlowCoordinatorProtocol?.mainFlowSignOutUser()
+        CardService.shared.cleanCards()
     }
 }

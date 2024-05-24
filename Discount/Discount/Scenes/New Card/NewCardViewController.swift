@@ -24,6 +24,7 @@ class NewCardViewController: UIViewController {
         setupNavigationBar()
         setupBindigs()
         scanView.delegate = self
+        viewModel.controller = self
     }
 
     init(viewModel: NewCardViewModel) {

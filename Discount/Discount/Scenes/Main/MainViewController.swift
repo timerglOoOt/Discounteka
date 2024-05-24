@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
         mainView.delegate = self
         mainView.setupDataSource(self)
         mainView.setupDelegate(self)
+        viewModel.controller = self
     }
 
     init(viewModel: MainViewModel) {
