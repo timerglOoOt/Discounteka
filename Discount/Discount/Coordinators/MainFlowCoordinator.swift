@@ -12,7 +12,7 @@ class MainFlowCoordinator: Coordinator {
     func start() {
         let mainViewController = MainModuleBuilder().build()
         mainViewController.delegate = self
-        navigationController.pushViewController(mainViewController, animated: true)
+        navigationController.setViewControllers([mainViewController], animated: true)
     }
 }
 

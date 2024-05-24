@@ -1,20 +1,8 @@
 import UIKit
 
-protocol SignInViewControllerProtocol: AnyObject {
-    func goToSignUpController()
-}
-
-protocol FlowTransitionProtocol: AnyObject {
-    func goFromAuthToMainFlow()
-    func goFromMainToAuthFlow()
-}
-
 class SignInViewController: UIViewController {
     private let signInView = SignInView(frame: .zero)
     private let viewModel: SignInViewModel
-    weak var delegate: SignInViewControllerProtocol?
-    weak var flowDelegate: FlowTransitionProtocol?
-    private var firebase: FirebaseManager?
 
     override func loadView() {
         view = signInView
@@ -23,12 +11,12 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         signInView.delegate = self
-        firebase = FirebaseManager(viewController: self)
     }
 
     init(viewModel: SignInViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.viewModel.controller = self
     }
 
     required init?(coder: NSCoder) {
@@ -38,15 +26,12 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: SignInViewProtocol {
     func signUpLabelTapped() {
-        delegate?.goToSignUpController()
+        viewModel.goToSignUpController()
     }
 
     func signInButtonTapped() {
-        Task {
-            let form = signInView.configureSignInForm()
-            await firebase?.signInUser(email: form.0, password: form.1)
-            flowDelegate?.goFromAuthToMainFlow()
-        }
+        let form = signInView.configureSignInForm()
+        viewModel.signInButtonTapped(email: form.0, password: form.1)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -26,18 +26,13 @@ private extension AppCoordinator {
     }
 
     func showAuthFlow() {
-        flowCoordinator = AuthFlowCoordinator(navigationController: navigationController)
+        flowCoordinator = AuthFlowCoordinator(navigationController: navigationController, authFlowCoordinatorOutput: self)
         flowCoordinator?.start()
     }
 }
 
-extension AppCoordinator: FlowTransitionProtocol {
-    func goFromAuthToMainFlow() {
-        navigationController.setViewControllers([], animated: false)
+extension AppCoordinator: AuthFlowCoordinatorOutput {
+    func authFlowCoordinatorEnteredUser() {
         showMainFlow()
-    }
-
-    func goFromMainToAuthFlow() {
-        //
     }
 }

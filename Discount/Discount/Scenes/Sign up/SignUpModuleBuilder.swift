@@ -1,10 +1,9 @@
 import Foundation
 
-class SignUpModuleBuilder: ModuleBuilder {
-    typealias ViewController = SignUpViewController
-
-    func build() -> SignUpViewController {
+class SignUpModuleBuilder {
+    func build(output: SignUpOutput) -> SignUpViewController {
         let viewModel = SignUpViewModel()
+        viewModel.delegate = output
         let controller = SignUpViewController(viewModel: viewModel)
         return controller
     }

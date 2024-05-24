@@ -41,7 +41,6 @@ class SignInView: UIView {
         let stack = UIStackView(arrangedSubviews: [infoLabel, signUpLabel])
         stack.spacing = 2
         stack.axis = .horizontal
-        stack.distribution = .fillEqually
         stack.contentMode = .center
         return stack
     }()
@@ -107,8 +106,6 @@ private extension SignInView {
 extension SignInView {
     func configureSignInForm() -> (String?, String?) {
         let form = (emailCustomTextField.text, passwordCustomTextField.text)
-        emailCustomTextField.text = ""
-        passwordCustomTextField.text = ""
         return form
     }
 }

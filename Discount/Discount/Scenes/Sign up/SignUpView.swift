@@ -45,7 +45,6 @@ class SignUpView: UIView {
         let stack = UIStackView(arrangedSubviews: [infoLabel, enterLabel])
         stack.spacing = 2
         stack.axis = .horizontal
-        stack.distribution = .fillEqually
         stack.contentMode = .center
         return stack
     }()
@@ -117,11 +116,6 @@ extension SignUpView {
             email: emailCustomTextField.text ?? "",
             sex: 0, cards: []),
             passwordCustomTextField.text ?? "")
-
-        firstNameCustomTextField.text = ""
-        lastNameCustomTextField.text = ""
-        emailCustomTextField.text = ""
-        passwordCustomTextField.text = ""
 
         return form
     }

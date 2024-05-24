@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1C45FC2C007D5C0057809E /* UIBlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C45FB2C007D5C0057809E /* UIBlurLoader.swift */; };
+		CE1C45FE2C007DD10057809E /* UIViewLoaderExtensoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C45FD2C007DD10057809E /* UIViewLoaderExtensoin.swift */; };
 		CE206A9D2BFDE4EA000A8336 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE206A9C2BFDE4EA000A8336 /* FirebaseAuth */; };
 		CE206A9F2BFDE4EA000A8336 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CE206A9E2BFDE4EA000A8336 /* FirebaseAuthCombine-Community */; };
 		CE206AA12BFDE4EA000A8336 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE206AA02BFDE4EA000A8336 /* FirebaseDatabase */; };
@@ -66,6 +68,7 @@
 		CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1512BD65DB200080CEC /* NewCardView.swift */; };
 		CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */; };
 		CEC1A1562BD662E500080CEC /* NewCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */; };
+		CEEA8BEB2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA8BEA2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1C45FB2C007D5C0057809E /* UIBlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurLoader.swift; sourceTree = "<group>"; };
+		CE1C45FD2C007DD10057809E /* UIViewLoaderExtensoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLoaderExtensoin.swift; sourceTree = "<group>"; };
 		CE206AA92BFDEBCA000A8336 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE206AAB2BFDECF1000A8336 /* NewCardChoiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardChoiseView.swift; sourceTree = "<group>"; };
 		CE206AAE2BFDF0AF000A8336 /* NewCardChoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardChoiseViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +146,7 @@
 		CEC1A1512BD65DB200080CEC /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModuleBuilder.swift; sourceTree = "<group>"; };
 		CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewModel.swift; sourceTree = "<group>"; };
+		CEEA8BEA2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAlertExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +287,9 @@
 				CE3DECB32BC9709D00B13324 /* UICustomGrayButton.swift */,
 				CE56B2942BDB70FF00132A10 /* Errors.swift */,
 				CE356F122BFE8552005B4376 /* ViewControllerAlert.swift */,
+				CEEA8BEA2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift */,
+				CE1C45FB2C007D5C0057809E /* UIBlurLoader.swift */,
+				CE1C45FD2C007DD10057809E /* UIViewLoaderExtensoin.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +601,8 @@
 				CE3DECAC2BC96CDF00B13324 /* UICustomButton.swift in Sources */,
 				CE356F112BFE6CF5005B4376 /* User.swift in Sources */,
 				CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */,
+				CEEA8BEB2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift in Sources */,
+				CE1C45FE2C007DD10057809E /* UIViewLoaderExtensoin.swift in Sources */,
 				CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */,
 				CE356F012BFE4071005B4376 /* SignInViewModel.swift in Sources */,
 				CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */,
@@ -601,6 +612,7 @@
 				CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */,
 				CE356F032BFE4093005B4376 /* SignUpViewController.swift in Sources */,
 				CE356F0B2BFE4C95005B4376 /* SignUpViewModel.swift in Sources */,
+				CE1C45FC2C007D5C0057809E /* UIBlurLoader.swift in Sources */,
 				CE356F092BFE4C47005B4376 /* SignUpModuleBuilder.swift in Sources */,
 				CE356F132BFE8552005B4376 /* ViewControllerAlert.swift in Sources */,
 			);

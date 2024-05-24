@@ -2,12 +2,16 @@ import Foundation
 import Firebase
 import UIKit
 
+protocol AlertShowable {
+    func showCustomAlert(title: String, message: String) async
+}
+
 class FirebaseManager {
     private let dataBase = Firestore.firestore()
-    private weak var viewController: UIViewController?
+    private var alertShowable: AlertShowable?
 
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+    init(alertShowable: AlertShowable?) {
+        self.alertShowable = alertShowable
     }
 
     func createUser(user: User, password: String) async {
@@ -35,14 +39,14 @@ class FirebaseManager {
             print("User created successfully with authentication.")
         } catch {
             print("Error creating user with authentication: \(error.localizedDescription)")
-            await viewController?.showAlert(title: "Error", message: "Error creating user with authentication: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error creating user with authentication: \(error.localizedDescription)")
         }
     }
 
     func signInUser(email: String?, password: String?) async {
         guard let email = email, let password = password else {
             print("Found empty textField!")
-            await viewController?.showAlert(title: "Error", message: "Found empty textField!")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Found empty textField!")
             return
         }
         do {
@@ -50,7 +54,7 @@ class FirebaseManager {
             print("User signed in successfully with email: \(authResult.user.email ?? "")")
         } catch {
             print("Error signing in user: \(error.localizedDescription)")
-            await viewController?.showAlert(title: "Error", message: "Error signing in user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error signing in user: \(error.localizedDescription)")
         }
     }
 
@@ -63,7 +67,7 @@ class FirebaseManager {
             return parseUserData(data: data)
         } catch {
             print("Error fetching user: \(error.localizedDescription)")
-            await viewController?.showAlert(title: "Error", message: "Error fetching user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error fetching user: \(error.localizedDescription)")
             return nil
         }
     }
@@ -100,7 +104,7 @@ class FirebaseManager {
             print("User deleted successfully.")
         } catch {
             print("Error deleting user: \(error.localizedDescription)")
-            await viewController?.showAlert(title: "Error", message: "Error deleting user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error deleting user: \(error.localizedDescription)")
         }
     }
 
@@ -119,7 +123,7 @@ class FirebaseManager {
             print("Card added to user successfully.")
         } catch {
             print("Error adding card to user: \(error.localizedDescription)")
-            await viewController?.showAlert(title: "Error", message: "Error adding card to user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error adding card to user: \(error.localizedDescription)")
         }
     }
 
@@ -138,7 +142,7 @@ class FirebaseManager {
             print("Card removed from user successfully.")
         } catch {
             print("Error removing card from user: \(error.localizedDescription)")
-            await viewController?.showAlert(title: "Error", message: "Error removing card from user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error removing card from user: \(error.localizedDescription)")
         }
     }
 
@@ -159,7 +163,7 @@ class FirebaseManager {
             }
         } catch {
             print("Error fetching cards for user: \(error.localizedDescription)")
-            await viewController?.showAlert(title: "Error", message: "Error fetching cards for user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error fetching cards for user: \(error.localizedDescription)")
             return nil
         }
     }
