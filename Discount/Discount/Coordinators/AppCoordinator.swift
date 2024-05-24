@@ -20,7 +20,7 @@ class AppCoordinator: Coordinator {
 
 private extension AppCoordinator {
     func showMainFlow() {
-        flowCoordinator = MainFlowCoordinator(navigationController: navigationController)
+        flowCoordinator = MainFlowCoordinator(navigationController: navigationController, mainFlowCoordinatorProtocol: self)
         flowCoordinator?.start()
     }
 
@@ -30,8 +30,13 @@ private extension AppCoordinator {
     }
 }
 
-extension AppCoordinator: AuthFlowCoordinatorOutput {
+extension AppCoordinator: AuthFlowCoordinatorOutput, MainFlowCoordinatorProtocol {
+    func mainFlowSignOutUser() {
+        showAuthFlow()
+    }
+
     func authFlowCoordinatorEnteredUser() {
+        UserDefaults.standard.set("", forKey: "curUser")
         showMainFlow()
     }
 }

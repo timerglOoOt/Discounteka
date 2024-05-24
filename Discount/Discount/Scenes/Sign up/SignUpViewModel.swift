@@ -5,6 +5,10 @@ protocol SignUpOutput: AnyObject {
     func signedUpUser()
 }
 
+protocol SignOutOutput: AnyObject {
+    func signedOutUser()
+}
+
 class SignUpViewModel {
     weak var delegate: SignUpOutput?
     weak var controller: SignUpViewController?

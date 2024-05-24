@@ -1,12 +1,18 @@
 import UIKit
 
+protocol MainFlowCoordinatorProtocol: AnyObject {
+    func mainFlowSignOutUser()
+}
+
 // MARK: Логика старта главного потока приложения
 
 class MainFlowCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private var mainFlowCoordinatorProtocol: MainFlowCoordinatorProtocol?
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, mainFlowCoordinatorProtocol: MainFlowCoordinatorProtocol) {
         self.navigationController = navigationController
+        self.mainFlowCoordinatorProtocol = mainFlowCoordinatorProtocol
     }
 
     func start() {
@@ -34,8 +40,7 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
 
     private func showProfileController() {
         print("profile")
-        // MARK: пусть пока будет так, добавлю нормальный логаут
-        UserDefaults.standard.set("", forKey: "curUser")
+        signedOutUser()
     }
 
     private func showContactUsController() {
@@ -76,5 +81,11 @@ extension MainFlowCoordinator: MainViewControllerDelegate {
         let aboutAppViewController = AboutAppModuleBuilder().build()
         aboutAppViewController.delegate = self
         navigationController.pushViewController(aboutAppViewController, animated: true)
+    }
+}
+
+extension MainFlowCoordinator: SignOutOutput {
+    func signedOutUser() {
+        mainFlowCoordinatorProtocol?.mainFlowSignOutUser()
     }
 }
