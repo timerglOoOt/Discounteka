@@ -28,7 +28,6 @@ class FirebaseManager {
                 "cards": user.cards.map { card in
                     return [
                         "type": card.type == .qr,
-                        "isClicked": card.isClicked,
                         "name": card.name,
                         "code": card.code
                     ]
@@ -85,7 +84,6 @@ class FirebaseManager {
             "cards": user.cards.map { card in
                 return [
                     "type": card.type == .qr,
-                    "isClicked": card.isClicked,
                     "name": card.name,
                     "code": card.code
                 ]
@@ -115,7 +113,6 @@ class FirebaseManager {
     func addCard(toUserId userId: String, card: Card) async {
         let cardData: [String: Any] = [
             "type": card.type == .qr,
-            "isClicked": card.isClicked,
             "name": card.name,
             "code": card.code
         ]
@@ -134,7 +131,6 @@ class FirebaseManager {
     func removeCard(fromUserId userId: String, card: Card) async {
         let cardData: [String: Any] = [
             "type": card.type == .qr,
-            "isClicked": card.isClicked,
             "name": card.name,
             "code": card.code
         ]
@@ -158,12 +154,11 @@ class FirebaseManager {
             }
             return cardsData.compactMap { cardData -> Card? in
                 guard let type = cardData["type"] as? Bool,
-                    let isClicked = cardData["isClicked"] as? Bool,
                     let name = cardData["name"] as? String,
                     let code = cardData["code"] as? String else {
                     return nil
                 }
-                return Card(type: type ? .qr : .code128, isClicked: isClicked, name: name, code: code)
+                return Card(type: type ? .qr : .code128, isClicked: false, name: name, code: code)
             }
         } catch {
             print("Error fetching cards for user: \(error.localizedDescription)")
@@ -182,12 +177,11 @@ class FirebaseManager {
         }
         let cards = cardsData.compactMap { cardData -> Card? in
             guard let type = cardData["type"] as? Bool,
-                let isClicked = cardData["isClicked"] as? Bool,
                 let name = cardData["name"] as? String,
                 let code = cardData["code"] as? String else {
                 return nil
             }
-            return Card(type: type ? .qr : .code128, isClicked: isClicked, name: name, code: code)
+            return Card(type: type ? .qr : .code128, isClicked: false, name: name, code: code)
         }
         return User(firstName: firstName, lastName: lastName, email: email, sex: sex, cards: cards)
     }
