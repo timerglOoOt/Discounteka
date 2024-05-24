@@ -34,6 +34,8 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
 
     private func showProfileController() {
         print("profile")
+        // MARK: пусть пока будет так, добавлю нормальный логаут
+        UserDefaults.standard.set("", forKey: "curUser")
     }
 
     private func showContactUsController() {
@@ -60,16 +62,6 @@ extension MainFlowCoordinator: NewCardChoiseControllerDelegate {
         }
         navigationController.pushViewController(newCardViewController, animated: true)
     }
-
-//    private func showNewQRCardController() {
-//        let newCardViewController = NewCardModuleBuilder().build()
-//        newCardViewController.cardType = .withQR
-//        navigationController.pushViewController(newCardViewController, animated: true)
-//    }
-//
-//    private func showNewBarcodeCardController() {
-//        print("contact us")
-//    }
 }
 // MARK: Настройка для главного экрана
 

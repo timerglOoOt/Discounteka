@@ -2,8 +2,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
-    // TODO: добавить UserDefaults на лог
-    var isLogged = false
+    var isLogged = UserDefaults.standard.string(forKey: "curUser") != ""
     var flowCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {

@@ -14,7 +14,7 @@ class FirebaseManager {
         self.alertShowable = alertShowable
     }
 
-    func createUser(user: User, password: String) async {
+    func createUser(user: User, password: String) async -> String? {
         do {
             let authResult = try await Auth.auth().createUser(withEmail: user.email, password: password)
             let uid = authResult.user.uid
@@ -37,25 +37,29 @@ class FirebaseManager {
 
             try await dataBase.collection("users").document(uid).setData(userData)
             print("User created successfully with authentication.")
+            return uid
         } catch {
             print("Error creating user with authentication: \(error.localizedDescription)")
             await alertShowable?.showCustomAlert(title: "Error", message: "Error creating user with authentication: \(error.localizedDescription)")
         }
+        return ""
     }
 
-    func signInUser(email: String?, password: String?) async {
+    func signInUser(email: String?, password: String?) async -> String {
         guard let email = email, let password = password else {
             print("Found empty textField!")
             await alertShowable?.showCustomAlert(title: "Error", message: "Found empty textField!")
-            return
+            return ""
         }
         do {
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
             print("User signed in successfully with email: \(authResult.user.email ?? "")")
+            return authResult.user.uid
         } catch {
             print("Error signing in user: \(error.localizedDescription)")
             await alertShowable?.showCustomAlert(title: "Error", message: "Error signing in user: \(error.localizedDescription)")
         }
+        return ""
     }
 
     func getUser(withId id: String) async -> User? {
@@ -72,31 +76,31 @@ class FirebaseManager {
         }
     }
 
-//    func updateUser(user: User) async {
-//        let userData: [String: Any] = [
-//            "firstName": user.firstName,
-//            "lastName": user.lastName,
-//            "email": user.email,
-//            "sex": user.sex,
-//            "cards": user.cards.map { card in
-//                return [
-//                    "type": card.type == .qr,
-//                    "isClicked": card.isClicked,
-//                    "name": card.name,
-//                    "code": card.code
-//                ]
-//            }
-//        ]
-//
-//        do {
-//            // TODO: переделать логику хранения id в UserDefaults
-//            try await db.collection("users").document(user.id).updateData(userData)
-//            print("User updated successfully.")
-//        } catch {
-//            print("Error updating user: \(error.localizedDescription)")
-//            await viewController?.showAlert(title: "Error", message: "Error updating user: \(error.localizedDescription)")
-//        }
-//    }
+    func updateUser(user: User) async {
+        let userData: [String: Any] = [
+            "firstName": user.firstName,
+            "lastName": user.lastName,
+            "email": user.email,
+            "sex": user.sex,
+            "cards": user.cards.map { card in
+                return [
+                    "type": card.type == .qr,
+                    "isClicked": card.isClicked,
+                    "name": card.name,
+                    "code": card.code
+                ]
+            }
+        ]
+
+        do {
+            guard let uid = UserDefaults.standard.string(forKey: "curUser") else { return }
+            try await dataBase.collection("users").document(uid).updateData(userData)
+            print("User updated successfully.")
+        } catch {
+            print("Error updating user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error updating user: \(error.localizedDescription)")
+        }
+    }
 
     func deleteUser(withId id: String) async {
         do {

@@ -15,11 +15,10 @@ class SignUpViewModel {
     }
 
     func signUpButtonTapped(user: User, password: String) {
+        controller?.view.showBlurLoader()
         Task {
-            DispatchQueue.main.async { [weak self] in
-                self?.controller?.view.showBlurLoader()
-            }
-            await firebase.createUser(user: user, password: password)
+            let curUser = await firebase.createUser(user: user, password: password)
+            UserDefaults.standard.set(curUser, forKey: "curUser")
             DispatchQueue.main.async { [weak self] in
                 self?.delegate?.signedUpUser()
                 self?.controller?.view.removeBluerLoader()

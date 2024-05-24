@@ -17,7 +17,8 @@ class SignInViewModel {
     func signInButtonTapped(email: String?, password: String?) {
         controller?.view.showBlurLoader()
         Task {
-            await firebase.signInUser(email: email, password: password)
+            let curUser = await firebase.signInUser(email: email, password: password)
+            UserDefaults.standard.set(curUser, forKey: "curUser")
             DispatchQueue.main.async { [weak self] in
                 self?.delegate?.signedInUser()
                 self?.controller?.view.removeBluerLoader()
