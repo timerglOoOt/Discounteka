@@ -68,7 +68,7 @@ final class SignInView: UIView {
 
 private extension SignInView {
     func setupLayout() {
-        backgroundColor = .systemBackground
+        backgroundColor = UIColor(named: "backgroundColor")
         passwordCustomTextField.isSecureTextEntry = true
         addSubview(welcomeCustomeLabel)
         addSubview(textFieldsStack)

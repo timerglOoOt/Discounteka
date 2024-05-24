@@ -18,7 +18,7 @@ final class MainTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
+        label.textColor = UIColor(named: "textColor")
         return label
     }()
 
@@ -44,7 +44,8 @@ final class MainTableViewCell: UITableViewCell {
 private extension MainTableViewCell {
 
     func setupLayout() {
-        contentView.backgroundColor = .systemBackground
+        backgroundView?.backgroundColor = .clear
+        contentView.backgroundColor = UIColor(named: "backgroundColor")
 
         contentView.addSubview(stackView)
 
@@ -77,6 +78,11 @@ extension MainTableViewCell {
         cardImageView.image = nil
         cardNameLabel.text = nil
     }
+
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0))
+//    }
 
     private func generateImage(from string: String, cardType: AVMetadataObject.ObjectType) -> UIImage? {
         let data = Data(string.utf8)

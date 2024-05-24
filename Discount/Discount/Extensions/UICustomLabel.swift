@@ -9,7 +9,7 @@ class UICustomLabel: UILabel {
         text = labelText
         numberOfLines = .zero
         font = .systemFont(ofSize: 24, weight: .bold)
-        textColor = UIColor.hexStringToUIColor(hex: "3B4651")
+        textColor = UIColor(named: "textColor")
         textAlignment = alignment
         translatesAutoresizingMaskIntoConstraints = false
     }

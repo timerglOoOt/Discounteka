@@ -16,6 +16,7 @@ class MainFlowCoordinator: Coordinator {
     }
 
     func start() {
+        CardService.shared.getCards()
         let mainViewController = MainModuleBuilder().build()
         mainViewController.delegate = self
         navigationController.setViewControllers([mainViewController], animated: true)
@@ -88,5 +89,6 @@ extension MainFlowCoordinator: SignOutOutput {
     func signedOutUser() {
         mainFlowCoordinatorProtocol?.mainFlowSignOutUser()
         CardService.shared.cleanCards()
+        UserDefaults.standard.set("", forKey: "curUser")
     }
 }

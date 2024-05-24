@@ -47,7 +47,7 @@ final class NewCardView: UIView {
 
 private extension NewCardView {
     private func setupLayout() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "backgroundColor")
         addSubview(enterCardNumberCustomLabel)
         addSubview(cardNumberCustomTextField)
         addSubview(scanQRCustomLabel)

@@ -36,7 +36,7 @@ final class NewCardChoiseView: UIView {
 
 private extension NewCardChoiseView {
     func setupLayout() {
-        backgroundColor = .systemBackground
+        backgroundColor = UIColor(named: "backgroundColor")
         cardWithQRInfoLabel.tag = 1
         cardWithBarcodeInfoLabel.tag = 2
         addSubview(infoStackView)

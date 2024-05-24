@@ -6,7 +6,7 @@ extension UIView {
         self.addSubview(blurLoader)
     }
 
-    func removeBluerLoader() {
+    func removeBlurLoader() {
         if let blurLoader = subviews.first(where: { $0 is UIBlurLoader }) {
             blurLoader.removeFromSuperview()
         }

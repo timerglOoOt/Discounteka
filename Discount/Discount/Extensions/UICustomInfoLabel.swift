@@ -15,7 +15,7 @@ class UICustomInfoLabel: UIView {
     private lazy var infoDescriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
+        label.textColor = UIColor(named: "textColor")
         label.numberOfLines = .zero
         return label
     }()
@@ -43,7 +43,7 @@ class UICustomInfoLabel: UIView {
 
 extension UICustomInfoLabel {
     private func setupLayout() {
-        backgroundColor = .white
+        backgroundColor = .clear
 
         addSubview(infoImageView)
         addSubview(infoDescriptionLabel)
@@ -75,11 +75,11 @@ extension UICustomInfoLabel {
 
     @objc private func handleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.2) {
-            self.backgroundColor = UIColor.hexStringToUIColor(hex: "F4FAFF")
+            self.backgroundColor = UIColor(named: "backgroundColor")
         }
         if sender.state == .ended {
             UIView.animate(withDuration: 0.3, delay: 0.3) {
-                self.backgroundColor = .white
+                self.backgroundColor = UIColor(named: "infoLabelColor")
             }
         }
     }
@@ -87,11 +87,11 @@ extension UICustomInfoLabel {
     @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             UIView.animate(withDuration: 0.2) {
-                self.backgroundColor = UIColor.hexStringToUIColor(hex: "F4FAFF")
+                self.backgroundColor = UIColor(named: "infoLabelColor")
             }
         } else if sender.state == .ended {
             UIView.animate(withDuration: 0.3) {
-                self.backgroundColor = .white
+                self.backgroundColor = UIColor(named: "backgroundColor")
             }
         }
     }

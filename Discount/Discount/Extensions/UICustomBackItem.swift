@@ -6,14 +6,14 @@ import SnapKit
 class UICustomBackItem: UIView {
     private lazy var backItemImageView: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "chevron.backward"))
-        image.tintColor = UIColor.hexStringToUIColor(hex: "3B4651")
+        image.tintColor = UIColor(named: "textColor")
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
+        label.textColor = UIColor(named: "textColor")
         label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.numberOfLines = .zero
         label.translatesAutoresizingMaskIntoConstraints = false

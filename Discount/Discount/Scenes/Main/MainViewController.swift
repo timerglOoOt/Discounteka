@@ -83,12 +83,12 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
 extension MainViewController {
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(handleTap))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.hexStringToUIColor(hex: "3B4651")
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "textColor")
 
         lazy var titleLabel: UILabel = {
             let label = UILabel()
             label.text = "  Мои карты"
-            label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
+            label.textColor = UIColor(named: "textColor")
             label.font = .systemFont(ofSize: 17, weight: .semibold)
             return label
         }()

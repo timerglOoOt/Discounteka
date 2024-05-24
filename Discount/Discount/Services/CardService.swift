@@ -3,7 +3,6 @@ import Combine
 
 class CardService {
     private let firebase = FirebaseManager(alertShowable: nil)
-    private let userId = UserDefaults.standard.string(forKey: "curUser")
     @Published var cards: [Card] = []
     public static let shared = CardService()
     private let lock = NSLock()
@@ -39,6 +38,7 @@ class CardService {
     }
 
     func getCards() {
+        let userId = UserDefaults.standard.string(forKey: "curUser")
         Task {
             guard let userId = userId else { return }
             await cards = firebase.getCards(forUserId: userId) ?? []

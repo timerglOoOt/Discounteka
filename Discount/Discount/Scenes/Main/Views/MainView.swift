@@ -12,7 +12,7 @@ final class MainView: UIView {
         let table = UITableView()
         table.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         table.separatorStyle = .none
-        table.backgroundColor = .white
+        table.backgroundColor = UIColor(named: "backgroundColor")
         table.bounces = false
         table.showsVerticalScrollIndicator = false
         table.estimatedRowHeight = UITableView.automaticDimension
@@ -44,7 +44,7 @@ final class MainView: UIView {
 
 private extension MainView {
     func setupLayout() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "backgroundColor")
 
         addSubview(cardsTableView)
         addSubview(addButton)

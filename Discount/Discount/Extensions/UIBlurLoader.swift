@@ -2,7 +2,7 @@ import UIKit
 
 class UIBlurLoader: UIView {
     private lazy var blurEffectView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = frame
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

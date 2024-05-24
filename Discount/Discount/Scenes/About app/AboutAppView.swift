@@ -47,7 +47,7 @@ final class AboutAppView: UIView {
 
 private extension AboutAppView {
     private func setupLayout() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "backgroundColor")
         addSubview(infoStackView)
 
         infoStackView.snp.makeConstraints { make in

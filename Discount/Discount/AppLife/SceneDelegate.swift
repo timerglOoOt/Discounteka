@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
-        navigationBarAppearance.backgroundColor = UIColor.hexStringToUIColor(hex: "F4FAFF")
+        navigationBarAppearance.backgroundColor = UIColor(named: "navigationBarColor")
 
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance

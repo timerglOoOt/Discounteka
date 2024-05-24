@@ -23,7 +23,6 @@ class AuthFlowCoordinator: Coordinator {
 extension AuthFlowCoordinator: SignInOutput, SignUpOutput {
     func signedInUser() {
         authFlowCoordinatorOutput?.authFlowCoordinatorEnteredUser()
-        CardService.shared.getCards()
     }
 
     func signedUpUser() {

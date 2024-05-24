@@ -25,7 +25,7 @@ class SignUpViewModel {
             UserDefaults.standard.set(curUser, forKey: "curUser")
             DispatchQueue.main.async { [weak self] in
                 self?.delegate?.signedUpUser()
-                self?.controller?.view.removeBluerLoader()
+                self?.controller?.view.removeBlurLoader()
             }
         }
     }
