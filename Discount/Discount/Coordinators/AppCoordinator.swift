@@ -32,11 +32,11 @@ private extension AppCoordinator {
 
 extension AppCoordinator: AuthFlowCoordinatorOutput, MainFlowCoordinatorProtocol {
     func mainFlowSignOutUser() {
+        UserDefaults.standard.set("", forKey: "curUser")
         showAuthFlow()
     }
 
     func authFlowCoordinatorEnteredUser() {
-        UserDefaults.standard.set("", forKey: "curUser")
         showMainFlow()
     }
 }
