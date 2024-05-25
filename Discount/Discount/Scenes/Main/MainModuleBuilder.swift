@@ -1,10 +1,9 @@
 import UIKit
 
-class MainModuleBuilder: ModuleBuilder {
-    typealias ViewController = MainViewController
-
-    func build() -> MainViewController {
+class MainModuleBuilder {
+    func build(output: MainViewOutput) -> MainViewController {
         let viewModel = MainViewModel()
+        viewModel.delegate = output
         let viewController = MainViewController(viewModel: viewModel)
         return viewController
     }

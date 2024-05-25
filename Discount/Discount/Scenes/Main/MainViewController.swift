@@ -1,15 +1,9 @@
 import UIKit
 import Combine
 
-protocol MainViewControllerDelegate: AnyObject {
-    func showAboutAppController()
-    func showNewCardController()
-}
-
 class MainViewController: UIViewController {
     private let mainView = MainView(frame: .zero)
     var viewModel: MainViewModel
-    weak var delegate: MainViewControllerDelegate?
     private var cancellables = Set<AnyCancellable>()
     var cardsCount = 0
 
@@ -60,7 +54,7 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
     }
 
     func addButtonTapped() {
-        delegate?.showNewCardController()
+        viewModel.showNewCardController()
     }
 
     func setupBindigs() {
@@ -96,6 +90,6 @@ extension MainViewController {
     }
 
     @objc private func handleTap() {
-        delegate?.showAboutAppController()
+        viewModel.showAboutAppController()
     }
 }

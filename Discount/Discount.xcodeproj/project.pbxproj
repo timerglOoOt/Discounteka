@@ -64,6 +64,16 @@
 		CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */; };
 		CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F302BCEC3950005DAB9 /* MainView.swift */; };
 		CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F322BCECF350005DAB9 /* MainViewController.swift */; };
+		CEAC2C5B2C025CBE007336A0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5A2C025CBE007336A0 /* ProfileViewController.swift */; };
+		CEAC2C5D2C025CD4007336A0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5C2C025CD4007336A0 /* ProfileView.swift */; };
+		CEAC2C5F2C025CE7007336A0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5E2C025CE7007336A0 /* ProfileViewModel.swift */; };
+		CEAC2C612C025D02007336A0 /* ProfileModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C602C025D02007336A0 /* ProfileModuleBuilder.swift */; };
+		CEAC2C632C026092007336A0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C622C026092007336A0 /* SettingsViewModel.swift */; };
+		CEAC2C652C02609C007336A0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C642C02609C007336A0 /* SettingsView.swift */; };
+		CEAC2C672C0260A6007336A0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C662C0260A6007336A0 /* SettingsViewController.swift */; };
+		CEAC2C692C0263DE007336A0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C682C0263DE007336A0 /* Theme.swift */; };
+		CEAC2C6B2C02653F007336A0 /* SettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C6A2C02653F007336A0 /* SettingsModuleBuilder.swift */; };
+		CEAC2C6D2C026C1B007336A0 /* UICustomSwitchLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C6C2C026C1B007336A0 /* UICustomSwitchLabel.swift */; };
 		CEC1A1502BD65DA200080CEC /* NewCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */; };
 		CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1512BD65DB200080CEC /* NewCardView.swift */; };
 		CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */; };
@@ -147,6 +157,16 @@
 		CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypes.swift; sourceTree = "<group>"; };
 		CE7D5F302BCEC3950005DAB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE7D5F322BCECF350005DAB9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEAC2C5A2C025CBE007336A0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CEAC2C5C2C025CD4007336A0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CEAC2C5E2C025CE7007336A0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		CEAC2C602C025D02007336A0 /* ProfileModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModuleBuilder.swift; sourceTree = "<group>"; };
+		CEAC2C622C026092007336A0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		CEAC2C642C02609C007336A0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CEAC2C662C0260A6007336A0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CEAC2C682C0263DE007336A0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		CEAC2C6A2C02653F007336A0 /* SettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		CEAC2C6C2C026C1B007336A0 /* UICustomSwitchLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomSwitchLabel.swift; sourceTree = "<group>"; };
 		CEC1A14F2BD65DA200080CEC /* NewCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewController.swift; sourceTree = "<group>"; };
 		CEC1A1512BD65DB200080CEC /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
 		CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModuleBuilder.swift; sourceTree = "<group>"; };
@@ -300,6 +320,7 @@
 				CEEA8BEA2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift */,
 				CE1C45FB2C007D5C0057809E /* UIBlurLoader.swift */,
 				CE1C45FD2C007DD10057809E /* UIViewLoaderExtensoin.swift */,
+				CEAC2C6C2C026C1B007336A0 /* UICustomSwitchLabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +414,7 @@
 				CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */,
 				CE356F102BFE6CF5005B4376 /* User.swift */,
 				CEFB23DB2C01FC4100762BD8 /* Message.swift */,
+				CEAC2C682C0263DE007336A0 /* Theme.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +445,10 @@
 		CEFB23D22C01F71300762BD8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC2C5A2C025CBE007336A0 /* ProfileViewController.swift */,
+				CEAC2C5C2C025CD4007336A0 /* ProfileView.swift */,
+				CEAC2C5E2C025CE7007336A0 /* ProfileViewModel.swift */,
+				CEAC2C602C025D02007336A0 /* ProfileModuleBuilder.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -430,6 +456,10 @@
 		CEFB23D32C01F71D00762BD8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC2C622C026092007336A0 /* SettingsViewModel.swift */,
+				CEAC2C642C02609C007336A0 /* SettingsView.swift */,
+				CEAC2C662C0260A6007336A0 /* SettingsViewController.swift */,
+				CEAC2C6A2C02653F007336A0 /* SettingsModuleBuilder.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -620,6 +650,8 @@
 				CE56B2952BDB70FF00132A10 /* Errors.swift in Sources */,
 				CE356F0F2BFE6C6E005B4376 /* FirebaseManager.swift in Sources */,
 				CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */,
+				CEAC2C5F2C025CE7007336A0 /* ProfileViewModel.swift in Sources */,
+				CEAC2C5B2C025CBE007336A0 /* ProfileViewController.swift in Sources */,
 				CEFB23DA2C01F94300762BD8 /* ContactUsViewModel.swift in Sources */,
 				CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */,
 				CE356EFD2BFE4056005B4376 /* SignInView.swift in Sources */,
@@ -635,6 +667,7 @@
 				CE206AAF2BFDF0AF000A8336 /* NewCardChoiseViewController.swift in Sources */,
 				CE48EE822BCFC7B0006C33F5 /* MainFlowCoordinator.swift in Sources */,
 				CE3DEC6D2BC9581B00B13324 /* AppDelegate.swift in Sources */,
+				CEAC2C672C0260A6007336A0 /* SettingsViewController.swift in Sources */,
 				CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */,
 				CE356F0D2BFE5103005B4376 /* SignInModuleBuilder.swift in Sources */,
 				CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */,
@@ -644,6 +677,7 @@
 				CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */,
 				CE48EE8B2BCFCB49006C33F5 /* MainViewModel.swift in Sources */,
 				CEFB23D82C01F80A00762BD8 /* ContactUsViewController.swift in Sources */,
+				CEAC2C692C0263DE007336A0 /* Theme.swift in Sources */,
 				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
 				CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */,
 				CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */,
@@ -653,19 +687,25 @@
 				CE356F112BFE6CF5005B4376 /* User.swift in Sources */,
 				CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */,
 				CEEA8BEB2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift in Sources */,
+				CEAC2C6D2C026C1B007336A0 /* UICustomSwitchLabel.swift in Sources */,
 				CE1C45FE2C007DD10057809E /* UIViewLoaderExtensoin.swift in Sources */,
+				CEAC2C652C02609C007336A0 /* SettingsView.swift in Sources */,
 				CE48EE932BCFE5BC006C33F5 /* AboutAppView.swift in Sources */,
+				CEAC2C5D2C025CD4007336A0 /* ProfileView.swift in Sources */,
 				CE356F012BFE4071005B4376 /* SignInViewModel.swift in Sources */,
+				CEAC2C632C026092007336A0 /* SettingsViewModel.swift in Sources */,
 				CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */,
 				CE3DECB42BC9709D00B13324 /* UICustomGrayButton.swift in Sources */,
 				CE356F072BFE4BE2005B4376 /* AuthFlowCoordinator.swift in Sources */,
 				CE356F052BFE40A7005B4376 /* SignUpView.swift in Sources */,
 				CE3DEC6F2BC9581B00B13324 /* SceneDelegate.swift in Sources */,
 				CE356F032BFE4093005B4376 /* SignUpViewController.swift in Sources */,
+				CEAC2C612C025D02007336A0 /* ProfileModuleBuilder.swift in Sources */,
 				CE356F0B2BFE4C95005B4376 /* SignUpViewModel.swift in Sources */,
 				CE1C45FC2C007D5C0057809E /* UIBlurLoader.swift in Sources */,
 				CE356F092BFE4C47005B4376 /* SignUpModuleBuilder.swift in Sources */,
 				CE356F132BFE8552005B4376 /* ViewControllerAlert.swift in Sources */,
+				CEAC2C6B2C02653F007336A0 /* SettingsModuleBuilder.swift in Sources */,
 				CEFB23DE2C0208D600762BD8 /* ContactUsModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

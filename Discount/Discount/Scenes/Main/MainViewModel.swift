@@ -1,7 +1,13 @@
 import UIKit
 
+protocol MainViewOutput: AnyObject {
+    func showAboutAppController()
+    func showNewCardController()
+}
+
 class MainViewModel {
     private let cardsService = CardService.shared
+    weak var delegate: MainViewOutput?
     weak var controller: MainViewController?
     private lazy var firebase = FirebaseManager(alertShowable: controller)
     private let userId = UserDefaults.standard.string(forKey: "curUser")
@@ -43,5 +49,15 @@ class MainViewModel {
         Task {
             await firebase.removeCard(fromUserId: userId ?? "", card: card)
         }
+    }
+}
+
+extension MainViewModel {
+    func showAboutAppController() {
+        delegate?.showAboutAppController()
+    }
+
+    func showNewCardController() {
+        delegate?.showNewCardController()
     }
 }

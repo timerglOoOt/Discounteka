@@ -17,8 +17,7 @@ class MainFlowCoordinator: Coordinator {
 
     func start() {
         CardService.shared.getCards()
-        let mainViewController = MainModuleBuilder().build()
-        mainViewController.delegate = self
+        let mainViewController = MainModuleBuilder().build(output: self)
         navigationController.setViewControllers([mainViewController], animated: true)
     }
 }
@@ -50,7 +49,8 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
     }
 
     private func showSettingsController() {
-        print("settings")
+        let settingsController = SettingsModuleBuilder().build()
+        navigationController.pushViewController(settingsController, animated: true)
     }
 }
 
@@ -72,7 +72,7 @@ extension MainFlowCoordinator: NewCardChoiseControllerDelegate {
 }
 // MARK: Настройка для главного экрана
 
-extension MainFlowCoordinator: MainViewControllerDelegate {
+extension MainFlowCoordinator: MainViewOutput {
     func showNewCardController() {
         let newCardChoiseViewController = NewCardChoiseModuleBuilder().build()
         newCardChoiseViewController.delegate = self
