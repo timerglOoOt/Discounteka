@@ -10,6 +10,7 @@ class UICustomTextView: UITextView, UITextViewDelegate {
         delegate = self
 
         font = .systemFont(ofSize: 22)
+        backgroundColor = .clear
         layer.cornerRadius = 14
         layer.borderWidth = 1.5
         layer.borderColor = UIColor.hexStringToUIColor(hex: "B8B8B8").cgColor
@@ -33,7 +34,7 @@ extension UICustomTextView {
         textView.layer.borderColor = UIColor.hexStringToUIColor(hex: "2B83FF").cgColor
         if textView.text == placeholderText {
             textView.text = nil
-            textView.textColor = .black
+            textView.textColor = UIColor(named: "standartTextColor")
         }
     }
 

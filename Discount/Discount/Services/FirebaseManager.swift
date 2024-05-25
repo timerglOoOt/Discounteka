@@ -167,6 +167,22 @@ class FirebaseManager {
         }
     }
 
+    func addMessage(messageText: String) async {
+        guard let curUser = UserDefaults.standard.string(forKey: "curUser") else {
+            print("User ID not found in UserDefaults")
+            return
+        }
+        let message = Message(userId: curUser, message: messageText)
+        let messageDict: [String: Any] = ["userId": message.userId, "message": message.message, "timestamp": Timestamp(date: Date())]
+        do {
+            let ref = try await dataBase.collection("messages").addDocument(data: messageDict)
+            print("Message added with ID: \(ref.documentID)")
+        } catch {
+            print("Error sending message for us: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlert(title: "Error", message: "Error sending message for us: \(error.localizedDescription)")
+        }
+    }
+
     private func parseUserData(data: [String: Any]) -> User? {
         guard let firstName = data["firstName"] as? String,
             let lastName = data["lastName"] as? String,

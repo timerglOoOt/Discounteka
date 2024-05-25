@@ -44,8 +44,9 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
         signedOutUser()
     }
 
-    private func showContactUsController() {
-        print("contact us")
+    func showContactUsController() {
+        let contactUsViewController = ContactUsModuleBuilder().build()
+        navigationController.pushViewController(contactUsViewController, animated: true)
     }
 
     private func showSettingsController() {

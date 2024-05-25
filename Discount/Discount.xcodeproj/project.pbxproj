@@ -69,6 +69,11 @@
 		CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */; };
 		CEC1A1562BD662E500080CEC /* NewCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */; };
 		CEEA8BEB2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA8BEA2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift */; };
+		CEFB23D62C01F7FB00762BD8 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB23D52C01F7FB00762BD8 /* ContactUsView.swift */; };
+		CEFB23D82C01F80A00762BD8 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB23D72C01F80A00762BD8 /* ContactUsViewController.swift */; };
+		CEFB23DA2C01F94300762BD8 /* ContactUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB23D92C01F94300762BD8 /* ContactUsViewModel.swift */; };
+		CEFB23DC2C01FC4100762BD8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB23DB2C01FC4100762BD8 /* Message.swift */; };
+		CEFB23DE2C0208D600762BD8 /* ContactUsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB23DD2C0208D600762BD8 /* ContactUsModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +152,11 @@
 		CEC1A1532BD662C700080CEC /* NewCardModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardModuleBuilder.swift; sourceTree = "<group>"; };
 		CEC1A1552BD662E500080CEC /* NewCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardViewModel.swift; sourceTree = "<group>"; };
 		CEEA8BEA2BFF6A9E003DBB3F /* UIViewControllerAlertExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAlertExtention.swift; sourceTree = "<group>"; };
+		CEFB23D52C01F7FB00762BD8 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
+		CEFB23D72C01F80A00762BD8 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		CEFB23D92C01F94300762BD8 /* ContactUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewModel.swift; sourceTree = "<group>"; };
+		CEFB23DB2C01FC4100762BD8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CEFB23DD2C0208D600762BD8 /* ContactUsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,9 +327,10 @@
 		CE48EE912BCFE59F006C33F5 /* About app */ = {
 			isa = PBXGroup;
 			children = (
-				CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */,
-				CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */,
-				CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */,
+				CEFB23D42C01F72B00762BD8 /* Contact us */,
+				CEFB23D32C01F71D00762BD8 /* Settings */,
+				CEFB23D22C01F71300762BD8 /* Profile */,
+				CEFB23D12C01F37B00762BD8 /* Main */,
 			);
 			path = "About app";
 			sourceTree = "<group>";
@@ -381,6 +392,7 @@
 			children = (
 				CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */,
 				CE356F102BFE6CF5005B4376 /* User.swift */,
+				CEFB23DB2C01FC4100762BD8 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,6 +408,41 @@
 				CE4306E52BF63AAF009D8577 /* ScannerView.swift */,
 			);
 			path = "New Card";
+			sourceTree = "<group>";
+		};
+		CEFB23D12C01F37B00762BD8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE48EE8F2BCFE57F006C33F5 /* AboutAppModuleBuilder.swift */,
+				CE48EE922BCFE5BC006C33F5 /* AboutAppView.swift */,
+				CE48EE942BCFE5C7006C33F5 /* AboutAppViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CEFB23D22C01F71300762BD8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CEFB23D32C01F71D00762BD8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CEFB23D42C01F72B00762BD8 /* Contact us */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB23D52C01F7FB00762BD8 /* ContactUsView.swift */,
+				CEFB23D72C01F80A00762BD8 /* ContactUsViewController.swift */,
+				CEFB23D92C01F94300762BD8 /* ContactUsViewModel.swift */,
+				CEFB23DD2C0208D600762BD8 /* ContactUsModuleBuilder.swift */,
+			);
+			path = "Contact us";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,8 +620,10 @@
 				CE56B2952BDB70FF00132A10 /* Errors.swift in Sources */,
 				CE356F0F2BFE6C6E005B4376 /* FirebaseManager.swift in Sources */,
 				CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */,
+				CEFB23DA2C01F94300762BD8 /* ContactUsViewModel.swift in Sources */,
 				CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */,
 				CE356EFD2BFE4056005B4376 /* SignInView.swift in Sources */,
+				CEFB23DC2C01FC4100762BD8 /* Message.swift in Sources */,
 				CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */,
 				CE206AAC2BFDECF1000A8336 /* NewCardChoiseView.swift in Sources */,
 				CE3DECB22BC9702200B13324 /* UICustomTextView.swift in Sources */,
@@ -589,10 +638,12 @@
 				CE48EE902BCFE57F006C33F5 /* AboutAppModuleBuilder.swift in Sources */,
 				CE356F0D2BFE5103005B4376 /* SignInModuleBuilder.swift in Sources */,
 				CE3DECAE2BC96D9500B13324 /* UICustomTextField.swift in Sources */,
+				CEFB23D62C01F7FB00762BD8 /* ContactUsView.swift in Sources */,
 				CE206AB12BFDF53A000A8336 /* NewCardChoiseModuleBuilder.swift in Sources */,
 				CE56B2902BDB6BC500132A10 /* CardService.swift in Sources */,
 				CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */,
 				CE48EE8B2BCFCB49006C33F5 /* MainViewModel.swift in Sources */,
+				CEFB23D82C01F80A00762BD8 /* ContactUsViewController.swift in Sources */,
 				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
 				CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */,
 				CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */,
@@ -615,6 +666,7 @@
 				CE1C45FC2C007D5C0057809E /* UIBlurLoader.swift in Sources */,
 				CE356F092BFE4C47005B4376 /* SignUpModuleBuilder.swift in Sources */,
 				CE356F132BFE8552005B4376 /* ViewControllerAlert.swift in Sources */,
+				CEFB23DE2C0208D600762BD8 /* ContactUsModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
