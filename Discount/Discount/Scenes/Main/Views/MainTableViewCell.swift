@@ -44,7 +44,6 @@ final class MainTableViewCell: UITableViewCell {
 private extension MainTableViewCell {
 
     func setupLayout() {
-        backgroundView?.backgroundColor = .clear
         contentView.backgroundColor = UIColor(named: "backgroundColor")
 
         contentView.addSubview(stackView)
