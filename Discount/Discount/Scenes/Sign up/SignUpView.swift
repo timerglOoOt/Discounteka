@@ -12,8 +12,8 @@ final class SignUpView: UIView {
         alignment: .center)
     private lazy var firstNameCustomTextField = UICustomTextField(placeholderText: "Имя")
     private lazy var lastNameCustomTextField = UICustomTextField(placeholderText: "Фамилия")
-    private lazy var emailCustomTextField = UICustomTextField(placeholderText: "Почта")
-    private lazy var passwordCustomTextField = UICustomTextField(placeholderText: "Пароль")
+    private lazy var emailCustomTextField = UICustomTextField(placeholderText: "Почта*")
+    private lazy var passwordCustomTextField = UICustomTextField(placeholderText: "Пароль*")
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
         label.text = "Уже есть аккаунт?"
@@ -109,7 +109,12 @@ private extension SignUpView {
 }
 
 extension SignUpView {
-    func configureSignUpForm() -> (User, String) {
+    func configureSignUpForm() -> (User, String)? {
+        let email = emailCustomTextField.isEmptyTextField()
+        let password = passwordCustomTextField.isEmptyTextField()
+        if email || password {
+            return nil
+        }
         let form = (User(
             firstName: firstNameCustomTextField.text ?? "",
             lastName: lastNameCustomTextField.text ?? "",

@@ -84,9 +84,16 @@ extension NewCardViewController: ScannerViewProtocol {
 }
 
 extension NewCardViewController: NewCardSceneDelegate {
-    func setupBindigs() {    }
+    func setupBindigs() {}
 
     func saveButtonTapped() {
+        if newCardView.checkIfTextFieldsIsEmpty() {
+            self.showAlert(
+                title: "Error",
+                message: "You are trying to send an empty field! Please enter the text."
+            )
+            return
+        }
         let cardInfo = newCardView.getTextFields()
         viewModel.addNewCard(cardValue: cardInfo.0, cardName: cardInfo.1, cardType: cardType ?? .qr)
         if let viewControllers = self.navigationController?.viewControllers {

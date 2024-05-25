@@ -59,4 +59,11 @@ extension UICustomTextField {
     public override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         return CGRect(x: bounds.width - 40, y: 0, width: 40, height: bounds.height)
     }
+    @discardableResult
+    func isEmptyTextField() -> Bool {
+        if self.text?.isEmpty ?? true {
+            self.layer.borderColor = UIColor.hexStringToUIColor(hex: "E33A43").cgColor
+        }
+        return self.text?.isEmpty ?? true
+    }
 }

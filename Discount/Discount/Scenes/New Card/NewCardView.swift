@@ -93,3 +93,11 @@ private extension NewCardView {
         }
     }
 }
+
+extension NewCardView {
+    func checkIfTextFieldsIsEmpty() -> Bool {
+        let first = cardNumberCustomTextField.isEmptyTextField()
+        let second = cardNameCustomTextField.isEmptyTextField()
+        return first || second
+    }
+}

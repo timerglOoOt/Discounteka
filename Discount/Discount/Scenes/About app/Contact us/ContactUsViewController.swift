@@ -43,6 +43,13 @@ private extension ContactUsViewController {
 
 extension ContactUsViewController: ContactUsViewProtocol {
     func sendButtonTapped(message: String) {
+        if contactUsView.checkTextViewIsEmpty() {
+            self.showCustomAlert(
+                title: "Error",
+                message: "You are trying to send an empty message! Please enter the text."
+            )
+            return
+        }
         viewModel.sendMessage(messageText: message)
         handleBackTap()
     }

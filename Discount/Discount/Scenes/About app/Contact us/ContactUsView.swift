@@ -52,3 +52,9 @@ private extension ContactUsView {
         }
     }
 }
+
+extension ContactUsView {
+    func checkTextViewIsEmpty() -> Bool {
+        return messageTextField.isEmptyTextView()
+    }
+}

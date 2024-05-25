@@ -104,7 +104,12 @@ private extension SignInView {
 }
 
 extension SignInView {
-    func configureSignInForm() -> (String?, String?) {
+    func configureSignInForm() -> (String?, String?)? {
+        let email = emailCustomTextField.isEmptyTextField()
+        let password = passwordCustomTextField.isEmptyTextField()
+        if email || password {
+            return nil
+        }
         return (emailCustomTextField.text, passwordCustomTextField.text)
     }
 }

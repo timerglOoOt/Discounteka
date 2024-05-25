@@ -49,4 +49,11 @@ extension UICustomTextView {
         textView.text = placeholderText
         textView.textColor = .systemGray3
     }
+
+    func isEmptyTextView() -> Bool {
+        if self.text == placeholderText || self.text.isEmpty {
+            self.layer.borderColor = UIColor.hexStringToUIColor(hex: "E33A43").cgColor
+        }
+        return self.text == placeholderText || self.text.isEmpty
+    }
 }

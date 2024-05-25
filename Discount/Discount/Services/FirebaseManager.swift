@@ -3,7 +3,8 @@ import Firebase
 import UIKit
 
 protocol AlertShowable {
-    func showCustomAlert(title: String, message: String) async
+    func showCustomAlertAsync(title: String, message: String) async
+    func showCustomAlert(title: String, message: String)
 }
 
 class FirebaseManager {
@@ -39,7 +40,7 @@ class FirebaseManager {
             return uid
         } catch {
             print("Error creating user with authentication: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error creating user with authentication: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error creating user with authentication: \(error.localizedDescription)")
         }
         return ""
     }
@@ -47,7 +48,7 @@ class FirebaseManager {
     func signInUser(email: String?, password: String?) async -> String {
         guard let email = email, let password = password else {
             print("Found empty textField!")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Found empty textField!")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Found empty textField!")
             return ""
         }
         do {
@@ -56,7 +57,7 @@ class FirebaseManager {
             return authResult.user.uid
         } catch {
             print("Error signing in user: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error signing in user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error signing in user: \(error.localizedDescription)")
         }
         return ""
     }
@@ -70,7 +71,7 @@ class FirebaseManager {
             return parseUserData(data: data)
         } catch {
             print("Error fetching user: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error fetching user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error fetching user: \(error.localizedDescription)")
             return nil
         }
     }
@@ -96,7 +97,7 @@ class FirebaseManager {
             print("User updated successfully.")
         } catch {
             print("Error updating user: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error updating user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error updating user: \(error.localizedDescription)")
         }
     }
 
@@ -106,7 +107,7 @@ class FirebaseManager {
             print("User deleted successfully.")
         } catch {
             print("Error deleting user: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error deleting user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error deleting user: \(error.localizedDescription)")
         }
     }
 
@@ -124,7 +125,7 @@ class FirebaseManager {
             print("Card added to user successfully.")
         } catch {
             print("Error adding card to user: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error adding card to user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error adding card to user: \(error.localizedDescription)")
         }
     }
 
@@ -142,7 +143,7 @@ class FirebaseManager {
             print("Card removed from user successfully.")
         } catch {
             print("Error removing card from user: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error removing card from user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error removing card from user: \(error.localizedDescription)")
         }
     }
 
@@ -162,7 +163,7 @@ class FirebaseManager {
             }
         } catch {
             print("Error fetching cards for user: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error fetching cards for user: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error fetching cards for user: \(error.localizedDescription)")
             return nil
         }
     }
@@ -179,7 +180,7 @@ class FirebaseManager {
             print("Message added with ID: \(ref.documentID)")
         } catch {
             print("Error sending message for us: \(error.localizedDescription)")
-            await alertShowable?.showCustomAlert(title: "Error", message: "Error sending message for us: \(error.localizedDescription)")
+            await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error sending message for us: \(error.localizedDescription)")
         }
     }
 
