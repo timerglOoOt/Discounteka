@@ -39,8 +39,8 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
     }
 
     private func showProfileController() {
-        print("profile")
-        signedOutUser()
+        let profileViewController = ProfileModuleBuilder().build()
+        navigationController.pushViewController(profileViewController, animated: true)
     }
 
     func showContactUsController() {
@@ -49,7 +49,7 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
     }
 
     private func showSettingsController() {
-        let settingsController = SettingsModuleBuilder().build()
+        let settingsController = SettingsModuleBuilder().build(output: self)
         navigationController.pushViewController(settingsController, animated: true)
     }
 }

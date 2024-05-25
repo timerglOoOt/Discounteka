@@ -56,10 +56,8 @@ private extension MainView {
         }
 
         addButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(24)
             make.centerX.equalTo(safeAreaLayoutGuide)
-            make.height.equalTo(65)
-            make.width.equalTo(350)
         }
     }
 }

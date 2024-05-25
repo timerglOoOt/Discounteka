@@ -76,19 +76,10 @@ class FirebaseManager {
         }
     }
 
-    func updateUser(user: User) async {
+    func updateUser(firstName: String, lastName: String) async {
         let userData: [String: Any] = [
-            "firstName": user.firstName,
-            "lastName": user.lastName,
-            "email": user.email,
-            "sex": user.sex,
-            "cards": user.cards.map { card in
-                return [
-                    "type": card.type == .qr,
-                    "name": card.name,
-                    "code": card.code
-                ]
-            }
+            "firstName": firstName,
+            "lastName": lastName
         ]
 
         do {

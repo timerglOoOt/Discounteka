@@ -1,10 +1,9 @@
 import Foundation
 
-class SettingsModuleBuilder: ModuleBuilder {
-    typealias ViewController = SettingsViewController
-
-    func build() -> SettingsViewController {
+class SettingsModuleBuilder {
+    func build(output: SignOutOutput) -> SettingsViewController {
         let viewModel = SettingsViewModel()
+        viewModel.delegate = output
         let controller = SettingsViewController(viewModel: viewModel)
         return controller
     }

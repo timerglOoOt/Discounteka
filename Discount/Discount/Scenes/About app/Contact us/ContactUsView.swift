@@ -47,7 +47,7 @@ private extension ContactUsView {
             make.height.equalTo(150)
         }
         sendMessageButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide).inset(40)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(24)
             make.centerX.equalTo(safeAreaLayoutGuide)
         }
     }

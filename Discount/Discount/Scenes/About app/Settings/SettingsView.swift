@@ -4,6 +4,7 @@ protocol SettingsViewProtocol: AnyObject {
     func systemThemeSwitchLabelTapped()
     func darkThemeSwitchLabelTapped()
     func notificationSwitchLabelTapped()
+    func signOutLabelTapped()
 }
 
 final class SettingsView: UIView {
@@ -45,12 +46,23 @@ final class SettingsView: UIView {
         stack.spacing = 16
         return stack
     }()
+
+    private lazy var signOutLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Выйти из аккаунта"
+        label.textColor = UIColor.hexStringToUIColor(hex: "E33A43")
+        label.font = .systemFont(ofSize: 22, weight: .regular)
+        label.isUserInteractionEnabled = true
+        return label
+    }()
+
     weak var delegate: SettingsViewProtocol?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         setupLayout()
+        setupGesture()
     }
 
     required init?(coder: NSCoder) {
@@ -63,6 +75,7 @@ private extension SettingsView {
         backgroundColor = UIColor(named: "backgroundColor")
         addSubview(themeStack)
         addSubview(notificationStack)
+        addSubview(signOutLabel)
 
         themeStack.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(safeAreaLayoutGuide).inset(16)
@@ -71,6 +84,19 @@ private extension SettingsView {
             make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
             make.top.equalTo(themeStack.snp.bottom).offset(24)
         }
+        signOutLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(24)
+            make.centerX.equalTo(safeAreaLayoutGuide)
+        }
+    }
+
+    func setupGesture() {
+        let signOutTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLableTap))
+        signOutLabel.addGestureRecognizer(signOutTapGesture)
+    }
+
+    @objc func handleLableTap(sender: UITapGestureRecognizer) {
+        delegate?.signOutLabelTapped()
     }
 }
 

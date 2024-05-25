@@ -1,6 +1,7 @@
 import Foundation
 
 class SettingsViewModel {
+    weak var delegate: SignOutOutput?
     func systemThemeSwitchLabelTapped() -> Bool {
         let newTheme: Theme = Theme.current == .system ? .light : .system
         newTheme.applyTheme()
@@ -17,5 +18,9 @@ class SettingsViewModel {
     func notificationSwitchLabelTapped() {
         // TODO: добавить уведомления
         print("Notification")
+    }
+
+    func signOutLabelTapped() {
+        delegate?.signedOutUser()
     }
 }

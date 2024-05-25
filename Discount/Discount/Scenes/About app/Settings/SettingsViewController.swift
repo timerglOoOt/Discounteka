@@ -41,6 +41,10 @@ private extension SettingsViewController {
 }
 
 extension SettingsViewController: SettingsViewProtocol {
+    func signOutLabelTapped() {
+        viewModel.signOutLabelTapped()
+    }
+
     func systemThemeSwitchLabelTapped() {
         let isEnabled = viewModel.systemThemeSwitchLabelTapped()
         settingsView.setDarkSwitchLabelAvailability(isEnabled: isEnabled)
