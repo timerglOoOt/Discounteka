@@ -45,7 +45,7 @@ private extension MainTableViewCell {
 
     func setupLayout() {
         contentView.backgroundColor = UIColor(named: "backgroundColor")
-
+        backgroundColor = UIColor(named: "backgroundColor")
         contentView.addSubview(stackView)
 
         stackView.snp.makeConstraints { make in
