@@ -75,6 +75,9 @@ private extension SignUpView {
     func setupLayout() {
         backgroundColor = UIColor(named: "backgroundColor")
         passwordCustomTextField.isSecureTextEntry = true
+        emailCustomTextField.autocapitalizationType = .none
+        passwordCustomTextField.textContentType = .password
+        emailCustomTextField.textContentType = .emailAddress
         addSubview(welcomeCustomeLabel)
         addSubview(textFieldsStack)
         addSubview(signUpCustomButton)
