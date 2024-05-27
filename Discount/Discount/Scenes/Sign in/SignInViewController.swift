@@ -32,8 +32,8 @@ extension SignInViewController: SignInViewProtocol {
     func signInButtonTapped() {
         guard let form = signInView.configureSignInForm() else {
             self.showAlert(
-                title: "Error",
-                message: "You are trying to send an empty field! Please enter the text."
+                title: "Error".localized(),
+                message: "You are trying to send an empty field! Please enter the text.".localized()
             )
             return }
         viewModel.signInButtonTapped(email: form.0, password: form.1)

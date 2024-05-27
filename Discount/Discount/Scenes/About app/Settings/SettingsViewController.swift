@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController {
 
 private extension SettingsViewController {
     func setupNavigationBar() {
-        let item = UICustomBackItem(titleLabel: "Настройки")
+        let item = UICustomBackItem(titleLabel: "Settings".localized())
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
         item.addGestureRecognizer(tapGesture)

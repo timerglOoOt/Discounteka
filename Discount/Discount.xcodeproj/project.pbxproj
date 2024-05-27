@@ -64,6 +64,8 @@
 		CE7D5F2F2BCEC1350005DAB9 /* CardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */; };
 		CE7D5F312BCEC3950005DAB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F302BCEC3950005DAB9 /* MainView.swift */; };
 		CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F322BCECF350005DAB9 /* MainViewController.swift */; };
+		CE875DD62C04B33C003F0D39 /* StringLocalizableExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE875DD52C04B33C003F0D39 /* StringLocalizableExtention.swift */; };
+		CE875DD92C04B3C0003F0D39 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE875DDB2C04B3C0003F0D39 /* Localizable.strings */; };
 		CEAC2C5B2C025CBE007336A0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5A2C025CBE007336A0 /* ProfileViewController.swift */; };
 		CEAC2C5D2C025CD4007336A0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5C2C025CD4007336A0 /* ProfileView.swift */; };
 		CEAC2C5F2C025CE7007336A0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5E2C025CE7007336A0 /* ProfileViewModel.swift */; };
@@ -157,6 +159,14 @@
 		CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypes.swift; sourceTree = "<group>"; };
 		CE7D5F302BCEC3950005DAB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE7D5F322BCECF350005DAB9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE875DD52C04B33C003F0D39 /* StringLocalizableExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalizableExtention.swift; sourceTree = "<group>"; };
+		CE875DDA2C04B3C0003F0D39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE875DDC2C04B3E3003F0D39 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE875DDD2C04C9D6003F0D39 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE875DDE2C04CA10003F0D39 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE875DDF2C04CA47003F0D39 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE875DE02C04CA60003F0D39 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE875DE12C04CA94003F0D39 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEAC2C5A2C025CBE007336A0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CEAC2C5C2C025CD4007336A0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CEAC2C5E2C025CE7007336A0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -321,6 +331,7 @@
 				CE1C45FB2C007D5C0057809E /* UIBlurLoader.swift */,
 				CE1C45FD2C007DD10057809E /* UIViewLoaderExtensoin.swift */,
 				CEAC2C6C2C026C1B007336A0 /* UICustomSwitchLabel.swift */,
+				CE875DD52C04B33C003F0D39 /* StringLocalizableExtention.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 				CE3DEC752BC9581C00B13324 /* Assets.xcassets */,
 				CE3DEC772BC9581C00B13324 /* LaunchScreen.storyboard */,
 				CE3DEC7A2BC9581C00B13324 /* Info.plist */,
+				CE875DDB2C04B3C0003F0D39 /* Localizable.strings */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -572,6 +584,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				"zh-Hant",
+				de,
+				fr,
+				es,
+				ja,
 			);
 			mainGroup = CE3DEC602BC9581B00B13324;
 			packageReferences = (
@@ -597,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3DEC792BC9581C00B13324 /* LaunchScreen.storyboard in Resources */,
+				CE875DD92C04B3C0003F0D39 /* Localizable.strings in Resources */,
 				CE3DEC762BC9581C00B13324 /* Assets.xcassets in Resources */,
 				CE5E2ECB2C00F08500B0F78B /* GoogleService-Info.plist in Resources */,
 			);
@@ -680,6 +699,7 @@
 				CEAC2C692C0263DE007336A0 /* Theme.swift in Sources */,
 				CE3DECB02BC96F3500B13324 /* UICustomLabel.swift in Sources */,
 				CE48EE952BCFE5C7006C33F5 /* AboutAppViewController.swift in Sources */,
+				CE875DD62C04B33C003F0D39 /* StringLocalizableExtention.swift in Sources */,
 				CEC1A1542BD662C700080CEC /* NewCardModuleBuilder.swift in Sources */,
 				CEC1A1502BD65DA200080CEC /* NewCardViewController.swift in Sources */,
 				CE356EFF2BFE405F005B4376 /* SignInViewController.swift in Sources */,
@@ -751,6 +771,20 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		CE875DDB2C04B3C0003F0D39 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE875DDA2C04B3C0003F0D39 /* en */,
+				CE875DDC2C04B3E3003F0D39 /* ru */,
+				CE875DDD2C04C9D6003F0D39 /* zh-Hant */,
+				CE875DDE2C04CA10003F0D39 /* de */,
+				CE875DDF2C04CA47003F0D39 /* fr */,
+				CE875DE02C04CA60003F0D39 /* es */,
+				CE875DE12C04CA94003F0D39 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -758,6 +792,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -818,6 +853,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

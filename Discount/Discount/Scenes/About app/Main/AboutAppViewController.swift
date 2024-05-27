@@ -22,7 +22,7 @@ class AboutAppViewController: UIViewController {
 
 extension AboutAppViewController {
     private func setupNavigationBar() {
-        let item = UICustomBackItem(titleLabel: "О приложении")
+        let item = UICustomBackItem(titleLabel: "About app".localized())
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
         item.addGestureRecognizer(tapGesture)

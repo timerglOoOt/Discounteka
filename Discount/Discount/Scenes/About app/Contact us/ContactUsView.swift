@@ -6,11 +6,11 @@ protocol ContactUsViewProtocol: AnyObject {
 
 final class ContactUsView: UIView {
     private lazy var contactUsNameLabel: UICustomLabel = UICustomLabel(
-        labelText: "Ваше мнение очень важно для нас",
+        labelText: "Your opinion is very important to us".localized(),
         alignment: .center)
-    private lazy var messageTextField = UICustomTextView(placeholderText: "Введите сообщение...")
+    private lazy var messageTextField = UICustomTextView(placeholderText: "Enter message...".localized())
     private lazy var sendMessageButton: UICustomButton = {
-        let button = UICustomButton("Отправить")
+        let button = UICustomButton("Send message".localized())
         button.addAction(UIAction( handler: { [weak self] _ in
             guard let message = self?.messageTextField.text else { return }
             self?.delegate?.sendButtonTapped(message: message)

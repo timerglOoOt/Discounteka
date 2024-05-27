@@ -78,11 +78,6 @@ extension MainTableViewCell {
         cardNameLabel.text = nil
     }
 
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0))
-//    }
-
     private func generateImage(from string: String, cardType: AVMetadataObject.ObjectType) -> UIImage? {
         let data = Data(string.utf8)
         var filter: CIFilter = CIFilter()

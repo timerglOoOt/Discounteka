@@ -38,7 +38,7 @@ struct ScannerView: View {
                         isPresentingScanner = false
                         delegate?.dismissScanner()
                     }) {
-                        Text("Закрыть")
+                        Text("Close".localized())
                             .padding()
                             .background(Color.black.opacity(0.5))
                             .foregroundColor(.white)

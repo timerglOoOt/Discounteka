@@ -2,19 +2,19 @@ import UIKit
 
 final class AboutAppView: UIView {
     private lazy var profileAppInfoLabel: UICustomInfoLabel = {
-        let label = UICustomInfoLabel(imageName: "star.svg", text: "Профиль")
+        let label = UICustomInfoLabel(imageName: "star.svg", text: "Profile".localized())
         label.tag = 1
         return label
     }()
 
     private lazy var settingsAppInfoLabel: UICustomInfoLabel = {
-        let label = UICustomInfoLabel(imageName: "share.svg", text: "Настройки")
+        let label = UICustomInfoLabel(imageName: "share.svg", text: "Settings".localized())
         label.tag = 2
         return label
     }()
 
     private lazy var contactAppInfoLabel: UICustomInfoLabel = {
-        let label = UICustomInfoLabel(imageName: "contact.svg", text: "Свяжитесь с нами")
+        let label = UICustomInfoLabel(imageName: "contact.svg", text: "Contact us".localized())
         label.tag = 3
         return label
     }()

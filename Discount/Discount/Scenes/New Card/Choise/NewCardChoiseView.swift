@@ -3,11 +3,11 @@ import SnapKit
 
 final class NewCardChoiseView: UIView {
     private lazy var newCardsNameLabel: UICustomLabel = UICustomLabel(
-        labelText: "Какую карту вы хотели бы добавить?",
+        labelText: "Which card would you like to add?".localized(),
         alignment: .left)
 
-    private lazy var cardWithQRInfoLabel = UICustomInfoLabel(imageName: "scanQR.svg", text: "С QR-кодом")
-    private lazy var cardWithBarcodeInfoLabel = UICustomInfoLabel(imageName: "scanBarcode.svg", text: "Со шрихкодом")
+    private lazy var cardWithQRInfoLabel = UICustomInfoLabel(imageName: "scanQR.svg", text: "QR code".localized())
+    private lazy var cardWithBarcodeInfoLabel = UICustomInfoLabel(imageName: "scanBarcode.svg", text: "Barcode".localized())
 
     private lazy var infoStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [

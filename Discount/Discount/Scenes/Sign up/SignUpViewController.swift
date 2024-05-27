@@ -28,8 +28,8 @@ extension SignUpViewController: SignUpViewProtocol {
     func signUpButtonTapped() {
         guard let pair = signUpView.configureSignUpForm() else {
             self.showAlert(
-                title: "Error",
-                message: "You are trying to send an empty field! Please enter the text."
+                title: "Error".localized(),
+                message: "You are trying to send an empty field! Please enter the text.".localized()
             )
             return }
         viewModel.signUpButtonTapped(user: pair.0, password: pair.1)
