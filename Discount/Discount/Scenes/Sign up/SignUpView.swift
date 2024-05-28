@@ -86,7 +86,7 @@ private extension SignUpView {
         }
         textFieldsStack.snp.makeConstraints { make in
             make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
-            make.top.equalTo(welcomeCustomeLabel.snp.bottom).offset(130)
+            make.top.equalTo(welcomeCustomeLabel.snp.bottom).offset(64)
         }
         signUpCustomButton.snp.makeConstraints { make in
             make.centerX.equalTo(safeAreaLayoutGuide)
