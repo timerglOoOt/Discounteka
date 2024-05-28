@@ -1,0 +1,5 @@
+"id.textFields.name" = "firstName";
+"id.textFields.surname" = "lastName";
+"id.textFields.email" = "email";
+"id.textFields.info" = "info";
+"id.buttons.signUp" = "signUp";

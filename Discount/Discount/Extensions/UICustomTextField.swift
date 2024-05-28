@@ -4,6 +4,7 @@ import UIKit
 
 final class UICustomTextField: UITextField, UITextFieldDelegate {
     private let defaultHeight: CGFloat = 60.0
+    weak var externalDelegate: UITextFieldDelegate?
 
     override var intrinsicContentSize: CGSize {
         return CGSize(width: super.intrinsicContentSize.width, height: defaultHeight)
@@ -32,14 +33,17 @@ extension UICustomTextField {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.hexStringToUIColor(hex: "2B83FF").cgColor
+        externalDelegate?.textFieldDidBeginEditing?(textField)
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.hexStringToUIColor(hex: "B8B8B8").cgColor
+        externalDelegate?.textFieldDidEndEditing?(textField)
     }
     public override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         return CGRect(x: bounds.width - 40, y: 0, width: 40, height: bounds.height)
     }
+
     @discardableResult
     func isEmptyTextField() -> Bool {
         if self.text?.isEmpty ?? true {
@@ -63,6 +67,7 @@ private extension UICustomTextField {
     @objc private func doneButtonTapped() { resignFirstResponder() }
 
     func configureTextField(placeholderText: String) {
+        self.delegate = self
         placeholder = placeholderText
         font = .systemFont(ofSize: 22)
         layer.cornerRadius = 14

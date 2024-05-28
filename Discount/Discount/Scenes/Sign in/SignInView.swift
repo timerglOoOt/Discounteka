@@ -107,8 +107,15 @@ private extension SignInView {
         emailCustomTextField.autocapitalizationType = .none
         passwordCustomTextField.textContentType = .password
         emailCustomTextField.textContentType = .emailAddress
-        emailCustomTextField.delegate = self
-        passwordCustomTextField.delegate = self
+
+        emailCustomTextField.externalDelegate = self
+        passwordCustomTextField.externalDelegate = self
+
+        emailCustomTextField.returnKeyType = .next
+        passwordCustomTextField.returnKeyType = .done
+
+        emailCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
+        passwordCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
     }
 }
 

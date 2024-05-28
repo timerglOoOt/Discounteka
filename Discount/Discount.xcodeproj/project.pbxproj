@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE15026E2C0678160090DAA9 /* UIdentifiers.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE15026D2C0678160090DAA9 /* UIdentifiers.strings */; };
 		CE1C45FC2C007D5C0057809E /* UIBlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C45FB2C007D5C0057809E /* UIBlurLoader.swift */; };
 		CE1C45FE2C007DD10057809E /* UIViewLoaderExtensoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C45FD2C007DD10057809E /* UIViewLoaderExtensoin.swift */; };
 		CE206A9D2BFDE4EA000A8336 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE206A9C2BFDE4EA000A8336 /* FirebaseAuth */; };
@@ -106,6 +107,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE15026D2C0678160090DAA9 /* UIdentifiers.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = UIdentifiers.strings; sourceTree = "<group>"; };
 		CE1C45FB2C007D5C0057809E /* UIBlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurLoader.swift; sourceTree = "<group>"; };
 		CE1C45FD2C007DD10057809E /* UIViewLoaderExtensoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLoaderExtensoin.swift; sourceTree = "<group>"; };
 		CE206AAB2BFDECF1000A8336 /* NewCardChoiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardChoiseView.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 			children = (
 				CE875DFD2C05EAB2003F0D39 /* Strings+Generated.swift */,
 				CE875DDB2C04B3C0003F0D39 /* Localizable.strings */,
+				CE15026D2C0678160090DAA9 /* UIdentifiers.strings */,
 			);
 			path = SwiftGen;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 			files = (
 				CE3DEC792BC9581C00B13324 /* LaunchScreen.storyboard in Resources */,
 				CE875DD92C04B3C0003F0D39 /* Localizable.strings in Resources */,
+				CE15026E2C0678160090DAA9 /* UIdentifiers.strings in Resources */,
 				CE3DEC762BC9581C00B13324 /* Assets.xcassets in Resources */,
 				CE5E2ECB2C00F08500B0F78B /* GoogleService-Info.plist in Resources */,
 			);

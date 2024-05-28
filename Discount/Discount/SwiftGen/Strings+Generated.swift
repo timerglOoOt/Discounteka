@@ -10,6 +10,22 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Strings {
+    public enum Id {
+      public enum Buttons {
+        /// signUp
+        public static let signUp = Strings.tr("UIdentifiers", "id.buttons.signUp", fallback: "signUp")
+      }
+      public enum TextFields {
+        /// email
+        public static let email = Strings.tr("UIdentifiers", "id.textFields.email", fallback: "email")
+        /// info
+        public static let info = Strings.tr("UIdentifiers", "id.textFields.info", fallback: "info")
+        /// firstName
+        public static let name = Strings.tr("UIdentifiers", "id.textFields.name", fallback: "firstName")
+        /// lastName
+        public static let surname = Strings.tr("UIdentifiers", "id.textFields.surname", fallback: "lastName")
+      }
+    }
   ///  barcode
   public static let barcode = Strings.tr("Localizable", " barcode", fallback: " barcode")
   ///  My cards
