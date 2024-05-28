@@ -59,6 +59,7 @@ final class SignInView: UIView {
 
         setupLayout()
         setupGesture()
+        setupTextFieldsDelegate()
     }
 
     required init?(coder: NSCoder) {
@@ -104,9 +105,14 @@ private extension SignInView {
     @objc func handleLableTap(sender: UITapGestureRecognizer) {
         delegate?.signUpLabelTapped()
     }
+
+    func setupTextFieldsDelegate() {
+        emailCustomTextField.delegate = self
+        passwordCustomTextField.delegate = self
+    }
 }
 
-extension SignInView {
+extension SignInView: UITextFieldDelegate {
     func configureSignInForm() -> (String?, String?)? {
         let email = emailCustomTextField.isEmptyTextField()
         let password = passwordCustomTextField.isEmptyTextField()
@@ -114,5 +120,18 @@ extension SignInView {
             return nil
         }
         return (emailCustomTextField.text, passwordCustomTextField.text)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case emailCustomTextField:
+                passwordCustomTextField.becomeFirstResponder()
+            case passwordCustomTextField:
+                textField.resignFirstResponder()
+                delegate?.signInButtonTapped()
+            default:
+                break
+        }
+        return true
     }
 }

@@ -64,6 +64,7 @@ final class SignUpView: UIView {
 
         setupLayout()
         setupGesture()
+        setupTextFieldsDelegate()
     }
 
     required init?(coder: NSCoder) {
@@ -89,7 +90,7 @@ private extension SignUpView {
         }
         textFieldsStack.snp.makeConstraints { make in
             make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
-            make.centerY.equalTo(safeAreaLayoutGuide)
+            make.top.equalTo(welcomeCustomeLabel.snp.bottom).offset(130)
         }
         signUpCustomButton.snp.makeConstraints { make in
             make.centerX.equalTo(safeAreaLayoutGuide)
@@ -109,9 +110,16 @@ private extension SignUpView {
     @objc func handleLableTap(sender: UITapGestureRecognizer) {
         delegate?.enterLabelTapped()
     }
+
+    func setupTextFieldsDelegate() {
+        firstNameCustomTextField.delegate = self
+        lastNameCustomTextField.delegate = self
+        emailCustomTextField.delegate = self
+        passwordCustomTextField.delegate = self
+    }
 }
 
-extension SignUpView {
+extension SignUpView: UITextFieldDelegate {
     func configureSignUpForm() -> (User, String)? {
         let email = emailCustomTextField.isEmptyTextField()
         let password = passwordCustomTextField.isEmptyTextField()
@@ -126,5 +134,22 @@ extension SignUpView {
             passwordCustomTextField.text ?? "")
 
         return form
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case firstNameCustomTextField:
+                lastNameCustomTextField.becomeFirstResponder()
+            case lastNameCustomTextField:
+                emailCustomTextField.becomeFirstResponder()
+            case emailCustomTextField:
+                passwordCustomTextField.becomeFirstResponder()
+            case passwordCustomTextField:
+                textField.resignFirstResponder()
+                delegate?.signUpButtonTapped()
+            default:
+                break
+            }
+        return true
     }
 }
