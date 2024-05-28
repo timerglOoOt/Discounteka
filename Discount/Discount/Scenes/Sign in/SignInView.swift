@@ -8,13 +8,13 @@ protocol SignInViewProtocol: AnyObject {
 
 final class SignInView: UIView {
     private lazy var welcomeCustomeLabel = UICustomLabel(
-        labelText: "Discounteka is a person's best friend!".localized(),
+        labelText: Strings.discountekaIsAPersonSBestFriend,
         alignment: .center)
-    private lazy var emailCustomTextField = UICustomTextField(placeholderText: "Email".localized())
-    private lazy var passwordCustomTextField = UICustomTextField(placeholderText: "Password".localized())
+    private lazy var emailCustomTextField = UICustomTextField(placeholderText: Strings.email)
+    private lazy var passwordCustomTextField = UICustomTextField(placeholderText: Strings.password)
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Don't you have an account yet?".localized()
+        label.text = Strings.donTYouHaveAnAccountYet
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor.hexStringToUIColor(hex: "DBD7D7")
         return label
@@ -22,7 +22,7 @@ final class SignInView: UIView {
 
     private lazy var signUpLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sign up".localized()
+        label.text = Strings.signUp
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = UIColor.hexStringToUIColor(hex: "2B83FF")
         label.isUserInteractionEnabled = true
@@ -46,7 +46,7 @@ final class SignInView: UIView {
     }()
 
     private lazy var signUpCustomButton: UICustomButton = {
-        let button = UICustomButton("Sign in".localized())
+        let button = UICustomButton(Strings.signIn)
         button.addAction(UIAction { [weak self] _ in
             self?.delegate?.signInButtonTapped()
         }, for: .touchUpInside)

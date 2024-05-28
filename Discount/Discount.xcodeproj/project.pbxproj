@@ -37,7 +37,6 @@
 		CE3DEC8E2BC9581C00B13324 /* DiscountUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC8D2BC9581C00B13324 /* DiscountUITests.swift */; };
 		CE3DEC902BC9581C00B13324 /* DiscountUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DEC8F2BC9581C00B13324 /* DiscountUITestsLaunchTests.swift */; };
 		CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE3DEC9E2BC95C2600B13324 /* SnapKit */; };
-		CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = CE3DECA12BC95E6600B13324 /* Swinject */; };
 		CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECA52BC96A2900B13324 /* UIColor.swift */; };
 		CE3DECA82BC96B4700B13324 /* UICustomInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECA72BC96B4700B13324 /* UICustomInfoLabel.swift */; };
 		CE3DECAA2BC96C9100B13324 /* UICustomBackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DECA92BC96C9100B13324 /* UICustomBackItem.swift */; };
@@ -66,6 +65,7 @@
 		CE7D5F332BCECF350005DAB9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D5F322BCECF350005DAB9 /* MainViewController.swift */; };
 		CE875DD62C04B33C003F0D39 /* StringLocalizableExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE875DD52C04B33C003F0D39 /* StringLocalizableExtention.swift */; };
 		CE875DD92C04B3C0003F0D39 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE875DDB2C04B3C0003F0D39 /* Localizable.strings */; };
+		CE875DFE2C05EAB2003F0D39 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE875DFD2C05EAB2003F0D39 /* Strings+Generated.swift */; };
 		CEAC2C5B2C025CBE007336A0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5A2C025CBE007336A0 /* ProfileViewController.swift */; };
 		CEAC2C5D2C025CD4007336A0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5C2C025CD4007336A0 /* ProfileView.swift */; };
 		CEAC2C5F2C025CE7007336A0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC2C5E2C025CE7007336A0 /* ProfileViewModel.swift */; };
@@ -167,6 +167,7 @@
 		CE875DDF2C04CA47003F0D39 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE875DE02C04CA60003F0D39 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE875DE12C04CA94003F0D39 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE875DFD2C05EAB2003F0D39 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CEAC2C5A2C025CBE007336A0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CEAC2C5C2C025CD4007336A0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CEAC2C5E2C025CE7007336A0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -197,7 +198,6 @@
 				CE206AA12BFDE4EA000A8336 /* FirebaseDatabase in Frameworks */,
 				CE4306E22BF62847009D8577 /* CodeScanner in Frameworks */,
 				CE3DEC9F2BC95C2600B13324 /* SnapKit in Frameworks */,
-				CE3DECA22BC95E6600B13324 /* Swinject in Frameworks */,
 				CE206A9D2BFDE4EA000A8336 /* FirebaseAuth in Frameworks */,
 				CE206AA52BFDE4EA000A8336 /* FirebaseStorage in Frameworks */,
 				CE206A9F2BFDE4EA000A8336 /* FirebaseAuthCombine-Community in Frameworks */,
@@ -277,6 +277,7 @@
 		CE3DEC6B2BC9581B00B13324 /* Discount */ = {
 			isa = PBXGroup;
 			children = (
+				CE875DE72C05D5FA003F0D39 /* SwiftGen */,
 				CE56B28E2BDB6BB200132A10 /* Services */,
 				CE48EE7E2BCFC729006C33F5 /* Coordinators */,
 				CE7D5F2D2BCEC0F70005DAB9 /* Models */,
@@ -383,7 +384,6 @@
 				CE3DEC752BC9581C00B13324 /* Assets.xcassets */,
 				CE3DEC772BC9581C00B13324 /* LaunchScreen.storyboard */,
 				CE3DEC7A2BC9581C00B13324 /* Info.plist */,
-				CE875DDB2C04B3C0003F0D39 /* Localizable.strings */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -429,6 +429,15 @@
 				CEAC2C682C0263DE007336A0 /* Theme.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CE875DE72C05D5FA003F0D39 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				CE875DFD2C05EAB2003F0D39 /* Strings+Generated.swift */,
+				CE875DDB2C04B3C0003F0D39 /* Localizable.strings */,
+			);
+			path = SwiftGen;
 			sourceTree = "<group>";
 		};
 		CEC1A14E2BD65D8900080CEC /* New Card */ = {
@@ -506,7 +515,6 @@
 			name = Discount;
 			packageProductDependencies = (
 				CE3DEC9E2BC95C2600B13324 /* SnapKit */,
-				CE3DECA12BC95E6600B13324 /* Swinject */,
 				CE4306E12BF62847009D8577 /* CodeScanner */,
 				CE206A9C2BFDE4EA000A8336 /* FirebaseAuth */,
 				CE206A9E2BFDE4EA000A8336 /* FirebaseAuthCombine-Community */,
@@ -594,7 +602,6 @@
 			mainGroup = CE3DEC602BC9581B00B13324;
 			packageReferences = (
 				CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */,
 				CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				CE206A9B2BFDE4EA000A8336 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
@@ -673,6 +680,7 @@
 				CEAC2C5B2C025CBE007336A0 /* ProfileViewController.swift in Sources */,
 				CEFB23DA2C01F94300762BD8 /* ContactUsViewModel.swift in Sources */,
 				CE3DECA62BC96A2900B13324 /* UIColor.swift in Sources */,
+				CE875DFE2C05EAB2003F0D39 /* Strings+Generated.swift in Sources */,
 				CE356EFD2BFE4056005B4376 /* SignInView.swift in Sources */,
 				CEFB23DC2C01FC4100762BD8 /* Message.swift in Sources */,
 				CEC1A1522BD65DB200080CEC /* NewCardView.swift in Sources */,
@@ -1094,14 +1102,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		CE4306E02BF62847009D8577 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
@@ -1142,11 +1142,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3DEC9D2BC95C2600B13324 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		CE3DECA12BC95E6600B13324 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE3DECA02BC95E6600B13324 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
 		};
 		CE4306E12BF62847009D8577 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;

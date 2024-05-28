@@ -6,9 +6,9 @@ protocol ProfileViewProtocol: AnyObject {
 }
 
 final class ProfileView: UIView {
-    private lazy var profileLabel = UICustomLabel(labelText: "You can change your personal data".localized(), alignment: .center)
-    private lazy var firstNameTextField = UICustomTextField(placeholderText: "Name".localized())
-    private lazy var lastNameTextField = UICustomTextField(placeholderText: "Surname".localized())
+    private lazy var profileLabel = UICustomLabel(labelText: Strings.youCanChangeYourPersonalData, alignment: .center)
+    private lazy var firstNameTextField = UICustomTextField(placeholderText: Strings.name)
+    private lazy var lastNameTextField = UICustomTextField(placeholderText: Strings.surname)
 
     private lazy var textFieldsStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [firstNameTextField, lastNameTextField])
@@ -26,7 +26,7 @@ final class ProfileView: UIView {
     }()
 
     private lazy var saveButton: UICustomButton = {
-        let button = UICustomButton("Save".localized())
+        let button = UICustomButton(Strings.save)
         button.addAction(UIAction { [weak self] _ in
             let first = self?.firstNameTextField.isEmptyTextField()
             let second = self?.lastNameTextField.isEmptyTextField()

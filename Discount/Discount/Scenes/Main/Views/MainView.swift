@@ -20,7 +20,7 @@ final class MainView: UIView {
     }()
 
     private lazy var addButton: UICustomButton = {
-        let button = UICustomButton("Add card".localized())
+        let button = UICustomButton(Strings.addCard)
         button.addAction(UIAction(handler: { _ in
             self.delegate?.addButtonTapped()
         }), for: .touchUpInside)

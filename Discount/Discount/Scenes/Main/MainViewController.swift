@@ -81,7 +81,7 @@ extension MainViewController {
 
         lazy var titleLabel: UILabel = {
             let label = UILabel()
-            label.text = "  My cards".localized()
+            label.text = Strings.myCards
             label.textColor = UIColor(named: "textColor")
             label.font = .systemFont(ofSize: 17, weight: .semibold)
             return label

@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
 }
 private extension ProfileViewController {
     func setupNavigationBar() {
-        let item = UICustomBackItem(titleLabel: "Contact us".localized())
+        let item = UICustomBackItem(titleLabel: Strings.contactUs)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
         item.addGestureRecognizer(tapGesture)
@@ -40,7 +40,7 @@ private extension ProfileViewController {
 
 extension ProfileViewController: ProfileViewProtocol {
     func showAlert() {
-        self.showCustomAlert(title: "Error".localized(), message: "You are trying to send an empty field! Please enter the text.".localized())
+        self.showCustomAlert(title: Strings.error, message: Strings.youAreTryingToSendAnEmptyFieldPleaseEnterTheText)
     }
 
     func saveButtonTapped(firstName: String, lastName: String) {

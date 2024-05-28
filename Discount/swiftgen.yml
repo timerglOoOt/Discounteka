@@ -1,0 +1,13 @@
+input_dir: Discount/SwiftGen/en.lproj
+output_dir: Discount/SwiftGen
+
+strings:
+  inputs:
+    - Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: Strings+Generated.swift
+      params:
+        enumName: Strings
+        publicAccess: true
+        usesDefaults: true

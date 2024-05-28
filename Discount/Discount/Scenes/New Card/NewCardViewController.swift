@@ -39,7 +39,7 @@ class NewCardViewController: UIViewController {
 
 extension NewCardViewController {
     private func setupNavigationBar() {
-        let titleLabel = "Card with".localized() + (cardType == .qr ? " QR code".localized() : " barcode".localized())
+        let titleLabel = Strings.cardWith + (cardType == .qr ? Strings.qrCode : Strings.barcode)
         let item = UICustomBackItem(titleLabel: titleLabel)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
@@ -89,8 +89,8 @@ extension NewCardViewController: NewCardSceneDelegate {
     func saveButtonTapped() {
         if newCardView.checkIfTextFieldsIsEmpty() {
             self.showAlert(
-                title: "Error".localized(),
-                message: "You are trying to send an empty field! Please enter the text.".localized()
+                title: Strings.error,
+                message: Strings.youAreTryingToSendAnEmptyFieldPleaseEnterTheText
             )
             return
         }

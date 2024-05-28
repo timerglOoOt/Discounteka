@@ -21,7 +21,7 @@ class NewCardChoiseViewController: UIViewController {
 
 extension NewCardChoiseViewController {
     private func setupNavigationBar() {
-        let item = UICustomBackItem(titleLabel: "New card".localized())
+        let item = UICustomBackItem(titleLabel: Strings.newCard)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
         item.addGestureRecognizer(tapGesture)

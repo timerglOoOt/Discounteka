@@ -7,13 +7,13 @@ protocol NewCardSceneDelegate: AnyObject {
 }
 
 final class NewCardView: UIView {
-    private lazy var enterCardNumberCustomLabel = UICustomLabel(labelText: "You can enter the card number manually".localized(), alignment: .center)
-    lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: "Enter the number...".localized())
-    private lazy var scanQRCustomLabel = UICustomLabel(labelText: "or scan it".localized(), alignment: .center)
-    private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: "Enter the name of the card".localized(), alignment: .center)
-    private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: "Enter the name...".localized())
+    private lazy var enterCardNumberCustomLabel = UICustomLabel(labelText: Strings.youCanEnterTheCardNumberManually, alignment: .center)
+    lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: Strings.enterTheNumber)
+    private lazy var scanQRCustomLabel = UICustomLabel(labelText: Strings.orScanIt, alignment: .center)
+    private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: Strings.enterTheNameOfTheCard, alignment: .center)
+    private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: Strings.enterTheName)
     private lazy var saveCustomButton: UICustomButton = {
-        let button = UICustomButton("Save".localized())
+        let button = UICustomButton(Strings.save)
         button.addAction(UIAction(handler: { [weak self] _ in
             self?.delegate?.saveButtonTapped()
         }), for: .touchUpInside)
@@ -21,7 +21,7 @@ final class NewCardView: UIView {
     }()
 
     private lazy var scanQRCustomBlueButton: UICustomGrayButton = {
-        let button = UICustomGrayButton("Scan card".localized())
+        let button = UICustomGrayButton(Strings.scanCard)
         let action = UIAction { [weak self] _ in
             self?.delegate?.scanButtonTapped()
         }

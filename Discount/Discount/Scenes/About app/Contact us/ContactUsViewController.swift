@@ -28,7 +28,7 @@ class ContactUsViewController: UIViewController {
 
 private extension ContactUsViewController {
     func setupNavigationBar() {
-        let item = UICustomBackItem(titleLabel: "Contact us".localized())
+        let item = UICustomBackItem(titleLabel: Strings.contactUs)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
         item.addGestureRecognizer(tapGesture)
@@ -45,8 +45,8 @@ extension ContactUsViewController: ContactUsViewProtocol {
     func sendButtonTapped(message: String) {
         if contactUsView.checkTextViewIsEmpty() {
             self.showCustomAlert(
-                title: "Error".localized(),
-                message: "You are trying to send an empty message! Please enter the text.".localized()
+                title: Strings.error,
+                message: Strings.youAreTryingToSendAnEmptyFieldPleaseEnterTheText
             )
             return
         }

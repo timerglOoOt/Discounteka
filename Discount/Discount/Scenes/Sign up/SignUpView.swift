@@ -8,15 +8,15 @@ protocol SignUpViewProtocol: AnyObject {
 
 final class SignUpView: UIView {
     private lazy var welcomeCustomeLabel = UICustomLabel(
-        labelText: "Discounteka is a person's best friend!".localized(),
+        labelText: Strings.discountekaIsAPersonSBestFriend,
         alignment: .center)
-    private lazy var firstNameCustomTextField = UICustomTextField(placeholderText: "Name".localized())
-    private lazy var lastNameCustomTextField = UICustomTextField(placeholderText: "Surname".localized())
-    private lazy var emailCustomTextField = UICustomTextField(placeholderText: "Email".localized())
-    private lazy var passwordCustomTextField = UICustomTextField(placeholderText: "Password".localized())
+    private lazy var firstNameCustomTextField = UICustomTextField(placeholderText: Strings.name)
+    private lazy var lastNameCustomTextField = UICustomTextField(placeholderText: Strings.surname)
+    private lazy var emailCustomTextField = UICustomTextField(placeholderText: Strings.email)
+    private lazy var passwordCustomTextField = UICustomTextField(placeholderText: Strings.password)
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Already have an account?".localized()
+        label.text = Strings.alreadyHaveAnAccount
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textColor = UIColor.hexStringToUIColor(hex: "DBD7D7")
         return label
@@ -24,7 +24,7 @@ final class SignUpView: UIView {
 
     private lazy var enterLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sign in".localized()
+        label.text = Strings.signIn
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = UIColor.hexStringToUIColor(hex: "2B83FF")
         label.isUserInteractionEnabled = true
@@ -50,7 +50,7 @@ final class SignUpView: UIView {
     }()
 
     private lazy var signUpCustomButton: UICustomButton = {
-        let button = UICustomButton("Sign up".localized())
+        let button = UICustomButton(Strings.signUp)
         button.addAction(UIAction { [weak self] _ in
             self?.delegate?.signUpButtonTapped()
         }, for: .touchUpInside)

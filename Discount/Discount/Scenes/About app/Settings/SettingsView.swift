@@ -10,14 +10,14 @@ protocol SettingsViewProtocol: AnyObject {
 final class SettingsView: UIView {
     private let isSystem = UserDefaults.standard.string(forKey: "currentTheme") == "system"
     private let isDark = UserDefaults.standard.string(forKey: "currentTheme") == "dark"
-    private lazy var themeLabel = UICustomLabel(labelText: "Theme".localized(), alignment: .left)
+    private lazy var themeLabel = UICustomLabel(labelText: Strings.theme, alignment: .left)
     private lazy var systemThemeSwitchLabel = UICustomSwitchLabel(
-        text: "System theme".localized(), isOn: isSystem, isEnabled: true,
+        text: Strings.systemTheme, isOn: isSystem, isEnabled: true,
         action: UIAction { [weak self] _ in
             self?.delegate?.systemThemeSwitchLabelTapped()
     })
     private lazy var darkThemeSwitchLabel = UICustomSwitchLabel(
-        text: "Dark theme".localized(), isOn: isDark, isEnabled: !isSystem,
+        text: Strings.darkTheme, isOn: isDark, isEnabled: !isSystem,
         action: UIAction { [weak self] _ in
             self?.delegate?.darkThemeSwitchLabelTapped()
     })
@@ -34,9 +34,9 @@ final class SettingsView: UIView {
         return stack
     }()
 
-    private lazy var notificationLabel = UICustomLabel(labelText: "Notifications".localized(), alignment: .left)
+    private lazy var notificationLabel = UICustomLabel(labelText: Strings.notifications, alignment: .left)
     private lazy var notificationSwitchLabel = UICustomSwitchLabel(
-        text: "Allow notifications".localized(), isOn: false, isEnabled: true,
+        text: Strings.allowNotifications, isOn: false, isEnabled: true,
         action: UIAction { [weak self] _ in
             self?.delegate?.notificationSwitchLabelTapped()
     })
@@ -49,7 +49,7 @@ final class SettingsView: UIView {
 
     private lazy var signOutLabel: UILabel = {
         let label = UILabel()
-        label.text = "Log out".localized()
+        label.text = Strings.logOut
         label.textColor = UIColor.hexStringToUIColor(hex: "E33A43")
         label.font = .systemFont(ofSize: 22, weight: .regular)
         label.isUserInteractionEnabled = true
