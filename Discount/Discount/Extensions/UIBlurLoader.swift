@@ -1,6 +1,6 @@
 import UIKit
 
-class UIBlurLoader: UIView {
+final class UIBlurLoader: UIView {
     private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)

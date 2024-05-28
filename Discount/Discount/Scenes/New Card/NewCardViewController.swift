@@ -5,7 +5,7 @@ import SnapKit
 import CodeScanner
 import AVFoundation
 
-class NewCardViewController: UIViewController {
+final class NewCardViewController: UIViewController {
     private let newCardView = NewCardView(frame: .zero)
     let viewModel: NewCardViewModel
     private var cancellable: AnyCancellable?
@@ -37,7 +37,7 @@ class NewCardViewController: UIViewController {
     }
 }
 
-extension NewCardViewController {
+private extension NewCardViewController {
     private func setupNavigationBar() {
         let titleLabel = Strings.cardWith + (cardType == .qr ? Strings.qrCode : Strings.barcode)
         let item = UICustomBackItem(titleLabel: titleLabel)
@@ -50,10 +50,6 @@ extension NewCardViewController {
 
     @objc func handleBackTap() {
         navigationController?.popViewController(animated: true)
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
 }
 
@@ -80,6 +76,10 @@ extension NewCardViewController: ScannerViewProtocol {
             hostingController.view.removeFromSuperview()
             hostingController.removeFromParent()
         }
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
@@ -109,7 +109,7 @@ extension NewCardViewController: NewCardSceneDelegate {
         configScannerView()
     }
 
-    private func configScannerView() {
+    func configScannerView() {
         hostingController = UIHostingController(rootView: scanView)
         if let hostingController = hostingController {
             addChild(hostingController)

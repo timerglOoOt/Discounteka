@@ -1,6 +1,6 @@
 import UIKit
 
-class ContactUsViewController: UIViewController {
+final class ContactUsViewController: UIViewController {
     private let viewModel: ContactUsViewModel
     private let contactUsView = ContactUsView(frame: .zero)
 

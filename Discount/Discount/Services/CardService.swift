@@ -41,7 +41,7 @@ class CardService {
         let userId = UserDefaults.standard.string(forKey: "curUser")
         Task {
             guard let userId = userId else { return }
-            await cards = firebase.getCards(forUserId: userId) ?? []
+            cards = await firebase.getCards(forUserId: userId) ?? []
         }
     }
 

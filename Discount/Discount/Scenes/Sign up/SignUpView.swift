@@ -62,9 +62,9 @@ final class SignUpView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setupLayout()
         setupGesture()
-        setupTextFieldsDelegate()
+        setupTextFields()
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -75,10 +75,6 @@ final class SignUpView: UIView {
 private extension SignUpView {
     func setupLayout() {
         backgroundColor = UIColor(named: "backgroundColor")
-        passwordCustomTextField.isSecureTextEntry = true
-        emailCustomTextField.autocapitalizationType = .none
-        passwordCustomTextField.textContentType = .password
-        emailCustomTextField.textContentType = .emailAddress
         addSubview(welcomeCustomeLabel)
         addSubview(textFieldsStack)
         addSubview(signUpCustomButton)
@@ -111,7 +107,12 @@ private extension SignUpView {
         delegate?.enterLabelTapped()
     }
 
-    func setupTextFieldsDelegate() {
+    func setupTextFields() {
+        passwordCustomTextField.isSecureTextEntry = true
+        emailCustomTextField.autocapitalizationType = .none
+        passwordCustomTextField.textContentType = .password
+        emailCustomTextField.textContentType = .emailAddress
+
         firstNameCustomTextField.delegate = self
         lastNameCustomTextField.delegate = self
         emailCustomTextField.delegate = self
@@ -138,18 +139,18 @@ extension SignUpView: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-            case firstNameCustomTextField:
-                lastNameCustomTextField.becomeFirstResponder()
-            case lastNameCustomTextField:
-                emailCustomTextField.becomeFirstResponder()
-            case emailCustomTextField:
-                passwordCustomTextField.becomeFirstResponder()
-            case passwordCustomTextField:
-                textField.resignFirstResponder()
-                delegate?.signUpButtonTapped()
-            default:
-                break
-            }
+        case firstNameCustomTextField:
+            lastNameCustomTextField.becomeFirstResponder()
+        case lastNameCustomTextField:
+            emailCustomTextField.becomeFirstResponder()
+        case emailCustomTextField:
+            passwordCustomTextField.becomeFirstResponder()
+        case passwordCustomTextField:
+            textField.resignFirstResponder()
+            delegate?.signUpButtonTapped()
+        default:
+            break
+        }
         return true
     }
 }

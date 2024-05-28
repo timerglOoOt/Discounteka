@@ -77,8 +77,10 @@ extension MainTableViewCell {
         cardImageView.image = nil
         cardNameLabel.text = nil
     }
+}
 
-    private func generateImage(from string: String, cardType: AVMetadataObject.ObjectType) -> UIImage? {
+private extension MainTableViewCell {
+    func generateImage(from string: String, cardType: AVMetadataObject.ObjectType) -> UIImage? {
         let data = Data(string.utf8)
         var filter: CIFilter = CIFilter()
 

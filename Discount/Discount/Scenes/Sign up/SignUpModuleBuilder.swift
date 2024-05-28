@@ -1,6 +1,6 @@
 import Foundation
 
-class SignUpModuleBuilder {
+final class SignUpModuleBuilder {
     func build(output: SignUpOutput) -> SignUpViewController {
         let viewModel = SignUpViewModel()
         viewModel.delegate = output

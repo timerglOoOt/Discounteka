@@ -3,7 +3,7 @@ import SnapKit
 
 // MARK: Кастомная кнопка перехода не предыдущий экран с названием страницы
 
-class UICustomBackItem: UIView {
+final class UICustomBackItem: UIView {
     private lazy var backItemImageView: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "chevron.backward"))
         image.tintColor = UIColor(named: "textColor")
@@ -38,7 +38,7 @@ class UICustomBackItem: UIView {
 
 // MARK: - Работа с положением элементов на CustomInfoLabel
 
-extension UICustomBackItem {
+private extension UICustomBackItem {
     private func setupLayout() {
         addSubview(backItemImageView)
         addSubview(titleLabel)

@@ -9,7 +9,7 @@ protocol SignOutOutput: AnyObject {
     func signedOutUser()
 }
 
-class SignUpViewModel {
+final class SignUpViewModel {
     weak var delegate: SignUpOutput?
     weak var controller: SignUpViewController?
     private lazy var firebase = FirebaseManager(alertShowable: controller)
@@ -21,12 +21,17 @@ class SignUpViewModel {
     func signUpButtonTapped(user: User, password: String) {
         controller?.view.showBlurLoader()
         Task {
-            let curUser = await firebase.createUser(user: user, password: password)
+            guard let curUser = await firebase.createUser(user: user, password: password) else {
+                await controller?.view.removeBlurLoader()
+                return }
             UserDefaults.standard.set(curUser, forKey: "curUser")
-            DispatchQueue.main.async { [weak self] in
-                self?.delegate?.signedUpUser()
-                self?.controller?.view.removeBlurLoader()
-            }
+            await signUp()
         }
+    }
+
+    @MainActor
+    private func signUp() {
+        delegate?.signedUpUser()
+        controller?.view.removeBlurLoader()
     }
 }

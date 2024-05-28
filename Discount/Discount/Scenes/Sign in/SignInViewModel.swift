@@ -5,7 +5,7 @@ protocol SignInOutput: AnyObject {
     func signedInUser()
 }
 
-class SignInViewModel {
+final class SignInViewModel {
     weak var delegate: SignInOutput?
     weak var controller: SignInViewController?
     private lazy var firebase = FirebaseManager(alertShowable: controller)
@@ -18,11 +18,16 @@ class SignInViewModel {
         controller?.view.showBlurLoader()
         Task {
             let curUser = await firebase.signInUser(email: email, password: password)
-            UserDefaults.standard.set(curUser, forKey: "curUser")
-            DispatchQueue.main.async { [weak self] in
-                self?.delegate?.signedInUser()
-                self?.controller?.view.removeBlurLoader()
+            if curUser != "" {
+                UserDefaults.standard.set(curUser, forKey: "curUser")
+                await signIn()
             }
+            await controller?.view.removeBlurLoader()
         }
+    }
+
+    @MainActor
+    private func signIn() {
+        delegate?.signedInUser()
     }
 }

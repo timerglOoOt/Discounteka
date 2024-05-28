@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingsViewModel {
+final class SettingsViewModel {
     weak var delegate: SignOutOutput?
     func systemThemeSwitchLabelTapped() -> Bool {
         let newTheme: Theme = Theme.current == .system ? .light : .system

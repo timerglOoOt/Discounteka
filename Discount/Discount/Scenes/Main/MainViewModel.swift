@@ -5,7 +5,7 @@ protocol MainViewOutput: AnyObject {
     func showNewCardController()
 }
 
-class MainViewModel {
+final class MainViewModel {
     private let cardsService = CardService.shared
     weak var delegate: MainViewOutput?
     weak var controller: MainViewController?

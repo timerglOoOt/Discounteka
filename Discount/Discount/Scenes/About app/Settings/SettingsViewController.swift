@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     private let viewModel: SettingsViewModel
     private let settingsView = SettingsView(frame: .zero)
 

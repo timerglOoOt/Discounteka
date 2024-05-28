@@ -1,6 +1,6 @@
 import UIKit
 
-class MainModuleBuilder {
+final class MainModuleBuilder {
     func build(output: MainViewOutput) -> MainViewController {
         let viewModel = MainViewModel()
         viewModel.delegate = output

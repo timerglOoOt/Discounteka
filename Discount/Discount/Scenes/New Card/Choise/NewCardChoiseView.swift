@@ -53,7 +53,7 @@ private extension NewCardChoiseView {
         }
     }
 
-    private func setupGestures() {
+    func setupGestures() {
         let cardWithQRTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLableTap))
         cardWithQRInfoLabel.addGestureRecognizer(cardWithQRTapGesture)
         let cardWithBarcodeTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLableTap))

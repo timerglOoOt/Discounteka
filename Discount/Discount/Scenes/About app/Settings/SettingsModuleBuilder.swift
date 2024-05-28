@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingsModuleBuilder {
+final class SettingsModuleBuilder {
     func build(output: SignOutOutput) -> SettingsViewController {
         let viewModel = SettingsViewModel()
         viewModel.delegate = output

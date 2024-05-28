@@ -4,7 +4,7 @@ import CoreImage.CIFilterBuiltins
 import CodeScanner
 import AVFoundation
 
-class NewCardViewModel {
+final class NewCardViewModel {
     weak var controller: NewCardViewController?
     private lazy var firebase = FirebaseManager(alertShowable: controller)
     private let cardService = CardService.shared

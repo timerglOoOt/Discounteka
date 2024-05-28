@@ -57,9 +57,9 @@ final class SignInView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setupLayout()
+        setupTextFields()
         setupGesture()
-        setupTextFieldsDelegate()
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -70,10 +70,6 @@ final class SignInView: UIView {
 private extension SignInView {
     func setupLayout() {
         backgroundColor = UIColor(named: "backgroundColor")
-        passwordCustomTextField.isSecureTextEntry = true
-        emailCustomTextField.autocapitalizationType = .none
-        passwordCustomTextField.textContentType = .password
-        emailCustomTextField.textContentType = .emailAddress
         addSubview(welcomeCustomeLabel)
         addSubview(textFieldsStack)
         addSubview(signUpCustomButton)
@@ -106,7 +102,11 @@ private extension SignInView {
         delegate?.signUpLabelTapped()
     }
 
-    func setupTextFieldsDelegate() {
+    func setupTextFields() {
+        passwordCustomTextField.isSecureTextEntry = true
+        emailCustomTextField.autocapitalizationType = .none
+        passwordCustomTextField.textContentType = .password
+        emailCustomTextField.textContentType = .emailAddress
         emailCustomTextField.delegate = self
         passwordCustomTextField.delegate = self
     }
@@ -124,13 +124,13 @@ extension SignInView: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-            case emailCustomTextField:
-                passwordCustomTextField.becomeFirstResponder()
-            case passwordCustomTextField:
-                textField.resignFirstResponder()
-                delegate?.signInButtonTapped()
-            default:
-                break
+        case emailCustomTextField:
+            passwordCustomTextField.becomeFirstResponder()
+        case passwordCustomTextField:
+            textField.resignFirstResponder()
+            delegate?.signInButtonTapped()
+        default:
+            break
         }
         return true
     }

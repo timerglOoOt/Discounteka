@@ -1,6 +1,6 @@
 import UIKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
     private let profileView = ProfileView(frame: .zero)
     private let viewModel: ProfileViewModel
 

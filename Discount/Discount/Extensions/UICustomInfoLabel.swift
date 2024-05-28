@@ -3,7 +3,7 @@ import SnapKit
 
 // MARK: Кастомный label с картинкой
 
-class UICustomInfoLabel: UIView {
+final class UICustomInfoLabel: UIView {
     private lazy var infoImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleToFill
@@ -41,8 +41,8 @@ class UICustomInfoLabel: UIView {
 
 // MARK: - Работа с положением элементов на CustomInfoLabel
 
-extension UICustomInfoLabel {
-    private func setupLayout() {
+private extension UICustomInfoLabel {
+    func setupLayout() {
         backgroundColor = .clear
 
         addSubview(infoImageView)
@@ -63,7 +63,7 @@ extension UICustomInfoLabel {
 
     // MARK: - Работа с нажатиями на label
 
-    private func setupGesture() {
+    func setupGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.addGestureRecognizer(tapGesture)
 

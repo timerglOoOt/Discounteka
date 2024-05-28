@@ -1,6 +1,6 @@
 import Foundation
 
-class ContactUsModuleBuilder: ModuleBuilder {
+final class ContactUsModuleBuilder: ModuleBuilder {
     typealias ViewController = ContactUsViewController
 
     func build() -> ContactUsViewController {

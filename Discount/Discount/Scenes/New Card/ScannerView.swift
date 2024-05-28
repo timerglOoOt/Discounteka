@@ -14,9 +14,6 @@ struct ScannerView: View {
         ZStack {
             if isPresentingScanner {
                 CodeScannerView(codeTypes: [.qr, .code128, .microQR], simulatedData: "some card"
-//                .ean13, .upce,
-//                .code39, .code93, .code39Mod43,
-//                .interleaved2of5
                 ) { response in
                     delegate?.didResultChanged(result: response)
                     isPresentingScanner = false

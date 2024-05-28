@@ -1,6 +1,6 @@
 import Foundation
 
-class ProfileViewModel {
+final class ProfileViewModel {
     weak var controller: ProfileViewController?
     private lazy var firebase = FirebaseManager(alertShowable: controller)
 

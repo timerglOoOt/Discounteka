@@ -1,6 +1,6 @@
 import UIKit
 
-class AboutAppModuleBuilder: ModuleBuilder {
+final class AboutAppModuleBuilder: ModuleBuilder {
     typealias ViewController = AboutAppViewController
 
     func build() -> AboutAppViewController {

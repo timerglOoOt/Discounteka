@@ -1,6 +1,6 @@
 import Foundation
 
-class ProfileModuleBuilder {
+final class ProfileModuleBuilder {
     func build() -> ProfileViewController {
         let viewModel = ProfileViewModel()
         let controller = ProfileViewController(viewModel: viewModel)

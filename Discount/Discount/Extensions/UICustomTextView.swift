@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: Кастомное поле ввода данных в большом объеме
 
-class UICustomTextView: UITextView, UITextViewDelegate {
+final class UICustomTextView: UITextView {
     init(placeholderText: String) {
         super.init(frame: .zero, textContainer: .none)
         self.placeholderText = placeholderText
@@ -29,7 +29,7 @@ class UICustomTextView: UITextView, UITextViewDelegate {
 
 // MARK: - Настройка работы с текстовым полем во все этапы ввода данных
 
-extension UICustomTextView {
+extension UICustomTextView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.layer.borderColor = UIColor.hexStringToUIColor(hex: "2B83FF").cgColor
         if textView.text == placeholderText {

@@ -1,6 +1,6 @@
 import UIKit
 
-class UICustomSwitchLabel: UIView {
+final class UICustomSwitchLabel: UIView {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .regular)

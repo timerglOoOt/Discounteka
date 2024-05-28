@@ -1,6 +1,6 @@
 import UIKit
 
-class SignInViewController: UIViewController {
+final class SignInViewController: UIViewController {
     private let signInView = SignInView(frame: .zero)
     private let viewModel: SignInViewModel
 

@@ -403,21 +403,13 @@
 		CE7D5F292BCEBE800005DAB9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CE7D5F2A2BCEBE970005DAB9 /* Views */,
+				CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */,
+				CE7D5F302BCEC3950005DAB9 /* MainView.swift */,
 				CE7D5F322BCECF350005DAB9 /* MainViewController.swift */,
 				CE48EE882BCFCB1C006C33F5 /* MainModuleBuilder.swift */,
 				CE48EE8A2BCFCB49006C33F5 /* MainViewModel.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		CE7D5F2A2BCEBE970005DAB9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */,
-				CE7D5F302BCEC3950005DAB9 /* MainView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		CE7D5F2D2BCEC0F70005DAB9 /* Models */ = {

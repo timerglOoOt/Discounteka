@@ -42,7 +42,7 @@ class FirebaseManager {
             print("Error creating user with authentication: \(error.localizedDescription)")
             await alertShowable?.showCustomAlertAsync(title: "Error", message: "Error creating user with authentication: \(error.localizedDescription)")
         }
-        return ""
+        return nil
     }
 
     func signInUser(email: String?, password: String?) async -> String {

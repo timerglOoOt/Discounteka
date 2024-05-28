@@ -4,7 +4,7 @@ protocol AboutAppControllerDelegate: AnyObject {
     func showScreenByTag(_ tag: Int)
 }
 
-class AboutAppViewController: UIViewController {
+final class AboutAppViewController: UIViewController {
     private let aboutAppView = AboutAppView(frame: .zero)
     weak var delegate: AboutAppControllerDelegate?
 

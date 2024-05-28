@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     private let mainView = MainView(frame: .zero)
     var viewModel: MainViewModel
     private var cancellables = Set<AnyCancellable>()
@@ -74,7 +74,7 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
 
 // MARK: Настройка NavigationBar
 
-extension MainViewController {
+private extension MainViewController {
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(handleTap))
         navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "textColor")

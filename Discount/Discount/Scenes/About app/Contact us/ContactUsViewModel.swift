@@ -4,7 +4,7 @@ protocol ContactUsViewModelProtocol: AnyObject {
     func sendMessage(messageText: String)
 }
 
-class ContactUsViewModel {
+final class ContactUsViewModel {
     weak var controller: ContactUsViewController?
     private lazy var firebase = FirebaseManager(alertShowable: controller)
 
