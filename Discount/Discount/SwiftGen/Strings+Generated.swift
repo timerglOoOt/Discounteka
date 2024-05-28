@@ -13,7 +13,7 @@ public enum Strings {
   ///  barcode
   public static let barcode = Strings.tr("Localizable", " barcode", fallback: " barcode")
   ///  My cards
-  public static let myCards = Strings.tr("Localizable", " My cards", fallback: " My cards")
+  public static let myCards = Strings.tr("Localizable", "  My cards", fallback: "  My cards")
   ///  QR code
   public static let qrCode = Strings.tr("Localizable", " QR code", fallback: " QR code")
   public static let withQrCode = Strings.tr("Localizable", "QR code", fallback: "QR code")
