@@ -2,7 +2,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
-    var isLogged = true
+    var isLogged = UserDefaults.standard.string(forKey: "curUser") != ""
     var flowCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {
@@ -18,13 +18,24 @@ class AppCoordinator: Coordinator {
     }
 }
 
-extension AppCoordinator {
-    private func showMainFlow() {
-        flowCoordinator = MainFlowCoordinator(navigationController: navigationController)
+private extension AppCoordinator {
+    func showMainFlow() {
+        flowCoordinator = MainFlowCoordinator(navigationController: navigationController, mainFlowCoordinatorProtocol: self)
         flowCoordinator?.start()
     }
 
-    private func showAuthFlow() {
-        print("Auth flow")
+    func showAuthFlow() {
+        flowCoordinator = AuthFlowCoordinator(navigationController: navigationController, authFlowCoordinatorOutput: self)
+        flowCoordinator?.start()
+    }
+}
+
+extension AppCoordinator: AuthFlowCoordinatorOutput, MainFlowCoordinatorProtocol {
+    func mainFlowSignOutUser() {
+        showAuthFlow()
+    }
+
+    func authFlowCoordinatorEnteredUser() {
+        showMainFlow()
     }
 }

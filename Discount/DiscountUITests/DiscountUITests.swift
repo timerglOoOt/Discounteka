@@ -1,34 +1,64 @@
 import XCTest
+@testable import Discount
 
 final class DiscountUITests: XCTestCase {
-
+    var app: XCUIApplication!
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launch()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        app.terminate()
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    func testButtonExist() throws {
+        let button = app.buttons["signUp"]
+        XCTAssertTrue(button.exists, "Кнопка должна существовать на экране")
+        button.tap()
+    }
+
+    func testTextFieldIsEnabled() throws {
+        let textField = app.textFields["email"]
+        XCTAssertTrue(textField.exists, "Текстовое поле должно существовать на экране")
+        textField.tap()
+        XCTAssertTrue(textField.isEnabled, "Текстовое поле должно быть выбрано")
+    }
+
+    func testLightTheme() throws {
+        app.launchArguments.append("UITestLightMode")
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let newTheme: Theme = .light
+        newTheme.applyTheme()
+        newTheme.save()
+        let screenshot = app.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
+        attachment.name = "Light Theme Screenshot"
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func testDarkTheme() throws {
+        app.launchArguments.append("UITestDarkMode")
+        app.launch()
+        let newTheme: Theme = .dark
+        newTheme.applyTheme()
+        newTheme.save()
+        let screenshot = app.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot)
+        attachment.name = "Dark Theme Screenshot"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
+    func testTextFieldNextAndDoneWithErrorAlert() throws {
+        let app = XCUIApplication()
+        app/*@START_MENU_TOKEN@*/.textFields["firstName"]/*[[".textFields[\"Имя\"]",".textFields[\"firstName\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.textFields["lastName"]/*[[".textFields[\"Фамилия\"]",".textFields[\"lastName\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.textFields["email"]/*[[".textFields[\"Почта\"]",".textFields[\"email\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.secureTextFields["Пароль"].tap()
+        app.alerts["Ошибка"].scrollViews.otherElements.buttons["OK"].tap()
     }
 }

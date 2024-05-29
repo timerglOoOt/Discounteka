@@ -4,8 +4,11 @@ import CoreImage.CIFilterBuiltins
 import CodeScanner
 import AVFoundation
 
-class NewCardViewModel {
-    let cardService = CardService.shared
+final class NewCardViewModel {
+    weak var controller: NewCardViewController?
+    private lazy var firebase = FirebaseManager(alertShowable: controller)
+    private let cardService = CardService.shared
+    private let userId = UserDefaults.standard.string(forKey: "curUser")
     @Published var scannedResult: String?
 
     private func configureCard(cardValue: String, cardName: String, cardType: AVMetadataObject.ObjectType) -> Card {
@@ -14,7 +17,9 @@ class NewCardViewModel {
 
     func addNewCard(cardValue: String, cardName: String, cardType: AVMetadataObject.ObjectType) {
         let confCard = configureCard(cardValue: cardValue, cardName: cardName, cardType: cardType)
-
+        Task {
+            await firebase.addCard(toUserId: userId ?? "", card: confCard)
+        }
         cardService.saveCard(confCard)
     }
 

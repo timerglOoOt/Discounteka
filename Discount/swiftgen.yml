@@ -1,0 +1,12 @@
+input_dir: Discount/SwiftGen
+output_dir: Discount/SwiftGen
+
+strings:
+  inputs:
+    - UIdentifiers.strings
+  outputs:
+    - templateName: structured-swift5
+      output: UIdentifiers+Generated.swift
+      params:
+        enumName: Strings
+        publicAccess: true

@@ -7,13 +7,13 @@ protocol NewCardSceneDelegate: AnyObject {
 }
 
 final class NewCardView: UIView {
-    private lazy var enterCardNumberCustomLabel = UICustomLabel(labelText: "Вы можете ввести номер карты вручную", alignment: .center)
-    lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: "Введите номер...")
-    private lazy var scanQRCustomLabel = UICustomLabel(labelText: "или отсканировать", alignment: .center)
-    private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: "Введите название карты", alignment: .center)
-    private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: "Введите название...")
+    private lazy var enterCardNumberCustomLabel = UICustomLabel(labelText: Strings.youCanEnterTheCardNumberManually, alignment: .center)
+    lazy var cardNumberCustomTextField = UICustomTextField(placeholderText: Strings.enterTheNumber)
+    private lazy var scanQRCustomLabel = UICustomLabel(labelText: Strings.orScanIt, alignment: .center)
+    private lazy var enterCardNameCustomLabel = UICustomLabel(labelText: Strings.enterTheNameOfTheCard, alignment: .center)
+    private lazy var cardNameCustomTextField = UICustomTextField(placeholderText: Strings.enterTheName)
     private lazy var saveCustomButton: UICustomButton = {
-        let button = UICustomButton("Сохранить", "checkmark.circle")
+        let button = UICustomButton(Strings.save)
         button.addAction(UIAction(handler: { [weak self] _ in
             self?.delegate?.saveButtonTapped()
         }), for: .touchUpInside)
@@ -21,7 +21,7 @@ final class NewCardView: UIView {
     }()
 
     private lazy var scanQRCustomBlueButton: UICustomGrayButton = {
-        let button = UICustomGrayButton("Сканировать")
+        let button = UICustomGrayButton(Strings.scanCard)
         let action = UIAction { [weak self] _ in
             self?.delegate?.scanButtonTapped()
         }
@@ -47,7 +47,7 @@ final class NewCardView: UIView {
 
 private extension NewCardView {
     private func setupLayout() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "backgroundColor")
         addSubview(enterCardNumberCustomLabel)
         addSubview(cardNumberCustomTextField)
         addSubview(scanQRCustomLabel)
@@ -86,10 +86,16 @@ private extension NewCardView {
         }
 
         saveCustomButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(24)
             make.centerX.equalTo(safeAreaLayoutGuide)
-            make.height.equalTo(65)
-            make.width.equalTo(350)
         }
+    }
+}
+
+extension NewCardView {
+    func checkIfTextFieldsIsEmpty() -> Bool {
+        let first = cardNumberCustomTextField.isEmptyTextField()
+        let second = cardNameCustomTextField.isEmptyTextField()
+        return first || second
     }
 }

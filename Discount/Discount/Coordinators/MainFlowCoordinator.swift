@@ -1,18 +1,24 @@
 import UIKit
 
+protocol MainFlowCoordinatorProtocol: AnyObject {
+    func mainFlowSignOutUser()
+}
+
 // MARK: Логика старта главного потока приложения
 
 class MainFlowCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private var mainFlowCoordinatorProtocol: MainFlowCoordinatorProtocol?
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, mainFlowCoordinatorProtocol: MainFlowCoordinatorProtocol) {
         self.navigationController = navigationController
+        self.mainFlowCoordinatorProtocol = mainFlowCoordinatorProtocol
     }
 
     func start() {
-        let mainViewController = MainModuleBuilder().build()
-        mainViewController.delegate = self
-        navigationController.pushViewController(mainViewController, animated: true)
+        CardService.shared.getCards()
+        let mainViewController = MainModuleBuilder().build(output: self)
+        navigationController.setViewControllers([mainViewController], animated: true)
     }
 }
 
@@ -33,15 +39,18 @@ extension MainFlowCoordinator: AboutAppControllerDelegate {
     }
 
     private func showProfileController() {
-        print("profile")
+        let profileViewController = ProfileModuleBuilder().build()
+        navigationController.pushViewController(profileViewController, animated: true)
     }
 
-    private func showContactUsController() {
-        print("contact us")
+    func showContactUsController() {
+        let contactUsViewController = ContactUsModuleBuilder().build()
+        navigationController.pushViewController(contactUsViewController, animated: true)
     }
 
     private func showSettingsController() {
-        print("settings")
+        let settingsController = SettingsModuleBuilder().build(output: self)
+        navigationController.pushViewController(settingsController, animated: true)
     }
 }
 
@@ -60,20 +69,10 @@ extension MainFlowCoordinator: NewCardChoiseControllerDelegate {
         }
         navigationController.pushViewController(newCardViewController, animated: true)
     }
-
-//    private func showNewQRCardController() {
-//        let newCardViewController = NewCardModuleBuilder().build()
-//        newCardViewController.cardType = .withQR
-//        navigationController.pushViewController(newCardViewController, animated: true)
-//    }
-//
-//    private func showNewBarcodeCardController() {
-//        print("contact us")
-//    }
 }
 // MARK: Настройка для главного экрана
 
-extension MainFlowCoordinator: MainViewControllerDelegate {
+extension MainFlowCoordinator: MainViewOutput {
     func showNewCardController() {
         let newCardChoiseViewController = NewCardChoiseModuleBuilder().build()
         newCardChoiseViewController.delegate = self
@@ -84,5 +83,13 @@ extension MainFlowCoordinator: MainViewControllerDelegate {
         let aboutAppViewController = AboutAppModuleBuilder().build()
         aboutAppViewController.delegate = self
         navigationController.pushViewController(aboutAppViewController, animated: true)
+    }
+}
+
+extension MainFlowCoordinator: SignOutOutput {
+    func signedOutUser() {
+        mainFlowCoordinatorProtocol?.mainFlowSignOutUser()
+        CardService.shared.cleanCards()
+        UserDefaults.standard.set("", forKey: "curUser")
     }
 }

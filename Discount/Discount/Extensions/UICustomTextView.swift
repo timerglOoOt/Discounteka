@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: Кастомное поле ввода данных в большом объеме
 
-class UICustomTextView: UITextView, UITextViewDelegate {
+final class UICustomTextView: UITextView {
     init(placeholderText: String) {
         super.init(frame: .zero, textContainer: .none)
         self.placeholderText = placeholderText
@@ -10,6 +10,7 @@ class UICustomTextView: UITextView, UITextViewDelegate {
         delegate = self
 
         font = .systemFont(ofSize: 22)
+        backgroundColor = .clear
         layer.cornerRadius = 14
         layer.borderWidth = 1.5
         layer.borderColor = UIColor.hexStringToUIColor(hex: "B8B8B8").cgColor
@@ -28,12 +29,12 @@ class UICustomTextView: UITextView, UITextViewDelegate {
 
 // MARK: - Настройка работы с текстовым полем во все этапы ввода данных
 
-extension UICustomTextView {
+extension UICustomTextView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.layer.borderColor = UIColor.hexStringToUIColor(hex: "2B83FF").cgColor
         if textView.text == placeholderText {
             textView.text = nil
-            textView.textColor = .black
+            textView.textColor = UIColor(named: "standartTextColor")
         }
     }
 
@@ -47,5 +48,12 @@ extension UICustomTextView {
     private func editPlaceholder(textView: UITextView) {
         textView.text = placeholderText
         textView.textColor = .systemGray3
+    }
+
+    func isEmptyTextView() -> Bool {
+        if self.text == placeholderText || self.text.isEmpty {
+            self.layer.borderColor = UIColor.hexStringToUIColor(hex: "E33A43").cgColor
+        }
+        return self.text == placeholderText || self.text.isEmpty
     }
 }

@@ -5,7 +5,7 @@ import SnapKit
 import CodeScanner
 import AVFoundation
 
-class NewCardViewController: UIViewController {
+final class NewCardViewController: UIViewController {
     private let newCardView = NewCardView(frame: .zero)
     let viewModel: NewCardViewModel
     private var cancellable: AnyCancellable?
@@ -24,6 +24,7 @@ class NewCardViewController: UIViewController {
         setupNavigationBar()
         setupBindigs()
         scanView.delegate = self
+        viewModel.controller = self
     }
 
     init(viewModel: NewCardViewModel) {
@@ -36,9 +37,9 @@ class NewCardViewController: UIViewController {
     }
 }
 
-extension NewCardViewController {
+private extension NewCardViewController {
     private func setupNavigationBar() {
-        let titleLabel = "Карта с\(cardType == .qr ? " QR-кодом" : "о штрихкодом")"
+        let titleLabel = Strings.cardWith + (cardType == .qr ? Strings.qrCode : Strings.barcode)
         let item = UICustomBackItem(titleLabel: titleLabel)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
@@ -49,10 +50,6 @@ extension NewCardViewController {
 
     @objc func handleBackTap() {
         navigationController?.popViewController(animated: true)
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
 }
 
@@ -80,12 +77,23 @@ extension NewCardViewController: ScannerViewProtocol {
             hostingController.removeFromParent()
         }
     }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension NewCardViewController: NewCardSceneDelegate {
-    func setupBindigs() {    }
+    func setupBindigs() {}
 
     func saveButtonTapped() {
+        if newCardView.checkIfTextFieldsIsEmpty() {
+            self.showAlert(
+                title: Strings.error,
+                message: Strings.youAreTryingToSendAnEmptyFieldPleaseEnterTheText
+            )
+            return
+        }
         let cardInfo = newCardView.getTextFields()
         viewModel.addNewCard(cardValue: cardInfo.0, cardName: cardInfo.1, cardType: cardType ?? .qr)
         if let viewControllers = self.navigationController?.viewControllers {
@@ -101,7 +109,7 @@ extension NewCardViewController: NewCardSceneDelegate {
         configScannerView()
     }
 
-    private func configScannerView() {
+    func configScannerView() {
         hostingController = UIHostingController(rootView: scanView)
         if let hostingController = hostingController {
             addChild(hostingController)

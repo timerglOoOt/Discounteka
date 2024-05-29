@@ -12,7 +12,7 @@ final class MainView: UIView {
         let table = UITableView()
         table.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         table.separatorStyle = .none
-        table.backgroundColor = .white
+        table.backgroundColor = UIColor(named: "backgroundColor")
         table.bounces = false
         table.showsVerticalScrollIndicator = false
         table.estimatedRowHeight = UITableView.automaticDimension
@@ -20,7 +20,7 @@ final class MainView: UIView {
     }()
 
     private lazy var addButton: UICustomButton = {
-        let button = UICustomButton("Добавить", "plus.circle")
+        let button = UICustomButton(Strings.addCard)
         button.addAction(UIAction(handler: { _ in
             self.delegate?.addButtonTapped()
         }), for: .touchUpInside)
@@ -44,7 +44,7 @@ final class MainView: UIView {
 
 private extension MainView {
     func setupLayout() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "backgroundColor")
 
         addSubview(cardsTableView)
         addSubview(addButton)
@@ -56,10 +56,8 @@ private extension MainView {
         }
 
         addButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(-10)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(24)
             make.centerX.equalTo(safeAreaLayoutGuide)
-            make.height.equalTo(65)
-            make.width.equalTo(350)
         }
     }
 }

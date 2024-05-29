@@ -4,7 +4,7 @@ protocol NewCardChoiseControllerDelegate: AnyObject {
     func showNewCardScreenByTag(_ tag: Int)
 }
 
-class NewCardChoiseViewController: UIViewController {
+final class NewCardChoiseViewController: UIViewController {
     private let newCardChoiseView = NewCardChoiseView(frame: .zero)
     weak var delegate: NewCardChoiseControllerDelegate?
 
@@ -19,9 +19,9 @@ class NewCardChoiseViewController: UIViewController {
     }
 }
 
-extension NewCardChoiseViewController {
+private extension NewCardChoiseViewController {
     private func setupNavigationBar() {
-        let item = UICustomBackItem(titleLabel: "Новая карта")
+        let item = UICustomBackItem(titleLabel: Strings.newCard)
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBackTap))
         item.addGestureRecognizer(tapGesture)

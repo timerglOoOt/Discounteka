@@ -1,13 +1,13 @@
 import UIKit
 import SnapKit
 
-class NewCardChoiseView: UIView {
+final class NewCardChoiseView: UIView {
     private lazy var newCardsNameLabel: UICustomLabel = UICustomLabel(
-        labelText: "Какую карту вы хотели бы добавить?",
+        labelText: Strings.whichCardWouldYouLikeToAdd,
         alignment: .left)
 
-    private lazy var cardWithQRInfoLabel = UICustomInfoLabel(imageName: "scanQR.svg", text: "С QR-кодом")
-    private lazy var cardWithBarcodeInfoLabel = UICustomInfoLabel(imageName: "scanBarcode.svg", text: "Со шрихкодом")
+    private lazy var cardWithQRInfoLabel = UICustomInfoLabel(imageName: "scanQR.svg", text: Strings.withQrCode)
+    private lazy var cardWithBarcodeInfoLabel = UICustomInfoLabel(imageName: "scanBarcode.svg", text: Strings.withBarcode)
 
     private lazy var infoStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [
@@ -36,7 +36,7 @@ class NewCardChoiseView: UIView {
 
 private extension NewCardChoiseView {
     func setupLayout() {
-        backgroundColor = .systemBackground
+        backgroundColor = UIColor(named: "backgroundColor")
         cardWithQRInfoLabel.tag = 1
         cardWithBarcodeInfoLabel.tag = 2
         addSubview(infoStackView)
@@ -53,7 +53,7 @@ private extension NewCardChoiseView {
         }
     }
 
-    private func setupGestures() {
+    func setupGestures() {
         let cardWithQRTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLableTap))
         cardWithQRInfoLabel.addGestureRecognizer(cardWithQRTapGesture)
         let cardWithBarcodeTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLableTap))

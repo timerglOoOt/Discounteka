@@ -1,6 +1,6 @@
 import Foundation
 
-class NewCardChoiseModuleBuilder: ModuleBuilder {
+final class NewCardChoiseModuleBuilder: ModuleBuilder {
     typealias ViewController = NewCardChoiseViewController
 
     func build() -> NewCardChoiseViewController {

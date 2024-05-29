@@ -1,15 +1,9 @@
 import UIKit
 import Combine
 
-protocol MainViewControllerDelegate: AnyObject {
-    func showAboutAppController()
-    func showNewCardController()
-}
-
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     private let mainView = MainView(frame: .zero)
     var viewModel: MainViewModel
-    weak var delegate: MainViewControllerDelegate?
     private var cancellables = Set<AnyCancellable>()
     var cardsCount = 0
 
@@ -27,6 +21,7 @@ class MainViewController: UIViewController {
         mainView.delegate = self
         mainView.setupDataSource(self)
         mainView.setupDelegate(self)
+        viewModel.controller = self
     }
 
     init(viewModel: MainViewModel) {
@@ -59,7 +54,7 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
     }
 
     func addButtonTapped() {
-        delegate?.showNewCardController()
+        viewModel.showNewCardController()
     }
 
     func setupBindigs() {
@@ -79,15 +74,15 @@ extension MainViewController: MainSceneDelegate, UITableViewDelegate, UITableVie
 
 // MARK: Настройка NavigationBar
 
-extension MainViewController {
+private extension MainViewController {
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(handleTap))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.hexStringToUIColor(hex: "3B4651")
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "textColor")
 
         lazy var titleLabel: UILabel = {
             let label = UILabel()
-            label.text = "  Мои карты"
-            label.textColor = UIColor.hexStringToUIColor(hex: "3B4651")
+            label.text = Strings.myCards
+            label.textColor = UIColor(named: "textColor")
             label.font = .systemFont(ofSize: 17, weight: .semibold)
             return label
         }()
@@ -95,6 +90,6 @@ extension MainViewController {
     }
 
     @objc private func handleTap() {
-        delegate?.showAboutAppController()
+        viewModel.showAboutAppController()
     }
 }
