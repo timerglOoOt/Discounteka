@@ -114,15 +114,15 @@ private extension SignUpView {
         passwordCustomTextField.textContentType = .password
         emailCustomTextField.textContentType = .emailAddress
 
-        firstNameCustomTextField.externalDelegate = self
-        lastNameCustomTextField.externalDelegate = self
-        emailCustomTextField.externalDelegate = self
-        passwordCustomTextField.externalDelegate = self
-
         firstNameCustomTextField.returnKeyType = .next
         lastNameCustomTextField.returnKeyType = .next
         emailCustomTextField.returnKeyType = .next
         passwordCustomTextField.returnKeyType = .done
+
+        firstNameCustomTextField.externalDelegate = self
+        lastNameCustomTextField.externalDelegate = self
+        emailCustomTextField.externalDelegate = self
+        passwordCustomTextField.externalDelegate = self
 
         firstNameCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
         lastNameCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
