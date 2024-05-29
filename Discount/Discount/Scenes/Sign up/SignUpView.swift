@@ -65,6 +65,7 @@ final class SignUpView: UIView {
         setupGesture()
         setupTextFields()
         setupLayout()
+        setupIdentifiers()
     }
 
     required init?(coder: NSCoder) {
@@ -113,10 +114,28 @@ private extension SignUpView {
         passwordCustomTextField.textContentType = .password
         emailCustomTextField.textContentType = .emailAddress
 
-        firstNameCustomTextField.delegate = self
-        lastNameCustomTextField.delegate = self
-        emailCustomTextField.delegate = self
-        passwordCustomTextField.delegate = self
+        firstNameCustomTextField.externalDelegate = self
+        lastNameCustomTextField.externalDelegate = self
+        emailCustomTextField.externalDelegate = self
+        passwordCustomTextField.externalDelegate = self
+
+        firstNameCustomTextField.returnKeyType = .next
+        lastNameCustomTextField.returnKeyType = .next
+        emailCustomTextField.returnKeyType = .next
+        passwordCustomTextField.returnKeyType = .done
+
+        firstNameCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
+        lastNameCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
+        emailCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
+        passwordCustomTextField.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
+
+    }
+
+    func setupIdentifiers() {
+        firstNameCustomTextField.accessibilityIdentifier = Strings.Id.TextFields.name
+        lastNameCustomTextField.accessibilityIdentifier = Strings.Id.TextFields.surname
+        emailCustomTextField.accessibilityIdentifier = Strings.Id.TextFields.email
+        signUpCustomButton.accessibilityIdentifier = Strings.Id.Buttons.signUp
     }
 }
 

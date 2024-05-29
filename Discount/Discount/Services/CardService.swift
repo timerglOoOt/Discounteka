@@ -1,7 +1,16 @@
 import Foundation
 import Combine
 
-class CardService {
+protocol CardServiceProtocol: AnyObject {
+    func saveCard(_ card: Card)
+    func removeCard(at index: Int)
+    func getCard(at index: Int) -> Card
+    func getCount() -> Int
+    func toggleCardVision(at index: Int)
+    func cleanCards()
+}
+
+class CardService: CardServiceProtocol {
     private let firebase = FirebaseManager(alertShowable: nil)
     @Published var cards: [Card] = []
     public static let shared = CardService()
