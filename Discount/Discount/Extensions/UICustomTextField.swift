@@ -76,7 +76,6 @@ private extension UICustomTextField {
         layer.masksToBounds = true
         let clearButton = UIButton(type: .system)
         clearButton.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
-        clearButton.translatesAutoresizingMaskIntoConstraints = false
         clearButton.imageView?.contentMode = .scaleAspectFit
         clearButton.addAction(UIAction(handler: { _ in
             self.text = ""

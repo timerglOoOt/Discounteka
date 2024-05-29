@@ -5,6 +5,7 @@ protocol SettingsViewProtocol: AnyObject {
     func darkThemeSwitchLabelTapped()
     func notificationSwitchLabelTapped()
     func signOutLabelTapped()
+    func settingsLanguageLabelTapped()
 }
 
 final class SettingsView: UIView {
@@ -47,6 +48,29 @@ final class SettingsView: UIView {
         return stack
     }()
 
+    private lazy var languageLabel = UICustomLabel(labelText: Strings.language, alignment: .left)
+    private lazy var languageSettingsLabel: UILabel = {
+        let label = UILabel()
+        label.text = Strings.changeLanguage
+        label.textColor = UIColor.hexStringToUIColor(hex: "2B83FF")
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.isUserInteractionEnabled = true
+        return label
+    }()
+    private lazy var languageStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [languageLabel, languageSettingsLabel])
+        stack.axis = .vertical
+        stack.spacing = 16
+        return stack
+    }()
+
+    private lazy var settingsStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [themeStack, notificationStack, languageStack])
+        stack.axis = .vertical
+        stack.spacing = 24
+        return stack
+    }()
+
     private lazy var signOutLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.logOut
@@ -73,17 +97,13 @@ final class SettingsView: UIView {
 private extension SettingsView {
     func setupLayout() {
         backgroundColor = UIColor(named: "backgroundColor")
-        addSubview(themeStack)
-        addSubview(notificationStack)
+        addSubview(settingsStack)
         addSubview(signOutLabel)
 
-        themeStack.snp.makeConstraints { make in
+        settingsStack.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(safeAreaLayoutGuide).inset(16)
         }
-        notificationStack.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
-            make.top.equalTo(themeStack.snp.bottom).offset(24)
-        }
+
         signOutLabel.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide).inset(24)
             make.centerX.equalTo(safeAreaLayoutGuide)
@@ -93,15 +113,24 @@ private extension SettingsView {
     func setupGesture() {
         let signOutTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLableTap))
         signOutLabel.addGestureRecognizer(signOutTapGesture)
+        let languageSettingsTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLanguageLableTap))
+        languageSettingsLabel.addGestureRecognizer(languageSettingsTapGesture)
     }
 
     @objc func handleLableTap(sender: UITapGestureRecognizer) {
         delegate?.signOutLabelTapped()
+    }
+
+    @objc func handleLanguageLableTap(sender: UITapGestureRecognizer) {
+        delegate?.settingsLanguageLabelTapped()
     }
 }
 
 extension SettingsView {
     func setDarkSwitchLabelAvailability(isEnabled: Bool) {
         darkThemeSwitchLabel.setAvilability(isEnabled: isEnabled)
+    }
+    func toggleNotificationSwitcher() {
+        notificationSwitchLabel.toggleSwitch()
     }
 }
