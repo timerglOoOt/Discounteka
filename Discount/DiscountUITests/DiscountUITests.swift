@@ -1,4 +1,6 @@
 import XCTest
+//import Firebase
+//@testable import enum Discount.Theme
 
 final class DiscountUITests: XCTestCase {
     var app: XCUIApplication!
@@ -29,6 +31,9 @@ final class DiscountUITests: XCTestCase {
     func testLightTheme() throws {
         app.launchArguments.append("UITestLightMode")
         app.launch()
+//        let newTheme = .light
+//        newTheme.applyTheme()
+//        newTheme.save()
         let screenshot = app.screenshot()
         let attachment = XCTAttachment(screenshot: screenshot)
         attachment.name = "Light Theme Screenshot"
@@ -39,6 +44,9 @@ final class DiscountUITests: XCTestCase {
     func testDarkTheme() throws {
         app.launchArguments.append("UITestDarkMode")
         app.launch()
+//        let newTheme = .dark
+//        newTheme.applyTheme()
+//        newTheme.save()
         let screenshot = app.screenshot()
         let attachment = XCTAttachment(screenshot: screenshot)
         attachment.name = "Dark Theme Screenshot"
