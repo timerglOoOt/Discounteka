@@ -53,4 +53,8 @@ extension UICustomSwitchLabel {
             switcher.isOn = false
         }
     }
+
+    func toggleSwitch() {
+        switcher.setOn(!switcher.isOn, animated: true)
+    }
 }

@@ -107,6 +107,12 @@ public enum Strings {
   public static let youCanEnterTheCardNumberManually = Strings.tr("Localizable", "You can enter the card number manually", fallback: "You can enter the card number manually")
   /// Your opinion is very important to us
   public static let yourOpinionIsVeryImportantToUs = Strings.tr("Localizable", "Your opinion is very important to us", fallback: "Your opinion is very important to us")
+  public static let openSettings = Strings.tr("Localizable", "Open Settings", fallback: "Open Settings")
+  public static let cancel = Strings.tr("Localizable", "Cancel", fallback: "Cancel")
+  public static let language = Strings.tr("Localizable", "Language", fallback: "Language")
+  public static let changeLanguage = Strings.tr("Localizable", "Change language", fallback: "Change language")
+  public static let alertContinue = Strings.tr("Localizable", "Continue", fallback: "Continue")
+  public static let settingsLanguageMessage = Strings.tr("Localizable", "You are about to leave the app to change settings", fallback: "You are about to leave the app to change settings")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

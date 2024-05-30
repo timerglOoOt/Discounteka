@@ -1,7 +1,9 @@
 import Foundation
+import UIKit
 
 final class SettingsViewModel {
     weak var delegate: SignOutOutput?
+    weak var controller: SettingsViewController?
     func systemThemeSwitchLabelTapped() -> Bool {
         let newTheme: Theme = Theme.current == .system ? .light : .system
         newTheme.applyTheme()
@@ -22,5 +24,12 @@ final class SettingsViewModel {
 
     func signOutLabelTapped() {
         delegate?.signedOutUser()
+    }
+
+    @MainActor
+    func goToSettings(url: URL) {
+        Task {
+            await UIApplication.shared.open(url)
+        }
     }
 }

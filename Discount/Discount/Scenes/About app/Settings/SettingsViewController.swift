@@ -41,6 +41,17 @@ private extension SettingsViewController {
 }
 
 extension SettingsViewController: SettingsViewProtocol {
+    func settingsLanguageLabelTapped() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            showSettingsAlert(
+                title: Strings.openSettings,
+                message: Strings.settingsLanguageMessage,
+                url: url,
+                isSwitcher: false
+            )
+        }
+    }
+
     func signOutLabelTapped() {
         viewModel.signOutLabelTapped()
     }
@@ -55,6 +66,30 @@ extension SettingsViewController: SettingsViewProtocol {
     }
 
     func notificationSwitchLabelTapped() {
-        viewModel.notificationSwitchLabelTapped()
+        if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
+            showSettingsAlert(
+                title: Strings.openSettings,
+                message: Strings.settingsLanguageMessage,
+                url: url,
+                isSwitcher: true
+            )
+        }
+    }
+}
+
+private extension SettingsViewController {
+    func showSettingsAlert(title: String, message: String, url: URL, isSwitcher: Bool) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: Strings.alertContinue, style: .default) { [weak self] _ in
+            self?.viewModel.goToSettings(url: url)
+        }
+        alert.addAction(confirmAction)
+        let cancelAction = UIAlertAction(title: Strings.cancel, style: .cancel) { [weak self] _ in
+            if isSwitcher {
+                self?.settingsView.toggleNotificationSwitcher()
+            }
+        }
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }

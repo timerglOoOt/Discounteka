@@ -40,3 +40,9 @@
 "System theme" = "Системная тема";
 "Dark theme" = "Темная тема";
 "Theme" = "Тема";
+"Open Settings" = "Открыть настройки";
+"You are about to leave the app to change settings" = "Вы собираетесь выйти из приложения, чтобы изменить настройки";
+"Cancel" = "Закрыть";
+"Continue" = "Продолжить";
+"Language" = "Язык";
+"Change language" = "Сменить язык";
