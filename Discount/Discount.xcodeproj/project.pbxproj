@@ -166,6 +166,7 @@
 		CE56B28F2BDB6BC500132A10 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		CE56B2942BDB70FF00132A10 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		CE5E2ECA2C00F08500B0F78B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE69F2092C0CF7B500DFAEBE /* tt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tt; path = tt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE7D5F2B2BCEBEB70005DAB9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CE7D5F2E2BCEC1350005DAB9 /* CardTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypes.swift; sourceTree = "<group>"; };
 		CE7D5F302BCEC3950005DAB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -632,6 +633,7 @@
 				fr,
 				es,
 				ja,
+				tt,
 			);
 			mainGroup = CE3DEC602BC9581B00B13324;
 			packageReferences = (
@@ -825,6 +827,7 @@
 				CE875DDF2C04CA47003F0D39 /* fr */,
 				CE875DE02C04CA60003F0D39 /* es */,
 				CE875DE12C04CA94003F0D39 /* ja */,
+				CE69F2092C0CF7B500DFAEBE /* tt */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
